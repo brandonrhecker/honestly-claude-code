@@ -1,0 +1,13 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+*.swp
+*~
+.vscode/
+.idea/
+
+# WSL Zone.Identifier files
+*:Zone.Identifier
