@@ -32,8 +32,8 @@ Examples:
 |---|---|
 | "This project's prod DB is read-only" | CLAUDE.md (project) |
 | "I prefer terse responses without trailing summaries" | Memory (feedback) |
-| "Insmed uses Jira label casing X, Wave Exceptions uses Y" | CLAUDE.md (project, since others working in this repo need it) |
-| "I'm a consultant doing CDW work" | Memory (user) |
+| "This project's Jira labels are lowercase; module X is the exception" | CLAUDE.md (project, since others working in this repo need it) |
+| "I'm a consultant who works across multiple client engagements" | Memory (user) |
 | "Don't mock the DB in tests; we got burned last quarter" | CLAUDE.md if team-wide, memory if it's your personal habit |
 
 When in doubt: would another teammate need to know this? CLAUDE.md. Just you and Claude? Memory.

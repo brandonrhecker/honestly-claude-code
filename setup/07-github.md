@@ -84,9 +84,9 @@ gh repo rename NewName --yes
 
 - GitHub user: `brandonrhecker`
 - Existing repos (all private):
-  - `github.com/brandonrhecker/project-palpatine` ← Insmed (codename)
   - `github.com/brandonrhecker/claude-dotfiles` ← `~/.claude/`
   - `github.com/brandonrhecker/Claude-Holocron` ← this KB
+  - One private repo per client engagement, named with a Star Wars codename (e.g., `project-palpatine`)
 
 > 🪞 Client engagement repos use Star Wars codenames so the client name isn't on GitHub. Personal infra repos use descriptive names. See [best-practices/project-organization.md](../best-practices/project-organization.md).
 

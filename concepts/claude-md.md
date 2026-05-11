@@ -59,7 +59,7 @@ Stuff you'd otherwise re-type every time:
 | Path | Purpose |
 |---|---|
 | `~/CLAUDE.md` | Global: WSL env, installed tools, project folder pattern |
-| `~/projects/Insmed/CLAUDE.md` | Insmed CDW program: Jira details, env vars, skill usage |
+| `~/projects/<ClientName>/CLAUDE.md` | Per-client: Jira details, env vars, skill usage |
 
 ---
 

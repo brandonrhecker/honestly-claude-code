@@ -45,7 +45,7 @@ Functionally similar. `/clear` is faster (no reloading). Restart only if Claude 
 
 ---
 
-> 🪞 Habit to build: one task per conversation. If you finish helping the Insmed Jira workflow and now want to write a script for something else, `/clear` first.
+> 🪞 Habit to build: one task per conversation. If you finish a Jira bulk-load workflow and now want to write a script for something else, `/clear` first.
 
 ---
 

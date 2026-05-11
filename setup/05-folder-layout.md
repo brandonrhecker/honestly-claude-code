@@ -12,7 +12,7 @@ How I organize my home folder. This isn't required by Claude Code — it's the c
 ├── PREREQUISITES.md            ← the original beginner walkthrough (kept for backup)
 ├── Claude-Holocron/            ← this knowledge base
 ├── projects/                   ← parent folder for all client/project work
-│   ├── Insmed/                 ← one folder per client/project (local name = real name)
+│   ├── AcmeCorp/               ← one folder per client/project (local name = real name)
 │   │   ├── CLAUDE.md
 │   │   ├── .git/               ← each project is its own git repo
 │   │   └── ...

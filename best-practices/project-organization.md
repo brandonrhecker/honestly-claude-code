@@ -9,8 +9,8 @@ How I lay out work across the machine. The decisions here, made once, save a lot
 Each project under `~/projects/` is its own independent git repo:
 
 ```
-~/projects/Insmed/.git/
 ~/projects/AcmeCorp/.git/
+~/projects/GlobexInc/.git/
 ```
 
 `~/projects/` itself has no `.git`. It's just a parent folder.
@@ -41,7 +41,7 @@ See [what-not-to-commit.md](what-not-to-commit.md) for the patterns I use.
 
 | What | How to name |
 |---|---|
-| Local folder for a client project | Use the real client name: `~/projects/Insmed/` |
+| Local folder for a client project | Use the real client name: `~/projects/<ClientName>/` |
 | GitHub repo for a client project | Use a **Star Wars codename**: `project-palpatine`, `project-vader`, etc. |
 | Personal infra repo (this KB, dotfiles, etc.) | Descriptive name: `Claude-Holocron`, `claude-dotfiles` |
 

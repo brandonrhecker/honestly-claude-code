@@ -28,9 +28,9 @@ The pattern I use:
 Types I use: `feat`, `fix`, `refactor`, `docs`, `chore`, `wip` (last resort).
 
 Examples:
-- `feat: add jira-bulk-stories skill for CDW workbook intake`
+- `feat: add jira-bulk-stories skill for workbook intake`
 - `fix: handle empty rows in xlsx helper`
-- `docs: update Insmed CLAUDE.md with new env var`
+- `docs: update project CLAUDE.md with new env var`
 
 Focus on the **why**, not the what. The diff already shows the what.
 
@@ -91,7 +91,7 @@ git tag v0.1.0 -m "First working version"
 git push --tags
 ```
 
-For this KB, probably overkill. For the Insmed skill code, useful.
+For this KB, probably overkill. For skill or automation code, useful.
 
 ---
 

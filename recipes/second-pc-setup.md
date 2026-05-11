@@ -32,7 +32,7 @@ git config --global init.defaultBranch main
 ```bash
 mkdir -p ~/projects
 cd ~/projects
-gh repo clone brandonrhecker/project-palpatine Insmed
+gh repo clone brandonrhecker/project-<codename> <ClientName>
 # repeat for each client engagement; remember to use the LOCAL folder name (real client name),
 # not the codename
 ```

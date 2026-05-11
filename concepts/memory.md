@@ -9,8 +9,8 @@ Claude Code has a persistent memory system. It writes small markdown files to re
 ```
 ~/.claude/projects/-home-bhecker/memory/
 ├── MEMORY.md                       ← index (always loaded into context)
-├── feedback_xlsx_helper.md         ← individual memory files
-├── feedback_cdw_label_casing.md
+├── feedback_terse_responses.md     ← individual memory files
+├── feedback_xlsx_helper.md
 ├── project_git_setup.md
 └── ...
 ```
@@ -29,10 +29,10 @@ The individual files hold the actual content with frontmatter (name, description
 
 | Type | What it's for | Example |
 |---|---|---|
-| **user** | Who you are, role, preferences | "Brandon is a consultant doing Jira/CDW work" |
+| **user** | Who you are, role, preferences | "Brandon is a consultant doing Jira automation work" |
 | **feedback** | Corrections + validated approaches | "Use the xlsx helper, not heredoc Python" |
 | **project** | Ongoing initiatives, decisions | "Per-project repos, not a monorepo" |
-| **reference** | Pointers to external systems | "Insmed Jira lives at insmed.atlassian.net" |
+| **reference** | Pointers to external systems | "Client Jira lives at example.atlassian.net" |
 
 ---
 
