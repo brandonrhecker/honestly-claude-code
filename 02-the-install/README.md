@@ -152,7 +152,7 @@ to close the session cleanly.
 
 ## in case of emergency
 
-Didn't work? Take a breath. It's okay — we'll get through this together.
+Didn't work? You didn't do anything wrong. Don't throw anything yet — we'll get through this together.
 
 | Message | What it means | What to do |
 |---|---|---|
