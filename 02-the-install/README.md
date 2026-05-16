@@ -1,3 +1,5 @@
+[← back to the book](../README.md)
+
 # 02 — Get the damn thing running
 
 You're going to install Claude Code on your computer. After this

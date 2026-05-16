@@ -1,3 +1,5 @@
+[← back to the book](../README.md)
+
 # 03 — Make it do something for you
 
 You installed Claude Code. Now you'll have it do an actual thing —

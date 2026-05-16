@@ -1,3 +1,5 @@
+[← back to the book](../README.md)
+
 # 01 — So what the hell is Claude Code
 
 You're a little scared. Or skeptical. Or you've avoided this whole
@@ -103,7 +105,7 @@ leverage, not addiction.
 
 ---
 
-## now you (kind of) get it
+## now you get it
 
 If you're still here, you've got the gist:
 

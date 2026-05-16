@@ -24,7 +24,7 @@ what to type, what to expect, and what to do when it breaks.
 
 ---
 
-## Who this is for
+## who this is for
 
 - You've heard "Claude Code" thrown around and have no idea what it is
 - You're not an engineer (or you are, but new to this specific tool)
@@ -80,7 +80,7 @@ These exist for when you need them. They're not part of the walkthrough.
 
 ---
 
-## A note on the rebuild
+## a note on the rebuild
 
 This repo is being rewritten as a book for humans, not as personal notes.
 The previous version (the personal knowledge-base form) is still
