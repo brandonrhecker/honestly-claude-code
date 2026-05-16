@@ -7,18 +7,43 @@ chapter, typing `claude` into a terminal opens a chat with the AI.
 
 ## before you start
 
-You need:
+You need a computer (Mac, Windows, or Linux), internet, and an
+Anthropic account with a paid plan.
 
-- A computer running Mac, Windows, or Linux
-- Internet access
-- An Anthropic account — free to make at https://claude.ai
-- A way to pay Anthropic for usage — either a Claude Pro/Team
-  subscription (simplest) or an API account with billing set up.
-  Check https://claude.ai for current plan options. Claude Code is
-  metered, not free.
+### what it actually costs
 
-If you don't have an Anthropic account yet, go set one up first.
-Come back when you're logged in at claude.ai.
+Anthropic gives you a few options. The honest breakdown:
+
+| Plan | Cost | What you get |
+|---|---|---|
+| Free | $0 | Claude on the claude.ai website only. **No Claude Code.** |
+| Pro | ~$20/month | Claude on the website + Claude Code, light usage. Fine for following this book and casual day-to-day use. |
+| Max (5×) | ~$100/month | If you outgrow Pro and want more headroom. |
+| Max (20×) | ~$200/month | Power-user / daily-driver tier. |
+| API | pay-per-token | Per-call billing. Not the simple path for beginners. |
+
+For this book, **Pro is plenty.** Upgrade later if you start hitting
+limits.
+
+> Prices as of May 2026. Anthropic updates them — always check
+> [claude.ai/pricing](https://claude.ai/pricing) before you commit.
+
+### setting up your Anthropic account
+
+If you already have a Pro or higher account, skip ahead to **try this**
+below.
+
+If you have a free account, jump to step 4 to upgrade.
+
+1. Open https://claude.ai in your browser.
+2. Click **Sign up** (top right). Sign up with Google for the
+   fastest path, or use email + password.
+3. Verify your email if it asks.
+4. Once you're logged in, click your avatar (top right) → **Settings**
+   → **Plans** (or **Billing**).
+5. Pick **Pro**. Add a credit card.
+6. Done. The same account works for both the claude.ai chat website
+   AND the Claude Code tool you're about to install.
 
 ---
 
