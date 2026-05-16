@@ -15,12 +15,13 @@ actually follow it.
 
 ---
 
-## before you start
+## quick check before we start
 
-Before we start, I'm assuming you completed chapters 02 and 03 or
-got bored reading. Let's run a quick check that you have Claude
-installed, and you've successfully launched Claude in a folder and
-demanded it write a file for its overlord (you).
+I'm assuming you've made it through chapters 02 and 03 (or got bored
+and skipped — totally fair). Let's make sure together: you've got
+Claude installed, you've launched it in a folder, and you've had it
+write a file for its overlord (you). If all that's true, let's keep
+going.
 
 ---
 
