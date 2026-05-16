@@ -10,7 +10,7 @@ That's where CLAUDE.md comes in. CLAUDE.md is the magic file that
 tells Claude WHAT a folder is, WHO you are, and HOW you want it to
 behave inside that folder.
 
-This chapter: you create your first CLAUDE.md and watch Claude
+This chapter: you will create your first CLAUDE.md and watch Claude
 actually follow it.
 
 ---
