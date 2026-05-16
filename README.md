@@ -36,6 +36,18 @@ If that's you, start with [chapter 01](01-what-the-hell/).
 
 ---
 
+## stuff you should know to fit in
+
+Common questions, answered short:
+
+- **Will this replace my job?** → [reference/will-it-replace-me.md](reference/will-it-replace-me.md)
+- **Is my data safe?** → [reference/is-my-data-safe.md](reference/is-my-data-safe.md)
+- **What if I get dependent on it?** → [reference/getting-dependent.md](reference/getting-dependent.md)
+- **What it gets wrong (and how to catch it)** → [reference/when-it-fucks-up.md](reference/when-it-fucks-up.md)
+- **How to not burn out using AI** → [reference/burn-out.md](reference/burn-out.md)
+
+---
+
 ## how this helps you
 
 Seven chapters, in order. By the end you'll have Claude installed,
@@ -65,18 +77,6 @@ These exist for when you need them. They're not part of the walkthrough.
 | `concepts/` | Shit to remember (deeper explanations for when you want them) |
 | `daily-use/` | Day-to-day commands you'll reach for |
 | `best-practices/` | How to not make a mess of your setup |
-
----
-
-## stuff you should know to fit in
-
-Common questions, answered short:
-
-- **Will this replace my job?** → [reference/will-it-replace-me.md](reference/will-it-replace-me.md)
-- **Is my data safe?** → [reference/is-my-data-safe.md](reference/is-my-data-safe.md)
-- **What if I get dependent on it?** → [reference/getting-dependent.md](reference/getting-dependent.md)
-- **What it gets wrong (and how to catch it)** → [reference/when-it-fucks-up.md](reference/when-it-fucks-up.md)
-- **How to not burn out using AI** → [reference/burn-out.md](reference/burn-out.md)
 
 ---
 
