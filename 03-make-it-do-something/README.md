@@ -29,30 +29,39 @@ the rest of the book is just this with more sophistication.
 
 ## the actual steps — time to roll up your sleeves
 
-1. Make a scratch folder for this and `cd` into it:
+1. Open your terminal again — the same one from chapter 02. Not
+   Notepad, not your browser, not your email — the terminal app.
+
+   - **Mac:** `Cmd+Space`, type `Terminal`, hit Enter.
+   - **Windows:** Windows key, type `Terminal` (or `PowerShell`), hit
+     Enter.
+   - **Linux:** you already know.
+
+2. Make a scratch folder for this and step into it. Paste this into
+   the terminal and hit Enter:
    ```bash
    mkdir -p ~/scratch/packing-list && cd ~/scratch/packing-list
    ```
 
-2. Launch Claude:
+3. Launch Claude:
    ```bash
    claude
    ```
 
-3. When you see the prompt, paste this (or change it for a trip
+4. When you see the prompt, paste this (or change it for a trip
    you're actually planning):
 
    > Write me a packing list for a 4-day trip to a warm climate.
    > Essentials only — clothes, toiletries, electronics, paperwork.
    > Save it as `packing-list.md` in this folder.
 
-4. Claude will show you what it's about to write and ask for
+5. Claude will show you what it's about to write and ask for
    permission. **Read it.** Then approve.
 
-5. The file lands at `~/scratch/packing-list/packing-list.md`.
-   Open it however you'd open any other file.
+6. The file lands at `~/scratch/packing-list/packing-list.md`.
+   Open it however you'd open any other file on your computer.
 
-6. Exit Claude when you're done:
+7. Exit Claude when you're done:
    ```
    /exit
    ```
