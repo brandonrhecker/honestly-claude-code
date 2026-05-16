@@ -51,9 +51,11 @@ the rest of the book is just this with more sophistication.
 4. When you see the prompt, paste this (or change it for a trip
    you're actually planning):
 
-   > Write me a packing list for a 4-day trip to a warm climate.
-   > Essentials only — clothes, toiletries, electronics, paperwork.
-   > Save it as `packing-list.md` in this folder.
+   ```
+   Write me a packing list for a 4-day trip to a warm climate.
+   Essentials only — clothes, toiletries, electronics, paperwork.
+   Save it as packing-list.md in this folder.
+   ```
 
 5. Claude will show you what it's about to write and ask for
    permission. **Read it.** Then approve.
