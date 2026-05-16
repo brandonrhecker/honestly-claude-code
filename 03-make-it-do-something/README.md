@@ -73,15 +73,15 @@ literally seeing it render right now.)
      Enter.
    - **Linux:** you already know.
 
-2. Make a scratch folder for this and step into it. Paste this into
-   the terminal and hit Enter:
+2. Make a folder for this and step into it. Paste this into the
+   terminal and hit Enter:
    ```bash
-   mkdir -p ~/scratch/packing-list && cd ~/scratch/packing-list
+   mkdir -p ~/claude-experiments/packing-list && cd ~/claude-experiments/packing-list
    ```
    *(In English: `~` is your home folder. `mkdir -p` creates a folder
-   called `scratch` and inside it one called `packing-list`. `cd`
-   moves you into it. The `&&` between them just means "then do the
-   next thing.")*
+   called `claude-experiments` (where all your Claude tinkering will
+   live) and inside it one called `packing-list`. `cd` moves you into
+   it. The `&&` between them just means "then do the next thing.")*
 
 3. Launch Claude:
    ```bash
@@ -100,7 +100,7 @@ literally seeing it render right now.)
 5. Claude will show you what it's about to write and ask for
    permission. **Read it.** Then approve.
 
-6. The file lands at `~/scratch/packing-list/packing-list.md`.
+6. The file lands at `~/claude-experiments/packing-list/packing-list.md`.
    Open it however you'd open any other file on your computer.
 
 7. Exit Claude when you're done:
