@@ -27,6 +27,39 @@ the rest of the book is just this with more sophistication.
 
 ---
 
+## first, a word about .md files
+
+You're about to have Claude make a `.md` file. If these have ever
+intimidated you, you're not alone — they tripped me up too when I
+started.
+
+**What it is:** Markdown. Plain text with simple formatting baked in:
+`#` for headers, `-` for bullets, `**bold**` for bold. Readable as
+plain text; renders pretty when a viewer interprets it.
+
+**Do you need to install anything?** No. The default text editor on
+your computer (TextEdit on Mac, Notepad on Windows) opens it fine.
+You'll see raw markdown characters mixed in with the text — still
+readable, just not pretty.
+
+**Want it to look nice?** Install **VS Code** (free,
+[code.visualstudio.com](https://code.visualstudio.com)). Open the
+`.md` file in it, then hit `Cmd+Shift+V` (Mac) or `Ctrl+Shift+V`
+(Windows) for a rendered preview side-by-side. That's the easiest
+free path.
+
+| Opened in | What you see |
+|---|---|
+| Notepad / TextEdit (default) | Raw — `#` and `-` mixed with text |
+| VS Code + preview | Pretty rendered |
+| GitHub if you upload it | Pretty rendered automatically |
+| Obsidian / Bear / Notion | Pretty rendered |
+
+**Heads up:** this whole book is written in Markdown. Every chapter,
+every bullet, every table. You're reading Markdown right now.
+
+---
+
 ## the actual steps — time to roll up your sleeves
 
 1. Open your terminal again — the same one from chapter 02. Not
@@ -70,28 +103,6 @@ the rest of the book is just this with more sophistication.
 
 > You just had Claude write a real file on your real computer. That's
 > the whole game.
-
----
-
-## wait — what's an .md file?
-
-Markdown. Plain text with simple formatting — `#` for headers, `-`
-for bullets, `**bold**` for bold, that kind of thing. It renders
-nicely when something reads it as Markdown.
-
-To actually look at your packing list:
-
-| What you open it in | What you see |
-|---|---|
-| Any text editor (Notepad, TextEdit, VS Code) | Raw Markdown — `#` and `-` and `*` characters mixed in with the text |
-| A Markdown app (Obsidian, Bear, Notion) | Rendered pretty — headers look like headers, bullets like bullets |
-| GitHub, if you upload it | Rendered pretty automatically |
-
-This whole book is written in Markdown. The chapter titles, the
-bullets, the tables — all of it. You're reading Markdown right now.
-
-We'll write more `.md` files in the next chapter (chapter 04 is all
-about a special one called `CLAUDE.md`).
 
 ---
 
