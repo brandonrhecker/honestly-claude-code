@@ -2,14 +2,18 @@
 
 # 05 — Bolt on a skill
 
-You've installed Claude Code. You've taught it your project. Now we
-bolt on a skill: someone else's pre-built workflow that you install
-once and trigger whenever you need it.
+You've installed Claude Code. You've had it write a file for you.
+You've taught it your project. Each session, though, you're still
+figuring out your own workflows from scratch.
 
-This chapter: install the most popular Claude Code plugin
-(superpowers, by Jesse Vincent), use one of its skills (brainstorming)
-to plan an actual weekend meal-prep routine, then learn how to
-uninstall when you're done playing.
+Skills fix that. A skill is a pre-built workflow someone else already
+figured out. You install it, invoke it with a slash command, Claude
+follows it.
+
+This chapter: install superpowers (the #1 community Claude Code
+plugin, by Jesse Vincent), use its brainstorming skill on a weekend
+meal-prep routine you'll actually stick with, then uninstall the
+whole thing. That last part is also a skill worth having.
 
 ---
 
