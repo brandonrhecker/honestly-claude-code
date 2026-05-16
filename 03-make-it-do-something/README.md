@@ -92,8 +92,7 @@ That's a feature, not a bug.
 
 ## in case of emergency
 
-Didn't work? You didn't do anything wrong. Don't throw anything yet —
-we'll get through this together.
+Did Claude get weird on you? It happens. Not your fault. Let's fix it.
 
 | Message | What it means | What to do |
 |---|---|---|
