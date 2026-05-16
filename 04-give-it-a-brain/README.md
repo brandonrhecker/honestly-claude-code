@@ -17,11 +17,12 @@ actually follow it.
 
 ## quick check before we start
 
-I'm assuming you've made it through chapters 02 and 03 (or got bored
-and skipped — totally fair). Let's make sure together: you've got
-Claude installed, you've launched it in a folder, and you've had it
-write a file for its overlord (you). If all that's true, let's keep
-going.
+Before we start, I'm assuming you completed chapters 02 and 03 or
+got bored reading. Let's run a quick check that:
+
+- you have Claude installed.
+- you've successfully launched Claude in a folder.
+- you've demanded Claude to write an MD file for its new overlord (you).
 
 ---
 
