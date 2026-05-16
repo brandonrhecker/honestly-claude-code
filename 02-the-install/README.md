@@ -91,6 +91,8 @@ Pick your OS. Follow that section. Skip the others.
    The first run opens your browser. Log in with your Anthropic
    account.
 
+> Congrats. You're officially a nerd now. The hardest part is behind you.
+
 ### Windows
 
 1. Install Node.js for Windows from https://nodejs.org — click the
@@ -111,6 +113,8 @@ Pick your OS. Follow that section. Skip the others.
    claude
    ```
    Follow the browser login prompt.
+
+> Congrats. You're officially a nerd now. The hardest part is behind you.
 
 ### Linux
 
