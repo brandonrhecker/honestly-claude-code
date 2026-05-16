@@ -73,6 +73,28 @@ the rest of the book is just this with more sophistication.
 
 ---
 
+## wait — what's an .md file?
+
+Markdown. Plain text with simple formatting — `#` for headers, `-`
+for bullets, `**bold**` for bold, that kind of thing. It renders
+nicely when something reads it as Markdown.
+
+To actually look at your packing list:
+
+| What you open it in | What you see |
+|---|---|
+| Any text editor (Notepad, TextEdit, VS Code) | Raw Markdown — `#` and `-` and `*` characters mixed in with the text |
+| A Markdown app (Obsidian, Bear, Notion) | Rendered pretty — headers look like headers, bullets like bullets |
+| GitHub, if you upload it | Rendered pretty automatically |
+
+This whole book is written in Markdown. The chapter titles, the
+bullets, the tables — all of it. You're reading Markdown right now.
+
+We'll write more `.md` files in the next chapter (chapter 04 is all
+about a special one called `CLAUDE.md`).
+
+---
+
 ## what just happened
 
 You did five things in sequence:
