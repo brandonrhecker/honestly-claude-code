@@ -56,7 +56,8 @@ free path.
 | Obsidian / Bear / Notion | Pretty rendered |
 
 **Heads up:** this whole book is written in Markdown. Every chapter,
-every bullet, every table. You're reading Markdown right now.
+every bullet, every table. (If you're reading this on GitHub, you're
+literally seeing it render right now.)
 
 ---
 
