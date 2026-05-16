@@ -78,7 +78,9 @@ Pick your OS. Follow that section. Skip the others.
    ```bash
    nvm install --lts
    ```
-5. Install Claude Code:
+5. Install Claude Code using npm (Node Package Manager, which came
+   with Node). The `-g` flag means "global" so Claude is available
+   from any folder:
    ```bash
    npm install -g @anthropic-ai/claude-code
    ```
@@ -103,7 +105,9 @@ Pick your OS. Follow that section. Skip the others.
    default options.
 2. Open **Windows Terminal** or **PowerShell**: Windows key, type
    `Terminal`, hit Enter.
-3. Install Claude Code:
+3. Install Claude Code using npm (Node Package Manager, which came
+   with Node). The `-g` flag means "global" so Claude is available
+   from any folder:
    ```powershell
    npm install -g @anthropic-ai/claude-code
    ```
