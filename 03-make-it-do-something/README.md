@@ -78,6 +78,10 @@ literally seeing it render right now.)
    ```bash
    mkdir -p ~/scratch/packing-list && cd ~/scratch/packing-list
    ```
+   *(In English: `~` is your home folder. `mkdir -p` creates a folder
+   called `scratch` and inside it one called `packing-list`. `cd`
+   moves you into it. The `&&` between them just means "then do the
+   next thing.")*
 
 3. Launch Claude:
    ```bash

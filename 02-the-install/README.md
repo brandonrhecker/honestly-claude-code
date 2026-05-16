@@ -65,8 +65,9 @@ Pick your OS. Follow that section. Skip the others.
 
 1. Open the **Terminal** app: press `Cmd+Space`, type `Terminal`,
    hit Enter.
-2. Install Node.js (the runtime Claude Code is built on). Paste this
-   in the terminal and press Enter:
+2. Install Node.js (the runtime Claude Code is built on) using NVM
+   — that's Node Version Manager, a tool that handles installing
+   Node for you. Paste this in the terminal and press Enter:
    ```bash
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
    ```
@@ -159,7 +160,7 @@ Didn't work? You didn't do anything wrong. Don't throw anything yet — we'll ge
 | Message | What it means | What to do |
 |---|---|---|
 | `claude: command not found` | Node + npm aren't on your PATH | Close and reopen the terminal. If still broken, the Node install didn't finish — re-run that step. |
-| `EACCES: permission denied` on `npm install` | npm is trying to write to a system folder | On Mac, make sure you used the `nvm` install above (not Homebrew or the .pkg installer). Don't use `sudo`. |
+| `EACCES: permission denied` on `npm install` | `EACCES` is "access denied" — npm is trying to write to a system folder it doesn't have permission for | On Mac, make sure you used the NVM install above (not Homebrew or the `.pkg` installer). Don't use `sudo`. |
 | `nvm: command not found` after install | Your shell didn't reload | Close and reopen the terminal. New shells pick up the nvm config. |
 | Browser login spins forever | Pop-up blocker, third-party cookies disabled, or the auth tab failed to open | Copy the URL the terminal printed and open it manually in a fresh browser tab. |
 | `npm ERR! 403` or similar network error | Internet or proxy issue | Check your internet. If you're on a corporate network or VPN, you might be blocked from the npm registry — try a personal network. |
