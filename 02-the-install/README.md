@@ -125,6 +125,8 @@ npm install -g @anthropic-ai/claude-code
 claude
 ```
 
+> NERD.
+
 ---
 
 ## what just happened
