@@ -36,7 +36,7 @@ If that's you, start with [chapter 01](01-what-the-hell/).
 
 ---
 
-## The path
+## how this helps you
 
 Seven chapters, in order. By the end you'll have Claude installed,
 a project it knows about, a custom skill, a hook into another app,
@@ -54,7 +54,7 @@ and persistent memory. Split the chapters however you want.
 
 ---
 
-## The other folders (not part of the path)
+## stuff for later when you're bored
 
 These exist for when you need them. They're not part of the walkthrough.
 
@@ -68,9 +68,9 @@ These exist for when you need them. They're not part of the walkthrough.
 
 ---
 
-## What about [your fear]?
+## stuff you should know to fit in
 
-Common ones, answered short:
+Common questions, answered short:
 
 - **Will this replace my job?** → [reference/will-it-replace-me.md](reference/will-it-replace-me.md)
 - **Is my data safe?** → [reference/is-my-data-safe.md](reference/is-my-data-safe.md)
