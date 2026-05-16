@@ -24,10 +24,10 @@ Anthropic gives you a few options. The honest breakdown:
 | Max (20×) | ~$200/month | Power-user / daily-driver tier. |
 | API | pay-per-token | Per-call billing. Not the simple path for beginners. |
 
-**Pro is what most people use.** Budget **~$20/month** — about a
-streaming subscription.
+**Pro is what most people use.** Budget **~$20/month**. About the
+cost of a streaming subscription.
 
-> Prices as of May 2026. Anthropic updates them — always check
+> Prices as of May 2026. Anthropic updates them. Always check
 > [claude.ai/pricing](https://claude.ai/pricing) before you commit.
 
 ### setting up your Anthropic account
@@ -65,9 +65,9 @@ Pick your OS. Follow that section. Skip the others.
 
 1. Open the **Terminal** app: press `Cmd+Space`, type `Terminal`,
    hit Enter.
-2. Install Node.js (the runtime Claude Code is built on) using NVM
-   — that's Node Version Manager, a tool that handles installing
-   Node for you. Paste this in the terminal and press Enter:
+2. Install Node.js using NVM (Node Version Manager). NVM handles
+   installing Node for you. Paste this in the terminal and press
+   Enter:
    ```bash
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
    ```
@@ -98,7 +98,7 @@ Pick your OS. Follow that section. Skip the others.
 
 ### Windows
 
-1. Install Node.js for Windows from https://nodejs.org — click the
+1. Install Node.js for Windows from https://nodejs.org. Click the
    big green button labeled "LTS" and run the installer with
    default options.
 2. Open **Windows Terminal** or **PowerShell**: Windows key, type
@@ -136,34 +136,32 @@ claude
 
 You installed two things:
 
-- **Node.js** — the runtime Claude Code is built on. You don't need
+- **Node.js**, the runtime Claude Code is built on. You don't need
   to understand it; just know it's required.
-- **Claude Code** — the actual tool you'll use.
+- **Claude Code**, the actual tool you'll use.
 
-When you ran `claude` for the first time, it opened your browser,
-asked you to authorize the install, and logged you into your
-Anthropic account. It remembers the login from now on — you won't
-have to do that again.
+When you first ran `claude`, it opened your browser to log you into
+Anthropic. From now on it remembers you. No need to do that again.
 
 You're now in an interactive Claude session. The prompt is waiting
 for you to type something.
 
-Don't yet — we'll do that in the next chapter. For now, type `/exit`
+Don't yet. We'll do that in the next chapter. For now, type `/exit`
 to close the session cleanly.
 
 ---
 
 ## in case of emergency
 
-Didn't work? You didn't do anything wrong. Don't throw anything yet — we'll get through this together.
+Didn't work? You didn't do anything wrong. Don't throw anything yet. We'll get through this together.
 
 | Message | What it means | What to do |
 |---|---|---|
-| `claude: command not found` | Node + npm aren't on your PATH | Close and reopen the terminal. If still broken, the Node install didn't finish — re-run that step. |
-| `EACCES: permission denied` on `npm install` | `EACCES` is "access denied" — npm is trying to write to a system folder it doesn't have permission for | On Mac, make sure you used the NVM install above (not Homebrew or the `.pkg` installer). Don't use `sudo`. |
+| `claude: command not found` | Node + npm aren't on your PATH | Close and reopen the terminal. If still broken, the Node install didn't finish. Re-run that step. |
+| `EACCES: permission denied` on `npm install` | `EACCES` is "access denied". npm is trying to write to a system folder it doesn't have permission for | On Mac, make sure you used the NVM install above (not Homebrew or the `.pkg` installer). Don't use `sudo`. |
 | `nvm: command not found` after install | Your shell didn't reload | Close and reopen the terminal. New shells pick up the nvm config. |
 | Browser login spins forever | Pop-up blocker, third-party cookies disabled, or the auth tab failed to open | Copy the URL the terminal printed and open it manually in a fresh browser tab. |
-| `npm ERR! 403` or similar network error | Internet or proxy issue | Check your internet. If you're on a corporate network or VPN, you might be blocked from the npm registry — try a personal network. |
+| `npm ERR! 403` or similar network error | Internet or proxy issue | Check your internet. If you're on a corporate network or VPN, you might be blocked from the npm registry. Try a personal network. |
 | Anything else | The internet is a big place | Copy the exact error message and paste it into chat at https://claude.ai with "what does this error mean and how do I fix it on \[your OS\]?" Yes, you can use Claude to debug your Claude install. |
 
 ---

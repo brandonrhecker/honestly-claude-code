@@ -2,8 +2,8 @@
 
 # 03 — Make it do something for you
 
-You installed Claude Code. Now you'll have it do an actual thing —
-not a hello-world, not a placeholder. Something you might actually
+You installed Claude Code. Now you'll have it do an actual thing.
+Not a hello-world, not a placeholder. Something you might actually
 want.
 
 This chapter has Claude write you a packing list. Why packing?
@@ -32,7 +32,7 @@ the rest of the book is just this with more sophistication.
 ## first, a word about .md files
 
 You're about to have Claude make a `.md` file. If these have ever
-intimidated you, you're not alone — they tripped me up too when I
+intimidated you, you're not alone. They tripped me up too when I
 started.
 
 **What it is:** Markdown. Plain text with simple formatting baked in:
@@ -41,7 +41,7 @@ plain text; renders pretty when a viewer interprets it.
 
 **Do you need to install anything?** No. The default text editor on
 your computer (TextEdit on Mac, Notepad on Windows) opens it fine.
-You'll see raw markdown characters mixed in with the text — still
+You'll see raw markdown characters mixed in with the text. Still
 readable, just not pretty.
 
 **Want it to look nice?** Install **VS Code** (free,
@@ -52,7 +52,7 @@ free path.
 
 | Opened in | What you see |
 |---|---|
-| Notepad / TextEdit (default) | Raw — `#` and `-` mixed with text |
+| Notepad / TextEdit (default) | Raw: `#` and `-` mixed with text |
 | VS Code + preview | Pretty rendered |
 | GitHub if you upload it | Pretty rendered automatically |
 | Obsidian / Bear / Notion | Pretty rendered |
@@ -65,8 +65,8 @@ literally seeing it render right now.)
 
 ## the actual steps — time to roll up your sleeves
 
-1. Open your terminal again — the same one from chapter 02. Not
-   Notepad, not your browser, not your email — the terminal app.
+1. Open your terminal again. The same one from chapter 02. Not
+   Notepad, not your browser, not your email: the terminal app.
 
    - **Mac:** `Cmd+Space`, type `Terminal`, hit Enter.
    - **Windows:** Windows key, type `Terminal` (or `PowerShell`), hit
@@ -93,7 +93,7 @@ literally seeing it render right now.)
 
    ```
    Write me a packing list for a 4-day trip to a warm climate.
-   Essentials only — clothes, toiletries, electronics, paperwork.
+   Essentials only: clothes, toiletries, electronics, paperwork.
    Save it as packing-list.md in this folder.
    ```
 
@@ -119,13 +119,13 @@ You did five things in sequence:
 
 - **Launched Claude in a specific folder.** Claude can only see and
   write to the folder you launched from (and subfolders).
-- **Gave it a real prompt** — not a test, an actual thing.
+- **Gave it a real prompt**, not a test. An actual thing.
 - It **proposed an action** (writing a file) and waited for your okay.
 - You **approved**, and it did the thing.
 - The file exists. On your disk. Yours to edit, delete, or send.
 
 The "ask permission before writing" step is core to how Claude Code
-works. It's not autonomous — you're always the human in the loop.
+works. It's not autonomous. You're always the human in the loop.
 That's a feature, not a bug.
 
 ---
@@ -140,7 +140,7 @@ Did Claude get weird on you? It happens. Not your fault. Let's fix it.
 | Claude wrote the file in the wrong place | You launched from the wrong folder | `/exit`, `cd` to the folder you want, launch `claude` again |
 | Claude refused to write | It might have hit a permission setting | Run `/permissions` inside Claude to see what's allowed |
 | Claude wrote something weird or wrong | The model is good but not magic | Try the prompt again with more specific details. Tell it exactly what to fix. |
-| You can't find the file | Probably in a different folder than you think | Type `pwd` after exiting Claude — that's the folder it was working in |
+| You can't find the file | Probably in a different folder than you think | Type `pwd` after exiting Claude. That's the folder it was working in |
 
 ---
 
@@ -153,7 +153,7 @@ Did Claude get weird on you? It happens. Not your fault. Let's fix it.
   asking first
 
 Three chapters down. The next one teaches Claude **where it is** and
-**what your project is about** — a much bigger shift than it sounds.
+**what your project is about**. A much bigger shift than it sounds.
 
 ---
 

@@ -18,7 +18,7 @@ talk to it. It can read your files, write new ones, run commands, and
 remember things between sessions.
 
 It's not a website. It's not a copilot in your sidebar. It runs in a
-terminal window — the same place a developer would run code.
+terminal window. The same place a developer would run code.
 
 Underneath, it's Claude (the AI made by Anthropic) wired up to your
 computer in a useful way.
@@ -27,7 +27,7 @@ computer in a useful way.
 
 ## what it's not
 
-- **Not a chatbot.** A chatbot just talks. This does things — edits
+- **Not a chatbot.** A chatbot just talks. This does things: edits
   files, runs commands, looks at git.
 - **Not autonomous.** It asks permission before doing anything
   destructive. You're the human in the loop.
@@ -83,8 +83,8 @@ the longer version.
 It does, sometimes. Confidently. With zero hedging. That's the most
 important thing about it to remember.
 
-The fix isn't to never use it. The fix is to never trust it blindly —
-especially on facts, names, dates, code, or anything that matters.
+The fix isn't to never use it. The fix is to never trust it blindly.
+Especially on facts, names, dates, code, or anything that matters.
 You're the human; you're the check.
 
 → [reference/when-it-fucks-up.md](../reference/when-it-fucks-up.md)
