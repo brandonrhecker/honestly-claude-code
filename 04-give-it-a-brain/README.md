@@ -60,8 +60,8 @@ project. Examples:
 **How Claude reads it:** automatically, every time you launch in
 that folder. You don't tell it to read it. It just does.
 
-Think of it as the project's brain. Written by you, persistent
-between sessions, always loaded.
+Think of it as the project's brain, or its little BELIEVE sign.
+Written by you, persistent between sessions, always loaded.
 
 ---
 
@@ -87,10 +87,11 @@ something using your rules.
 
    ```
    Write a CLAUDE.md for this folder. This is where I'll keep my
-   personal writing: short essays and journal entries. My style
-   is conversational, mildly self-deprecating, around 400-600 words
-   per piece. Save each piece as YYYY-MM-DD-slug.md. Approve the
-   file when ready.
+   personal writing: short essays and journal entries. My writing
+   voice is Ted Lasso: relentlessly warm, folksy wisdom, finds the
+   good in everyone, with occasional mustache-based confidence.
+   Around 400-600 words per piece. Save each piece as
+   YYYY-MM-DD-slug.md. Approve the file when ready.
    ```
 
 5. Claude will propose a CLAUDE.md file and ask permission. Read
@@ -99,8 +100,8 @@ something using your rules.
 6. Now ask Claude to write something using those rules. Paste this:
 
    ```
-   Write a short journal entry about how it feels to learn AI tools
-   as a non-engineer in 2026. Follow the rules in CLAUDE.md.
+   Write a pep talk for someone who's scared to start using AI.
+   Follow the rules in CLAUDE.md.
    ```
 
 7. Claude reads your CLAUDE.md, follows the rules (style, length,
@@ -111,8 +112,8 @@ something using your rules.
    /exit
    ```
 
-> You just gave Claude a brain for this folder. Every future session
-> in this folder loads those rules automatically.
+> BELIEVE. You just gave Claude a brain for this folder. Every future
+> session loads those rules automatically.
 
 ---
 
@@ -136,7 +137,7 @@ picks up the changes the next time you launch.
 
 ## in case of emergency
 
-CLAUDE.md not behaving the way you'd expect? Probably one of these.
+Be a goldfish. CLAUDE.md not behaving? Don't dwell on it. Here's how to fix it.
 
 | Symptom | What it means | What to do |
 |---|---|---|
@@ -154,6 +155,8 @@ CLAUDE.md not behaving the way you'd expect? Probably one of these.
 - Edit CLAUDE.md to refine rules over time
 - Know that "Claude doesn't remember" is half-true: it doesn't
   remember conversations, but a project's CLAUDE.md is forever
+
+You can do this. Onward.
 
 Four chapters down. Next: skills. We'll install someone else's
 workflow and use it in this same folder.
