@@ -49,7 +49,7 @@ If you have a free account, jump to step 4 to upgrade.
 
 ---
 
-## why bother
+## why bother installing Claude Code
 
 Without Claude Code on your computer, this whole book is theory.
 After this chapter, the next six give you a working AI on your

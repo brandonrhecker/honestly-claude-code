@@ -18,7 +18,7 @@ You need Claude Code installed and working (chapter 02). That's it.
 
 ---
 
-## why bother
+## why bother making Claude do your dirty work
 
 Until you watch Claude do something useful on your actual computer,
 the whole thing is theoretical. This is the "oh, it's real" moment.
