@@ -17,9 +17,10 @@ actually follow it.
 
 ## before you start
 
-You need chapters 02 and 03 done. Specifically: Claude installed,
-and you've successfully launched Claude in a folder and had it
-write a file.
+Before we start, I'm assuming you completed chapters 02 and 03 or
+got bored reading. Let's run a quick check that you have Claude
+installed, and you've successfully launched Claude in a folder and
+demanded it write a file for its overlord (you).
 
 ---
 
