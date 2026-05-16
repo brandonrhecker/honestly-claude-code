@@ -100,8 +100,20 @@ literally seeing it render right now.)
 5. Claude will show you what it's about to write and ask for
    permission. **Read it.** Then approve.
 
-6. The file lands at `~/claude-experiments/packing-list/packing-list.md`.
-   Open it however you'd open any other file on your computer.
+6. Your file is now at `~/claude-experiments/packing-list/packing-list.md`.
+   To find it in your file manager:
+
+   - **Mac:** Open Finder. Press `Cmd+Shift+G`, paste
+     `~/claude-experiments/packing-list/`, hit Enter.
+   - **Windows:** Open File Explorer. In the left sidebar, click your
+     username. Then double-click `claude-experiments` → `packing-list`.
+   - **Linux:** You know.
+
+   To open `packing-list.md`: double-click it. On Windows, Notepad
+   might warn about an unrecognized file format — click **Open
+   anyway**. On Mac, TextEdit handles it without complaining. For the
+   pretty rendered version, open it in VS Code instead (see the
+   [.md section above](#first-a-word-about-md-files)).
 
 7. Exit Claude when you're done:
    ```
