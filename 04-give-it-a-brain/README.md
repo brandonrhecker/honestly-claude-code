@@ -20,9 +20,9 @@ actually follow it.
 Before we start, I'm assuming you completed chapters 02 and 03 or
 got bored reading. Let's run a quick check that:
 
-- you have Claude installed.
-- you've successfully launched Claude in a folder.
-- you've demanded Claude to write an MD file for its new overlord (you).
+- You've installed Claude Code.
+- You've successfully launched Claude Code in a folder.
+- You've demanded Claude Code to write an `.md` file for its new overlord (you).
 
 ---
 
