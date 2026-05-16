@@ -26,7 +26,7 @@ got bored reading. Let's run a quick check that:
 
 ---
 
-## why bother
+## why bother with CLAUDE.md
 
 Without CLAUDE.md, every time you launch Claude in a folder it's
 starting fresh. You have to re-explain context every session.
