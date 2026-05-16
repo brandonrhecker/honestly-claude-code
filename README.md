@@ -48,7 +48,7 @@ Common questions, answered short:
 
 ---
 
-## let's start
+## the actual book starts here
 
 Seven chapters, in order. By the end you'll have Claude installed,
 a project it knows about, a custom skill, a hook into another app,
