@@ -48,7 +48,7 @@ Common questions, answered short:
 
 ---
 
-## how this helps you
+## let's start
 
 Seven chapters, in order. By the end you'll have Claude installed,
 a project it knows about, a custom skill, a hook into another app,
