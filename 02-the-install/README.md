@@ -22,8 +22,10 @@ Anthropic gives you a few options. The honest breakdown:
 | Max (20×) | ~$200/month | Power-user / daily-driver tier. |
 | API | pay-per-token | Per-call billing. Not the simple path for beginners. |
 
-For this book, **Pro is plenty.** Upgrade later if you start hitting
-limits.
+**Pro is what most people use.** It covers what you need for this
+book and ongoing casual use. A reasonable starting budget is
+**~$20/month** — about the cost of a streaming subscription. Upgrade
+later only if you start hitting limits.
 
 > Prices as of May 2026. Anthropic updates them — always check
 > [claude.ai/pricing](https://claude.ai/pricing) before you commit.
