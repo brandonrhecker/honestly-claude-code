@@ -55,7 +55,7 @@ machine.
 
 ---
 
-## try this
+## the actual steps — time to roll up your sleeves
 
 Pick your OS. Follow that section. Skip the others.
 
