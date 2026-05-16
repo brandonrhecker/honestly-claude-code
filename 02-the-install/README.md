@@ -66,7 +66,7 @@ Pick your OS. Follow that section. Skip the others.
 2. Install Node.js (the runtime Claude Code is built on). Paste this
    in the terminal and press Enter:
    ```bash
-   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
    ```
 3. Close the Terminal window completely and reopen it. The install
    added something to your shell config that the new window will pick
