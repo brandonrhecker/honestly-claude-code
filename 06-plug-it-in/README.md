@@ -201,11 +201,10 @@ one of these.
 - Remove MCPs cleanly with `claude mcp remove`
 - Know where to find more MCPs when you need them
 
-Six chapters down. One to go: making Claude remember things across
-sessions. The last big lock.
+Six chapters down. One short closing chapter to go.
 
 ---
 
-→ Next: [07 — Make it stop forgetting](../07-stop-forgetting/)
+→ Next: [07 — You made it. Now what.](../07-you-made-it/)
 
 **Last verified: 2026-05-16 with Claude Code 2.1.138**

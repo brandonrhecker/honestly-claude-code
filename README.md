@@ -62,7 +62,7 @@ and persistent memory. Split the chapters however you want.
 | 04 | [Give it a brain](04-give-it-a-brain/) |
 | 05 | [Bolt on a skill](05-bolt-on-a-skill/) |
 | 06 | [Plug it into your other apps](06-plug-it-in/) |
-| 07 | [Make it stop forgetting](07-stop-forgetting/) |
+| 07 | [You made it. Now what.](07-you-made-it/) |
 
 ---
 
