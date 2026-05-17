@@ -37,10 +37,18 @@ CLAUDE.md.
 
 ## where to go from here
 
-Those podcast recommendations Claude pulled for you back in chapter
-06? Go listen to them. Or, for actual fun, ask Claude Code to build
-you a website where Ted Lasso is your personal assistant. You
-already taught it the voice in chapter 04.
+Those podcast recommendations from chapter 06? Knock yourself out.
+Better yet: ask Claude Code to give Ted Lasso a job. Paste this:
+
+```
+I want to build a simple personal-assistant website I can run on
+my own computer with Ted Lasso as the host. Help me brainstorm
+what would actually be useful, then help me build it and
+understand what you need along the way.
+```
+
+You taught him to talk in chapter 04, and the brainstorming skill
+from chapter 05 will kick in. Time to put him to work.
 
 That's the book. Go play.
 
