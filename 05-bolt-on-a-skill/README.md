@@ -3,13 +3,11 @@
 # 05 — Bolt on a skill
 
 You've installed Claude Code. You've had it write a file for you.
-You've taught it your project. CLAUDE.md handles what THIS project
-is. But for techniques you want available across every project, you
-need skills.
+You've taught it about your project.
 
-Skills fix that. A skill is a pre-built workflow someone else already
-figured out. You install it, invoke it with a slash command, Claude
-follows it.
+CLAUDE.md handles project-specific context. Skills handle the
+opposite: reusable workflows that work in any project. You install
+a skill once, invoke it with a slash command, Claude follows it.
 
 This chapter: install superpowers (the #1 community Claude Code
 plugin, by Jesse Vincent), use its brainstorming skill on a weekend
