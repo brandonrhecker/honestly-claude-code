@@ -11,3 +11,6 @@ desktop.ini
 
 # WSL Zone.Identifier files
 *:Zone.Identifier
+
+# Local project context for Claude Code (not for public)
+CLAUDE.md
