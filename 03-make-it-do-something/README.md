@@ -76,14 +76,26 @@ literally seeing it render right now.)
 2. Make a folder for this and step into it. Pick your OS.
 
    **Mac, Linux, or WSL:**
+
+   Create the folder:
    ```bash
    mkdir -p ~/claude-experiments/packing-list
+   ```
+
+   Then step into it:
+   ```bash
    cd ~/claude-experiments/packing-list
    ```
 
-   **Windows (PowerShell):**
+   **Windows:**
+
+   Create the folder:
    ```powershell
    mkdir ~\claude-experiments\packing-list
+   ```
+
+   Then step into it:
+   ```powershell
    cd ~\claude-experiments\packing-list
    ```
 

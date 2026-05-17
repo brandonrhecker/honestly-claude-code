@@ -79,14 +79,26 @@ use brainstorming to plan your meal-prep routine.
 2. Make a folder for this exercise and step into it. Pick your OS.
 
    **Mac, Linux, or WSL:**
+
+   Create the folder:
    ```bash
    mkdir -p ~/claude-experiments/brainstorm
+   ```
+
+   Then step into it:
+   ```bash
    cd ~/claude-experiments/brainstorm
    ```
 
-   **Windows (PowerShell):**
+   **Windows:**
+
+   Create the folder:
    ```powershell
    mkdir ~\claude-experiments\brainstorm
+   ```
+
+   Then step into it:
+   ```powershell
    cd ~\claude-experiments\brainstorm
    ```
 

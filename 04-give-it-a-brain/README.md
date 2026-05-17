@@ -77,14 +77,26 @@ something using your rules.
    your OS.
 
    **Mac, Linux, or WSL:**
+
+   Create the folder:
    ```bash
    mkdir -p ~/claude-experiments/writing
+   ```
+
+   Then step into it:
+   ```bash
    cd ~/claude-experiments/writing
    ```
 
-   **Windows (PowerShell):**
+   **Windows:**
+
+   Create the folder:
    ```powershell
    mkdir ~\claude-experiments\writing
+   ```
+
+   Then step into it:
+   ```powershell
    cd ~\claude-experiments\writing
    ```
 
