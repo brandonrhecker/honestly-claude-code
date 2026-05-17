@@ -10,7 +10,8 @@ Here's what you can do that they can't:
 
 ## what you can do now
 
-- **Install Claude Code** on any computer. Without asking IT.
+- **Install Claude Code** on any computer that lets you install
+  things.
 - **Make Claude do real work for you**: write files, organize
   folders, draft the thing you've been procrastinating on.
 - **Teach Claude about a project** with CLAUDE.md, so you stop
