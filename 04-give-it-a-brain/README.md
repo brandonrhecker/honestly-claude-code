@@ -107,7 +107,19 @@ something using your rules.
 7. Claude reads your CLAUDE.md, follows the rules (style, length,
    filename format), and writes the entry. Approve when ready.
 
-8. Exit Claude:
+8. Find your new file in `~/claude-experiments/writing/`. The
+   filename follows the `YYYY-MM-DD-slug.md` pattern (so something
+   like `2026-05-16-the-first-step.md`).
+
+   - **Mac:** Open Finder, press `Cmd+Shift+G`, paste
+     `~/claude-experiments/writing/`, hit Enter.
+   - **Windows:** Open File Explorer, click your username in the
+     left sidebar, then `claude-experiments` → `writing`.
+
+   Double-click the new file to open it. Same Notepad/TextEdit/VS
+   Code notes from chapter 03 apply.
+
+9. Exit Claude:
    ```
    /exit
    ```
