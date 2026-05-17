@@ -116,7 +116,7 @@ Pick your OS. Follow that section. Skip the others.
    ```powershell
    Remove-Item -Recurse -Force $env:USERPROFILE\.claude
    ```
-   *Same as Mac/Linux step 4 — wipes memory, plugins, MCPs, skills,
+   *Same as Mac/Linux step 4. Wipes memory, plugins, MCPs, skills,
    settings.*
 
 5. (Optional) Remove the demo folders:
@@ -140,7 +140,7 @@ Pick your OS. Follow that section. Skip the others.
 ### Linux
 
 You probably know how to handle most of this. If you're on WSL,
-follow this section — not the Windows one.
+follow this section, not the Windows one.
 
 1. Open your terminal.
 
@@ -163,9 +163,9 @@ follow this section — not the Windows one.
    rm -rf ~/claude-experiments
    ```
 
-5. (Optional) Remove Node — depends on your distro (`apt remove
+5. (Optional) Remove Node. Depends on your distro: `apt remove
    nodejs`, `dnf remove nodejs`, `nvm uninstall --lts && rm -rf
-   ~/.nvm`, etc.). Skip if you use Node elsewhere.
+   ~/.nvm`, etc. Skip if you use Node elsewhere.
 
 6. (Optional) If you did chapter 06 and installed uv:
    ```bash
