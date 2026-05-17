@@ -93,15 +93,24 @@ Pick your OS. Follow that section. Skip the others.
    ```bash
    claude
    ```
-   First run, Claude Code asks two things:
-   - **Pick a text theme.** Use arrow keys to highlight, Enter to
-     select. **Dark mode** (the default) is fine; you can change it
-     later with `/theme` inside Claude.
-   - **Browser login.** Claude Code prints a URL. Your browser may
-     auto-open to it; if not, copy the URL and paste it into your
-     browser yourself. Log in to your Anthropic account.
+   First run, Claude Code walks you through two things.
 
-   After that, you're at the Claude prompt.
+   **Pick a text theme.** Use arrow keys to highlight, Enter to
+   select. Dark mode (the default) is fine. You can change it later
+   with `/theme` inside Claude.
+
+   **Log in to Anthropic.** A few small steps:
+   1. Claude Code prints a long URL in your terminal.
+   2. Copy it.
+   3. Paste it into your browser. (Your browser might auto-open;
+      if not, paste it in yourself.)
+   4. Log in to your Anthropic account in the browser.
+   5. The browser shows an authorization code (a long string of
+      letters and numbers). Copy it.
+   6. Switch back to your terminal. Claude Code is waiting for that
+      code. Paste it in, hit Enter.
+
+   You're at the Claude prompt.
 
 > Congrats. You're officially a nerd now. The hardest part is behind you.
 
@@ -139,15 +148,24 @@ Pick your OS. Follow that section. Skip the others.
    ```powershell
    claude
    ```
-   First run, Claude Code asks two things:
-   - **Pick a text theme.** Use arrow keys to highlight, Enter to
-     select. **Dark mode** (the default) is fine; you can change it
-     later with `/theme` inside Claude.
-   - **Browser login.** Claude Code prints a URL. Your browser may
-     auto-open to it; if not, copy the URL and paste it into your
-     browser yourself. Log in to your Anthropic account.
+   First run, Claude Code walks you through two things.
 
-   After that, you're at the Claude prompt.
+   **Pick a text theme.** Use arrow keys to highlight, Enter to
+   select. Dark mode (the default) is fine. You can change it later
+   with `/theme` inside Claude.
+
+   **Log in to Anthropic.** A few small steps:
+   1. Claude Code prints a long URL in your terminal.
+   2. Copy it.
+   3. Paste it into your browser. (Your browser might auto-open;
+      if not, paste it in yourself.)
+   4. Log in to your Anthropic account in the browser.
+   5. The browser shows an authorization code (a long string of
+      letters and numbers). Copy it.
+   6. Switch back to your terminal. Claude Code is waiting for that
+      code. Paste it in, hit Enter.
+
+   You're at the Claude prompt.
 
 > Congrats. You're officially a nerd now. The hardest part is behind you.
 
@@ -161,10 +179,17 @@ npm install -g @anthropic-ai/claude-code
 claude
 ```
 
-First run prompts you for a theme (pick Dark mode or whatever),
-then prints a URL for Anthropic login. Copy that URL into your
-browser. On WSL the browser won't auto-open since WSL can't reach
-your Windows browser directly.
+First run prompts you for a theme (Dark mode default is fine),
+then walks you through Anthropic login:
+
+1. Copy the URL it prints into your browser.
+2. Log in to your Anthropic account.
+3. The browser shows an authorization code. Copy it.
+4. Paste the code back into your terminal where Claude Code is
+   waiting, hit Enter.
+
+On WSL the browser won't auto-open since WSL can't reach your
+Windows browser directly. That's why steps 1 and 3 are copy/paste.
 
 > NERD.
 
