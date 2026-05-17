@@ -92,7 +92,7 @@ something using your rules.
 
    Create the folder:
    ```powershell
-   mkdir ~\claude-experiments\writing
+   mkdir ~\claude-experiments\writing -Force
    ```
 
    Then step into it:
@@ -137,8 +137,9 @@ something using your rules.
 
    - **Mac:** Open Finder, press `Cmd+Shift+G`, paste
      `~/claude-experiments/writing/`, hit Enter.
-   - **Windows:** Open File Explorer, click your username in the
-     left sidebar, then `claude-experiments` → `writing`.
+   - **Windows:** Open File Explorer. Click in the address bar at
+     the top (or press `Ctrl+L`), paste
+     `%USERPROFILE%\claude-experiments\writing`, hit Enter.
 
    Double-click the new file to open it. Same Notepad/TextEdit/VS
    Code notes from chapter 03 apply.

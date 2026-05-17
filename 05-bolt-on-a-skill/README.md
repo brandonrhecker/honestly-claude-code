@@ -94,7 +94,7 @@ use brainstorming to plan your meal-prep routine.
 
    Create the folder:
    ```powershell
-   mkdir ~\claude-experiments\brainstorm
+   mkdir ~\claude-experiments\brainstorm -Force
    ```
 
    Then step into it:

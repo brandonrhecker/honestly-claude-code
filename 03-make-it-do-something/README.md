@@ -91,7 +91,7 @@ literally seeing it render right now.)
 
    Create the folder:
    ```powershell
-   mkdir ~\claude-experiments\packing-list
+   mkdir ~\claude-experiments\packing-list -Force
    ```
 
    Then step into it:
@@ -102,7 +102,8 @@ literally seeing it render right now.)
    *In English: `~` is your home folder. The first command creates a
    folder called `claude-experiments` (where all your Claude
    tinkering will live) and inside it one called `packing-list`. The
-   second command moves you into it.*
+   `-Force` part just means "don't complain if it already exists."
+   The second command moves you into it.*
 
 3. Launch Claude:
    ```bash
@@ -130,8 +131,9 @@ literally seeing it render right now.)
 
    - **Mac:** Open Finder. Press `Cmd+Shift+G`, paste
      `~/claude-experiments/packing-list/`, hit Enter.
-   - **Windows:** Open File Explorer. In the left sidebar, click your
-     username. Then double-click `claude-experiments` → `packing-list`.
+   - **Windows:** Open File Explorer. Click in the address bar at
+     the top (or press `Ctrl+L`), paste
+     `%USERPROFILE%\claude-experiments\packing-list`, hit Enter.
    - **Linux:** You know.
 
    To open `packing-list.md`: double-click it. On Windows, Notepad
