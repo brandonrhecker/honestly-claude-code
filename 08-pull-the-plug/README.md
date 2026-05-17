@@ -36,97 +36,150 @@ back at neutral.
 
 ## the actual steps — time to roll up your sleeves
 
-1. Open your terminal (same one from chapter 02).
+Pick your OS. Follow that section. Skip the others.
 
-2. Uninstall the Claude Code CLI.
+### Mac
 
-   First try (works for most installs):
+1. Open the Terminal app (same one from chapter 02).
+
+2. Uninstall the Claude Code CLI:
    ```bash
    npm uninstall -g @anthropic-ai/claude-code
    ```
    *Removes the `claude` command if you installed via npm.*
 
-   If that says "not installed" or doesn't remove the `claude`
-   command, you installed it via a different path. Find where the
-   binary actually lives:
+3. (Only if step 2 said "not installed") Find where the binary lives:
    ```bash
    which claude
    ```
-   *Prints the file path, e.g. `/usr/local/bin/claude` or
-   `/home/you/.local/bin/claude`.*
-
-   Then delete the file at that path:
+   Then delete it:
    ```bash
    rm $(which claude)
    ```
-   *Mac and Linux. On Windows, run `where claude` to find the path,
-   then delete the file via File Explorer or `Remove-Item` in
-   PowerShell.*
 
-3. Remove the Claude Code config folder.
-
-   **Mac/Linux:**
+4. Remove the Claude Code config folder:
    ```bash
    rm -rf ~/.claude
    ```
+   *Held your memory, installed plugins, MCP registrations, and
+   skill files. Wiping it leaves no trace.*
 
-   **Windows (PowerShell):**
-   ```powershell
-   Remove-Item -Recurse -Force $env:USERPROFILE\.claude
-   ```
-   *That folder held your memory, installed plugins, MCP
-   registrations, and skill files. Wiping it leaves no trace of
-   your Claude Code usage.*
-
-4. (Optional) Remove the demo folders you made along the way:
+5. (Optional) Remove the demo folders you made along the way:
    ```bash
    rm -rf ~/claude-experiments
    ```
-   *Holds the packing list (chapter 03), writing folder (chapter 04),
-   and brainstorm folder (chapter 05). Skip if you want to keep any
-   of that.*
+   *Holds the packing list (ch 03), writing folder (ch 04), and
+   brainstorm folder (ch 05). Skip if you want to keep any of it.*
 
-5. (Optional) If you installed Node just for Claude Code and don't
-   use it for anything else, remove it.
-
-   **Mac (NVM-installed):**
+6. (Optional) If you installed Node just for Claude Code via NVM
+   (chapter 02), remove it:
    ```bash
    nvm uninstall --lts
    ```
-
    Then remove NVM itself:
    ```bash
    rm -rf ~/.nvm
    ```
+   Then open `~/.zshrc` (or `~/.bashrc`) in a text editor and
+   delete the lines that mention `nvm`. *Skip this whole step if
+   you use Node for anything else.*
 
-   And remove the NVM lines from your shell config:
-   ```bash
-   # Edit ~/.bashrc or ~/.zshrc and delete the lines that mention nvm
-   ```
-
-   **Windows:** Settings → Apps → find Node.js → Uninstall.
-
-   *Skip this entire step if you use Node for anything else
-   (websites, other tools, etc.).*
-
-6. (Optional) If you went through chapter 06 and installed uv,
-   remove it:
+7. (Optional) If you went through chapter 06 and installed uv:
    ```bash
    uv cache clean
    ```
-
-   Then uninstall uv itself:
+   Then uninstall uv:
    ```bash
    uv self uninstall
    ```
    *Skip if you use uv for other Python tools.*
 
-7. (Optional) Cancel your Anthropic subscription. Open
-   https://claude.ai → click your avatar → **Settings** →
-   **Plans** → cancel or downgrade to free.
-   *You won't be charged from the next billing cycle. The free
-   claude.ai web chat still works. You just lose Claude Code
-   access.*
+### Windows
+
+1. Open Windows Terminal or PowerShell (same one from chapter 02).
+
+2. Uninstall the Claude Code CLI:
+   ```powershell
+   npm uninstall -g @anthropic-ai/claude-code
+   ```
+
+3. (Only if step 2 said "not installed") Find where the binary lives:
+   ```powershell
+   where claude
+   ```
+   Delete the file at that path via File Explorer, or:
+   ```powershell
+   Remove-Item (Get-Command claude).Source
+   ```
+
+4. Remove the Claude Code config folder:
+   ```powershell
+   Remove-Item -Recurse -Force $env:USERPROFILE\.claude
+   ```
+   *Same as Mac/Linux step 4 — wipes memory, plugins, MCPs, skills,
+   settings.*
+
+5. (Optional) Remove the demo folders:
+   ```powershell
+   Remove-Item -Recurse -Force $env:USERPROFILE\claude-experiments
+   ```
+
+6. (Optional) Remove Node.js: Settings → Apps → find **Node.js** →
+   Uninstall.
+   *Skip if you use Node for anything else.*
+
+7. (Optional) If you went through chapter 06 and installed uv:
+   ```powershell
+   uv cache clean
+   ```
+   Then:
+   ```powershell
+   uv self uninstall
+   ```
+
+### Linux
+
+You probably know how to handle most of this. If you're on WSL,
+follow this section — not the Windows one.
+
+1. Open your terminal.
+
+2. Uninstall Claude Code:
+   ```bash
+   npm uninstall -g @anthropic-ai/claude-code
+   ```
+   If that says "not installed":
+   ```bash
+   rm $(which claude)
+   ```
+
+3. Remove the config folder:
+   ```bash
+   rm -rf ~/.claude
+   ```
+
+4. (Optional) Remove demo folders:
+   ```bash
+   rm -rf ~/claude-experiments
+   ```
+
+5. (Optional) Remove Node — depends on your distro (`apt remove
+   nodejs`, `dnf remove nodejs`, `nvm uninstall --lts && rm -rf
+   ~/.nvm`, etc.). Skip if you use Node elsewhere.
+
+6. (Optional) If you did chapter 06 and installed uv:
+   ```bash
+   uv cache clean && uv self uninstall
+   ```
+
+### one last thing (all OSes)
+
+Cancel your Anthropic subscription. Open https://claude.ai → click
+your avatar → **Settings** → **Plans** → cancel or downgrade to
+free.
+
+*You won't be charged from the next billing cycle. The free
+claude.ai web chat still works. You just lose Claude Code access.*
 
 > Done. Your machine is back to its pre-Claude state. No judgment.
 > If you change your mind later, chapter 02 is right where you left
