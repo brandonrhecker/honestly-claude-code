@@ -98,8 +98,9 @@ A few honest notes:
    ```
    /mcp
    ```
-   *You should see `pocketcasts` in the list. If not, see "in case
-   of emergency" below.*
+   *You should see `pocketcasts` in the list. Press `Esc` to exit
+   the MCP view and get back to the chat prompt. If you don't see
+   `pocketcasts`, jump to "in case of emergency" below.*
 
 5. Now ask Claude to read this book and recommend podcasts. Paste:
    ```
