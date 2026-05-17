@@ -79,12 +79,6 @@ A few honest notes:
 
 ## the actual steps — time to roll up your sleeves
 
-We're doing two things:
-
-1. Tell Claude Code about the Pocket Casts MCP server.
-2. Ask Claude to read this book's repo URL and recommend podcast
-   episodes about the topics covered.
-
 1. Open your terminal (same one from chapter 02).
 
 2. Register the Pocket Casts MCP. Paste this:
