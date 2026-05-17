@@ -3,8 +3,9 @@
 # 05 — Bolt on a skill
 
 You've installed Claude Code. You've had it write a file for you.
-You've taught it your project. Each session, though, you're still
-figuring out your own workflows from scratch.
+You've taught it your project. CLAUDE.md handles what THIS project
+is. But for techniques you want available across every project, you
+need skills.
 
 Skills fix that. A skill is a pre-built workflow someone else already
 figured out. You install it, invoke it with a slash command, Claude
@@ -19,8 +20,8 @@ whole thing. That last part is also a skill worth having.
 
 ## quick check before we start
 
-Before we start, I'm assuming you completed chapters 02 through 04 or
-got bored reading. Let's run a quick check that:
+Five chapters in. If you skipped some, that's between you and your
+conscience. Quick check before we touch the marketplace:
 
 - You've installed Claude Code.
 - You've launched Claude Code in a folder.
@@ -30,16 +31,20 @@ got bored reading. Let's run a quick check that:
 
 ## why bother bolting on skills
 
-Without skills, every Claude conversation starts fresh. You type what
-you want, Claude does it, done.
+You just taught Claude about your project with CLAUDE.md. That's
+*project context* — what THIS folder is. Skills are a different
+layer: pre-built workflows that work in any folder, regardless of
+project.
 
-With skills, you can borrow workflows other people already figured
-out. A skill is a pre-built mini-instruction set you install once
-and trigger with a slash command (`/skill-name`). Like keyboard
+Think of it this way. CLAUDE.md = what your project is. Skills =
+techniques anyone can use. Both can be active at once.
+
+A skill is a pre-built mini-instruction set you install once and
+trigger with a slash command (`/skill-name`). Like keyboard
 shortcuts for whole multi-step processes.
 
 The win: when someone smart has already designed how to do something
-well, you don't have to reinvent it. You install their work.
+well, you install their work and use it across all your projects.
 
 ---
 
