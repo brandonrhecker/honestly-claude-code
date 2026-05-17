@@ -93,7 +93,7 @@ Pick your OS. Follow that section. Skip the others.
    ```bash
    claude
    ```
-   First run, Claude Code walks you through two things.
+   First run, Claude Code walks you through three things.
 
    **Pick a text theme.** Use arrow keys to highlight, Enter to
    select. Dark mode (the default) is fine. You can change it later
@@ -109,6 +109,14 @@ Pick your OS. Follow that section. Skip the others.
       letters and numbers). Copy it.
    6. Switch back to your terminal. Claude Code is waiting for that
       code. Paste it in, hit Enter.
+
+   **Confirm the workspace.** Claude Code shows the folder you
+   launched in and asks if you trust it. For this first launch
+   you're in your home folder. Use arrow keys to select **"Yes, I
+   trust this folder"** and hit Enter. *This prompt shows up the
+   first time you launch Claude in any new folder. It's a one-time
+   security check per folder, because Claude is about to be able to
+   read, edit, and run things there.*
 
    You're at the Claude prompt.
 
@@ -148,7 +156,7 @@ Pick your OS. Follow that section. Skip the others.
    ```powershell
    claude
    ```
-   First run, Claude Code walks you through two things.
+   First run, Claude Code walks you through three things.
 
    **Pick a text theme.** Use arrow keys to highlight, Enter to
    select. Dark mode (the default) is fine. You can change it later
@@ -164,6 +172,14 @@ Pick your OS. Follow that section. Skip the others.
       letters and numbers). Copy it.
    6. Switch back to your terminal. Claude Code is waiting for that
       code. Paste it in, hit Enter.
+
+   **Confirm the workspace.** Claude Code shows the folder you
+   launched in and asks if you trust it. For this first launch
+   you're in your home folder. Use arrow keys to select **"Yes, I
+   trust this folder"** and hit Enter. *This prompt shows up the
+   first time you launch Claude in any new folder. It's a one-time
+   security check per folder, because Claude is about to be able to
+   read, edit, and run things there.*
 
    You're at the Claude prompt.
 
@@ -187,6 +203,10 @@ then walks you through Anthropic login:
 3. The browser shows an authorization code. Copy it.
 4. Paste the code back into your terminal where Claude Code is
    waiting, hit Enter.
+
+Then Claude Code asks if you trust the folder you launched in.
+Select "Yes, I trust this folder" (arrow keys + Enter). One-time
+per folder.
 
 On WSL the browser won't auto-open since WSL can't reach your
 Windows browser directly. That's why steps 1 and 3 are copy/paste.
