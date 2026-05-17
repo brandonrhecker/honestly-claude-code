@@ -187,29 +187,55 @@ Pick your OS. Follow that section. Skip the others.
 
 ### Linux
 
-You probably already know how to install Node. If you're on WSL,
-follow this section, not the Windows one above.
+If you're on WSL, follow this section, not the Windows one above.
 
-```bash
-npm install -g @anthropic-ai/claude-code
-claude
-```
+1. Check if you have Node already:
+   ```bash
+   node --version
+   ```
+   If it prints a version (anything `v18` or higher), skip to step 3.
+   If it prints `command not found`, do step 2 first.
 
-First run prompts you for a theme (Dark mode default is fine),
-then walks you through Anthropic login:
+2. Install Node via NVM (Node Version Manager). DO NOT
+   `sudo apt install npm` on Ubuntu — that gets an outdated
+   version that breaks Claude Code. Use the same NVM flow as the
+   Mac section above:
 
-1. Copy the URL it prints into your browser.
-2. Log in to your Anthropic account.
-3. The browser shows an authorization code. Copy it.
-4. Paste the code back into your terminal where Claude Code is
-   waiting, hit Enter.
+   Install NVM:
+   ```bash
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
+   ```
 
-Then Claude Code asks if you trust the folder you launched in.
-Select "Yes, I trust this folder" (arrow keys + Enter). One-time
-per folder.
+   Close and reopen your terminal, then install Node:
+   ```bash
+   nvm install --lts
+   ```
+
+3. Install Claude Code:
+   ```bash
+   npm install -g @anthropic-ai/claude-code
+   ```
+
+4. Launch:
+   ```bash
+   claude
+   ```
+   First run prompts you for a theme (Dark mode default is fine),
+   then walks you through Anthropic login:
+
+   1. Copy the URL it prints into your browser.
+   2. Log in to your Anthropic account.
+   3. The browser shows an authorization code. Copy it.
+   4. Paste the code back into your terminal where Claude Code is
+      waiting, hit Enter.
+
+   Then Claude Code asks if you trust the folder you launched in.
+   Select "Yes, I trust this folder" (arrow keys + Enter). One-time
+   per folder.
 
 On WSL the browser won't auto-open since WSL can't reach your
-Windows browser directly. That's why steps 1 and 3 are copy/paste.
+Windows browser directly. That's why the URL and code are
+copy/paste.
 
 > NERD.
 

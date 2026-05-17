@@ -115,7 +115,7 @@ something using your rules.
    voice is Ted Lasso: relentlessly warm, folksy wisdom, finds the
    good in everyone, with occasional mustache-based confidence.
    Around 400-600 words per piece. Save each piece as
-   YYYY-MM-DD-slug.md. Approve the file when ready.
+   YYYY-MM-DD-slug.md.
    ```
 
 5. Claude will propose a CLAUDE.md file and ask permission. Read

@@ -25,7 +25,6 @@ things landed on your machine:
   `writing/`, `brainstorm/` (whatever you created in chapters 03-06).
 - **Node.js** (if you didn't have it already): the runtime Claude
   Code is built on.
-- **uv** (only if you went through chapter 06): Python tool runner.
 - **An Anthropic subscription** (Pro, Max, etc.): billing relationship
   with Anthropic.
 
@@ -82,19 +81,9 @@ Pick your OS. Follow that section. Skip the others.
    ```bash
    rm -rf ~/.nvm
    ```
-   Then open `~/.zshrc` (or `~/.bashrc`) in a text editor and
+   Then open `~/.zshrc` (or `~/.bash_profile`) in a text editor and
    delete the lines that mention `nvm`. *Skip this whole step if
    you use Node for anything else.*
-
-7. (Optional) If you went through chapter 06 and installed uv:
-   ```bash
-   uv cache clean
-   ```
-   Then uninstall uv:
-   ```bash
-   uv self uninstall
-   ```
-   *Skip if you use uv for other Python tools.*
 
 ### Windows
 
@@ -137,15 +126,6 @@ Pick your OS. Follow that section. Skip the others.
    Uninstall.
    *Skip if you use Node for anything else.*
 
-7. (Optional) If you went through chapter 06 and installed uv:
-   ```powershell
-   uv cache clean
-   ```
-   Then:
-   ```powershell
-   uv self uninstall
-   ```
-
 ### Linux
 
 You probably know how to handle most of this. If you're on WSL,
@@ -178,11 +158,6 @@ follow this section, not the Windows one.
 5. (Optional) Remove Node. Depends on your distro: `apt remove
    nodejs`, `dnf remove nodejs`, `nvm uninstall --lts && rm -rf
    ~/.nvm`, etc. Skip if you use Node elsewhere.
-
-6. (Optional) If you did chapter 06 and installed uv:
-   ```bash
-   uv cache clean && uv self uninstall
-   ```
 
 ### one last thing (all OSes)
 
