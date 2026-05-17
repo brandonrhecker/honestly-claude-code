@@ -97,8 +97,9 @@ Pick your OS. Follow that section. Skip the others.
    - **Pick a text theme.** Use arrow keys to highlight, Enter to
      select. **Dark mode** (the default) is fine; you can change it
      later with `/theme` inside Claude.
-   - **Browser login.** A browser tab opens. Log in to your Anthropic
-     account.
+   - **Browser login.** Claude Code prints a URL. Your browser may
+     auto-open to it; if not, copy the URL and paste it into your
+     browser yourself. Log in to your Anthropic account.
 
    After that, you're at the Claude prompt.
 
@@ -142,8 +143,9 @@ Pick your OS. Follow that section. Skip the others.
    - **Pick a text theme.** Use arrow keys to highlight, Enter to
      select. **Dark mode** (the default) is fine; you can change it
      later with `/theme` inside Claude.
-   - **Browser login.** A browser tab opens. Log in to your Anthropic
-     account.
+   - **Browser login.** Claude Code prints a URL. Your browser may
+     auto-open to it; if not, copy the URL and paste it into your
+     browser yourself. Log in to your Anthropic account.
 
    After that, you're at the Claude prompt.
 
@@ -151,15 +153,18 @@ Pick your OS. Follow that section. Skip the others.
 
 ### Linux
 
-You probably already know how to install Node. Then:
+You probably already know how to install Node. If you're on WSL,
+follow this section, not the Windows one above.
 
 ```bash
 npm install -g @anthropic-ai/claude-code
 claude
 ```
 
-First run prompts you for a theme (pick Dark mode or whatever) then
-opens your browser for Anthropic login.
+First run prompts you for a theme (pick Dark mode or whatever),
+then prints a URL for Anthropic login. Copy that URL into your
+browser. On WSL the browser won't auto-open since WSL can't reach
+your Windows browser directly.
 
 > NERD.
 
