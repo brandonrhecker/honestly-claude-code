@@ -110,22 +110,25 @@ Pick your OS. Follow that section. Skip the others.
    - Hit Enter.
 
    A dark window opens. That's your terminal. Keep it open.
-3. Install Claude Code. On Windows we use `npm.cmd` (not `npm`)
-   because PowerShell's default security policy blocks the
-   `npm.ps1` script. The `-g` flag means "global" so Claude is
+3. By default, Windows blocks PowerShell scripts (a security
+   setting). Allow your own user to run local scripts. This is a
+   one-time fix and matches the standard developer Windows setup:
+   ```powershell
+   Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+   ```
+   *When it asks "Are you sure?", type `Y` and hit Enter. The
+   `-Scope CurrentUser` part means this only affects you, not the
+   whole machine. No admin needed.*
+4. Install Claude Code. The `-g` flag means "global" so Claude is
    available from any folder:
    ```powershell
-   npm.cmd install -g @anthropic-ai/claude-code
+   npm install -g @anthropic-ai/claude-code
    ```
-   *The `.cmd` shim does the exact same thing as `npm` but bypasses
-   PowerShell's script restrictions. If you skip the `.cmd` and try
-   plain `npm`, you'll see "running scripts is disabled on this
-   system." That's the policy talking.*
-4. Confirm:
+5. Confirm:
    ```powershell
    claude --version
    ```
-5. Launch:
+6. Launch:
    ```powershell
    claude
    ```
