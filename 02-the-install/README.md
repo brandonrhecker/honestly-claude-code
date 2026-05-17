@@ -93,8 +93,14 @@ Pick your OS. Follow that section. Skip the others.
    ```bash
    claude
    ```
-   The first run opens your browser. Log in with your Anthropic
-   account.
+   First run, Claude Code asks two things:
+   - **Pick a text theme.** Use arrow keys to highlight, Enter to
+     select. **Dark mode** (the default) is fine; you can change it
+     later with `/theme` inside Claude.
+   - **Browser login.** A browser tab opens. Log in to your Anthropic
+     account.
+
+   After that, you're at the Claude prompt.
 
 > Congrats. You're officially a nerd now. The hardest part is behind you.
 
@@ -132,7 +138,14 @@ Pick your OS. Follow that section. Skip the others.
    ```powershell
    claude
    ```
-   Follow the browser login prompt.
+   First run, Claude Code asks two things:
+   - **Pick a text theme.** Use arrow keys to highlight, Enter to
+     select. **Dark mode** (the default) is fine; you can change it
+     later with `/theme` inside Claude.
+   - **Browser login.** A browser tab opens. Log in to your Anthropic
+     account.
+
+   After that, you're at the Claude prompt.
 
 > Congrats. You're officially a nerd now. The hardest part is behind you.
 
@@ -144,6 +157,9 @@ You probably already know how to install Node. Then:
 npm install -g @anthropic-ai/claude-code
 claude
 ```
+
+First run prompts you for a theme (pick Dark mode or whatever) then
+opens your browser for Anthropic login.
 
 > NERD.
 
