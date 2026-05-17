@@ -39,7 +39,7 @@ CLAUDE.md.
 
 Remember those podcast recommendations from chapter 06? Go listen
 to one and keep learning. Better yet: ask Claude Code to create Ted
-Lasso as your personal assistant with this prompt:
+Lasso as your personal assistant by pasting this into your Claude Code window:
 
 ```
 I want to build a simple personal-assistant website I can run on
