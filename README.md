@@ -12,8 +12,8 @@ Mind your business.
 ---
 
 I work in AI. I don't think it's going to save the world, and I don't
-think it's going to end it. I do think it's going to burn a lot of
-people out before we figure out how to live with it.
+think it's going to end it. It's going to keep burning people out,
+and we're going to have to figure that out as we go.
 
 This is a book for the humans I know who don't want to get left behind,
 but also don't want to be hyped into using something they don't
@@ -72,10 +72,8 @@ These exist for when you need them. They're not part of the walkthrough.
 
 | Folder | What's in it |
 |---|---|
-| `recipes/` | How-tos for when you need them (add MCP, update CLI, etc.) |
-| `reference/` | Cheat sheets, glossary, versions |
+| `reference/` | Cheat sheets, glossary, daily commands, versions |
 | `concepts/` | Shit to remember (deeper explanations for when you want them) |
-| `daily-use/` | Day-to-day commands you'll reach for |
 | `best-practices/` | How to not make a mess of your setup |
 
 ---

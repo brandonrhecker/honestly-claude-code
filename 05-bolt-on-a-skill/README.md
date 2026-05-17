@@ -2,8 +2,8 @@
 
 # 05: Bolt on a skill
 
-You've installed Claude Code. You've had it write a file for you.
-You've taught it about your project.
+You've installed Claude Code, made it write a file, and taught it
+about your project.
 
 This chapter: we'll install superpowers (the #1 community Claude
 Code plugin, by Jesse Vincent), use its brainstorming skill on a

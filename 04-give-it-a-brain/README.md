@@ -6,9 +6,9 @@ In chapter 03, you launched Claude in a folder and asked for a
 packing list. It worked, but Claude went in blind. It didn't know
 what the folder was for, what you preferred, or what rules to follow.
 
-That's where CLAUDE.md comes in. CLAUDE.md is the magic file that
-tells Claude WHAT a folder is, WHO you are, and HOW you want it to
-behave inside that folder.
+That's where CLAUDE.md comes in. It's the file you write that tells
+Claude what the folder is for, who you are, and the rules to follow
+inside it.
 
 This chapter: you will create your first CLAUDE.md and watch Claude
 actually follow it.
@@ -17,8 +17,8 @@ actually follow it.
 
 ## quick check before we start
 
-Before we start, I'm assuming you completed chapters 02 and 03 or
-got bored reading. Let's run a quick check that:
+I'm assuming you completed chapters 02 and 03, or got bored reading.
+Quick check:
 
 - You've installed Claude Code.
 - You've successfully launched Claude Code in a folder.
@@ -61,7 +61,7 @@ project. Examples:
 that folder. You don't tell it to read it. It just does.
 
 Think of it as the project's brain, or its little BELIEVE sign.
-Written by you, persistent between sessions, always loaded.
+You write it once. Every session loads it automatically.
 
 ---
 

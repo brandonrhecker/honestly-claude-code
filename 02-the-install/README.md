@@ -2,8 +2,8 @@
 
 # 02: Get the damn thing running
 
-You're going to install Claude Code on your computer. After this
-chapter, typing `claude` into a terminal opens a chat with the AI.
+You're putting Claude Code on your machine. After this chapter,
+you type `claude` into a terminal and the AI answers.
 
 ---
 

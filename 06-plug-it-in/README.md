@@ -2,10 +2,9 @@
 
 # 06: Plug it into your other apps
 
-You've installed Claude Code. You've made it write a file for you.
-You've given it project context with CLAUDE.md. You've bolted on a
-skill. Claude already has built-in web tools: it can fetch a URL or
-search the web on its own.
+You've installed Claude Code, made it write a file, given it project
+context with CLAUDE.md, and bolted on a skill. Claude already has
+built-in web tools: it can fetch a URL or search the web on its own.
 
 What it CAN'T do natively: talk to specific apps and services. Your
 podcast app, your calendar, your notes app, your inbox. Claude
