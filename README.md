@@ -52,7 +52,7 @@ Common questions, answered short:
 
 Seven chapters, in order. By the end you'll have Claude installed,
 a project it knows about, a custom skill, a hook into another app,
-and persistent memory. Split the chapters however you want.
+and a sense of where to go next. Split the chapters however you want.
 
 | # | Chapter |
 |---|---|

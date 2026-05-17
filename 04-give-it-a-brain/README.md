@@ -22,7 +22,7 @@ got bored reading. Let's run a quick check that:
 
 - You've installed Claude Code.
 - You've successfully launched Claude Code in a folder.
-- You've demanded Claude Code to write an `.md` file for its new overlord (you).
+- You've demanded Claude Code write an `.md` file for its new overlord (you).
 
 ---
 

@@ -12,7 +12,7 @@ up with a real file you can use.
 
 ---
 
-## before you start
+## quick check before we start
 
 You need Claude Code installed and working (chapter 02). That's it.
 
@@ -69,8 +69,7 @@ literally seeing it render right now.)
    Notepad, not your browser, not your email: the terminal app.
 
    - **Mac:** `Cmd+Space`, type `Terminal`, hit Enter.
-   - **Windows:** Windows key, type `Terminal` (or `PowerShell`), hit
-     Enter.
+   - **Windows:** Windows key, type `Terminal`, hit Enter.
    - **Linux:** you already know.
 
 2. Make a folder for this and step into it. Pick your OS.
@@ -137,7 +136,7 @@ literally seeing it render right now.)
    - **Linux:** You know.
 
    To open `packing-list.md`: double-click it. On Windows, Notepad
-   might warn about an unrecognized file format — click **Open
+   might warn about an unrecognized file format. Click **Open
    anyway**. On Mac, TextEdit handles it without complaining. For the
    pretty rendered version, open it in VS Code instead (see the
    [.md section above](#first-a-word-about-md-files)).

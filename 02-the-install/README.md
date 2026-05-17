@@ -7,7 +7,7 @@ chapter, typing `claude` into a terminal opens a chat with the AI.
 
 ---
 
-## before you start
+## quick check before we start
 
 You need a computer (Mac, Windows, or Linux), internet, and an
 Anthropic account with a paid plan.

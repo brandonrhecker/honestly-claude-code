@@ -110,6 +110,8 @@ A few honest notes:
    and use the Pocket Casts MCP to find 5 podcast episodes that
    would help me keep learning about the topics in this book.
    ```
+   *Yes, the URL is this book's own repo. Meta, I know — but it
+   makes the demo concrete since you already know what's in it.*
 
 6. Watch Claude work:
    - It uses built-in WebFetch to read the repo.
