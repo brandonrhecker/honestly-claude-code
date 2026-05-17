@@ -73,9 +73,19 @@ something using your rules.
 
 1. Open your terminal again (the same one from chapter 02).
 
-2. Make a folder for your writing project and step into it:
+2. Make a folder for your writing project and step into it. Pick
+   your OS.
+
+   **Mac, Linux, or WSL:**
    ```bash
-   mkdir -p ~/claude-experiments/writing && cd ~/claude-experiments/writing
+   mkdir -p ~/claude-experiments/writing
+   cd ~/claude-experiments/writing
+   ```
+
+   **Windows (PowerShell):**
+   ```powershell
+   mkdir ~\claude-experiments\writing
+   cd ~\claude-experiments\writing
    ```
 
 3. Launch Claude:

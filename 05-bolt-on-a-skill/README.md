@@ -76,12 +76,23 @@ use brainstorming to plan your meal-prep routine.
 
 1. Open your terminal again (the same one from chapter 02).
 
-2. Make a folder for this exercise and step into it:
+2. Make a folder for this exercise and step into it. Pick your OS.
+
+   **Mac, Linux, or WSL:**
    ```bash
-   mkdir -p ~/claude-experiments/brainstorm && cd ~/claude-experiments/brainstorm
+   mkdir -p ~/claude-experiments/brainstorm
+   cd ~/claude-experiments/brainstorm
    ```
-   *Same pattern as before. Fresh folder so the brainstorm doesn't
-   collide with your writing folder from chapter 04.*
+
+   **Windows (PowerShell):**
+   ```powershell
+   mkdir ~\claude-experiments\brainstorm
+   cd ~\claude-experiments\brainstorm
+   ```
+
+   *Same pattern as chapters 03 and 04. Fresh folder so the
+   brainstorm doesn't collide with the writing folder from
+   chapter 04.*
 
 3. Launch Claude Code:
    ```bash
