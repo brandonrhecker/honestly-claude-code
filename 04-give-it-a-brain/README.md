@@ -137,9 +137,9 @@ something using your rules.
 
    - **Mac:** Open Finder, press `Cmd+Shift+G`, paste
      `~/claude-experiments/writing/`, hit Enter.
-   - **Windows:** Open File Explorer. Click in the address bar at
-     the top (or press `Ctrl+L`), paste
-     `%USERPROFILE%\claude-experiments\writing`, hit Enter.
+   - **Windows:** Press `Win+R` (the Windows key + R) to open the
+     Run dialog. Paste `%USERPROFILE%\claude-experiments\writing`
+     and hit Enter. File Explorer opens to the folder.
 
    Double-click the new file to open it. Same Notepad/TextEdit/VS
    Code notes from chapter 03 apply.

@@ -131,9 +131,9 @@ literally seeing it render right now.)
 
    - **Mac:** Open Finder. Press `Cmd+Shift+G`, paste
      `~/claude-experiments/packing-list/`, hit Enter.
-   - **Windows:** Open File Explorer. Click in the address bar at
-     the top (or press `Ctrl+L`), paste
-     `%USERPROFILE%\claude-experiments\packing-list`, hit Enter.
+   - **Windows:** Press `Win+R` (the Windows key + R) to open the
+     Run dialog. Paste `%USERPROFILE%\claude-experiments\packing-list`
+     and hit Enter. File Explorer opens to the folder.
    - **Linux:** You know.
 
    To open `packing-list.md`: double-click it. On Windows, Notepad
