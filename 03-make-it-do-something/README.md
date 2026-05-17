@@ -73,15 +73,24 @@ literally seeing it render right now.)
      Enter.
    - **Linux:** you already know.
 
-2. Make a folder for this and step into it. Paste this into the
-   terminal and hit Enter:
+2. Make a folder for this and step into it. Pick your OS.
+
+   **Mac, Linux, or WSL:**
    ```bash
-   mkdir -p ~/claude-experiments/packing-list && cd ~/claude-experiments/packing-list
+   mkdir -p ~/claude-experiments/packing-list
+   cd ~/claude-experiments/packing-list
    ```
-   *(In English: `~` is your home folder. `mkdir -p` creates a folder
-   called `claude-experiments` (where all your Claude tinkering will
-   live) and inside it one called `packing-list`. `cd` moves you into
-   it. The `&&` between them just means "then do the next thing.")*
+
+   **Windows (PowerShell):**
+   ```powershell
+   mkdir ~\claude-experiments\packing-list
+   cd ~\claude-experiments\packing-list
+   ```
+
+   *In English: `~` is your home folder. The first command creates a
+   folder called `claude-experiments` (where all your Claude
+   tinkering will live) and inside it one called `packing-list`. The
+   second command moves you into it.*
 
 3. Launch Claude:
    ```bash
