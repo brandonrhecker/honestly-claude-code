@@ -38,8 +38,8 @@ CLAUDE.md.
 ## where to go from here
 
 Remember those podcast recommendations from chapter 06? Go listen
-to one and keep learning. Better yet: ask Claude Code to give Ted
-Lasso a job. Paste this:
+to one and keep learning. Better yet: ask Claude Code to create Ted
+Lasso as your personal assistant with this prompt:
 
 ```
 I want to build a simple personal-assistant website I can run on
