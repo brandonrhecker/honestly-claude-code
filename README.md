@@ -1,5 +1,5 @@
-# Claude-Code-for-Humans
-### A guide to Claude Code, for humans
+# Honestly, Claude Code
+### An honest guide for humans
 
 Real quick:
 

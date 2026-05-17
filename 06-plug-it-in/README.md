@@ -105,7 +105,7 @@ A few honest notes:
 
 5. Now ask Claude to read this book and recommend podcasts. Paste:
    ```
-   Fetch https://github.com/brandonrhecker/claude-code-for-humans
+   Fetch https://github.com/brandonrhecker/honestly-claude-code
    and use the Pocket Casts MCP to find 5 podcast episodes that
    would help me keep learning about the topics in this book.
    ```
