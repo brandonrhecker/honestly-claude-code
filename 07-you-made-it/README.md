@@ -38,8 +38,9 @@ CLAUDE.md.
 ## where to go from here
 
 Those podcast recommendations Claude pulled for you back in chapter
-06? Go listen to them. You already did the hard part of finding
-them.
+06? Go listen to them. Or, for actual fun, ask Claude Code to build
+you a website where Ted Lasso is your personal assistant. You
+already taught it the voice in chapter 04.
 
 That's the book. Go play.
 
