@@ -37,8 +37,9 @@ CLAUDE.md.
 
 ## where to go from here
 
-Those podcast recommendations from chapter 06? Knock yourself out.
-Better yet: ask Claude Code to give Ted Lasso a job. Paste this:
+Remember those podcast recommendations from chapter 06? Go listen
+to one and keep learning. Better yet: ask Claude Code to give Ted
+Lasso a job. Paste this:
 
 ```
 I want to build a simple personal-assistant website I can run on
