@@ -1,6 +1,6 @@
 [← back to the book](../README.md)
 
-# 08 — Pull the plug
+# 08: Pull the plug
 
 You tried it. Maybe it's not for you. Maybe you're moving to a new
 machine and want a clean install. Maybe you're switching tools.
@@ -33,7 +33,7 @@ back at neutral.
 
 ---
 
-## the actual steps — time to roll up your sleeves
+## the actual steps: time to roll up your sleeves
 
 Pick your OS. Follow that section. Skip the others.
 

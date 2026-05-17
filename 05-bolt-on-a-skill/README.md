@@ -1,6 +1,6 @@
 [← back to the book](../README.md)
 
-# 05 — Bolt on a skill
+# 05: Bolt on a skill
 
 You've installed Claude Code. You've had it write a file for you.
 You've taught it about your project.
@@ -67,7 +67,7 @@ We'll do all three in the next section.
 
 ---
 
-## the actual steps — time to roll up your sleeves
+## the actual steps: time to roll up your sleeves
 
 We're installing **superpowers**, the most-installed Claude Code
 plugin in the community. It bundles ~20 skills including
@@ -168,7 +168,7 @@ use brainstorming to plan your meal-prep routine.
 
 > You just installed someone else's workflow, used it for something
 > in your actual life, and you can uninstall it whenever you want.
-> That's leverage.
+> That's the move.
 
 ---
 
@@ -273,6 +273,6 @@ other apps you already use.
 
 ---
 
-→ Next: [06 — Plug it into your other apps](../06-plug-it-in/)
+→ Next: [06: Plug it into your other apps](../06-plug-it-in/)
 
 **Last verified: 2026-05-16 with Claude Code 2.1.138**

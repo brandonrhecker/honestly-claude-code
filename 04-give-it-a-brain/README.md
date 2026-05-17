@@ -1,6 +1,6 @@
 [← back to the book](../README.md)
 
-# 04 — Give it a brain
+# 04: Give it a brain
 
 In chapter 03, you launched Claude in a folder and asked for a
 packing list. It worked, but Claude went in blind. It didn't know
@@ -65,7 +65,7 @@ Written by you, persistent between sessions, always loaded.
 
 ---
 
-## the actual steps — time to roll up your sleeves
+## the actual steps: time to roll up your sleeves
 
 For this chapter we'll set up a "personal writing" folder. You'll
 write a CLAUDE.md that defines the project, then have Claude draft
@@ -200,6 +200,6 @@ workflow and use it in this same folder.
 
 ---
 
-→ Next: [05 — Bolt on a skill](../05-bolt-on-a-skill/)
+→ Next: [05: Bolt on a skill](../05-bolt-on-a-skill/)
 
 **Last verified: 2026-05-16 with Claude Code 2.1.138**

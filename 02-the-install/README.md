@@ -1,6 +1,6 @@
 [← back to the book](../README.md)
 
-# 02 — Get the damn thing running
+# 02: Get the damn thing running
 
 You're going to install Claude Code on your computer. After this
 chapter, typing `claude` into a terminal opens a chat with the AI.
@@ -57,7 +57,7 @@ machine.
 
 ---
 
-## the actual steps — time to roll up your sleeves
+## the actual steps: time to roll up your sleeves
 
 Pick your OS. Follow that section. Skip the others.
 
@@ -197,7 +197,7 @@ If you're on WSL, follow this section, not the Windows one above.
    If it prints `command not found`, do step 2 first.
 
 2. Install Node via NVM (Node Version Manager). DO NOT
-   `sudo apt install npm` on Ubuntu — that gets an outdated
+   `sudo apt install npm` on Ubuntu. That gets an outdated
    version that breaks Claude Code. Use the same NVM flow as the
    Mac section above:
 
@@ -286,6 +286,6 @@ That's the whole install. The rest of the book is built on top of this.
 
 ---
 
-→ Next: [03 — Make it do something for you](../03-make-it-do-something/)
+→ Next: [03: Make it do something for you](../03-make-it-do-something/)
 
 **Last verified: 2026-05-16 with Claude Code 2.1.138**

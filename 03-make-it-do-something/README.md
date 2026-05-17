@@ -1,6 +1,6 @@
 [← back to the book](../README.md)
 
-# 03 — Make it do something for you
+# 03: Make it do something for you
 
 You installed Claude Code. Now you'll have it do an actual thing.
 Not a hello-world, not a placeholder. Something you might actually
@@ -63,7 +63,7 @@ literally seeing it render right now.)
 
 ---
 
-## the actual steps — time to roll up your sleeves
+## the actual steps: time to roll up your sleeves
 
 1. Open your terminal again. The same one from chapter 02. Not
    Notepad, not your browser, not your email: the terminal app.
@@ -195,6 +195,6 @@ Three chapters down. The next one teaches Claude **where it is** and
 
 ---
 
-→ Next: [04 — Give it a brain](../04-give-it-a-brain/)
+→ Next: [04: Give it a brain](../04-give-it-a-brain/)
 
 **Last verified: 2026-05-16 with Claude Code 2.1.138**

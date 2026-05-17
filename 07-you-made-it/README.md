@@ -1,6 +1,6 @@
 [← back to the book](../README.md)
 
-# 07 — You made it. Now what.
+# 07: You made it. Now what.
 
 You made it through the path. While people on LinkedIn are still
 "leveraging AI for synergistic outcomes," you actually know how the

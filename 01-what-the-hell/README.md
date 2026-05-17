@@ -1,6 +1,6 @@
 [← back to the book](../README.md)
 
-# 01 — So what the hell is Claude Code
+# 01: So what the hell is Claude Code
 
 You're a little scared. Or skeptical. Or you've avoided this whole
 conversation for months because everyone around you sounds insufferable
@@ -50,7 +50,7 @@ beneath you so you can do the work that isn't.
 
 ---
 
-## but wait — am I going to lose my job?
+## but wait, am I going to lose my job?
 
 Honest answer: maybe parts of it, probably not the whole thing. The
 people who lean hardest into AI tools tend to climb faster, not get
@@ -66,7 +66,7 @@ has more.
 
 ---
 
-## but wait — is my data safe?
+## but wait, is my data safe?
 
 Short version: your conversations go to Anthropic's servers to get
 processed. Files Claude reads stay on YOUR computer unless you
@@ -78,7 +78,7 @@ the longer version.
 
 ---
 
-## but wait — what if it just makes shit up?
+## but wait, what if it just makes shit up?
 
 It does, sometimes. Confidently. With zero hedging. That's the most
 important thing about it to remember.
@@ -98,8 +98,8 @@ Using AI is going to take mental energy you weren't spending before.
 Some days it'll save you hours. Some days it'll waste an hour and
 you'll feel dumb. That's normal.
 
-If you start to feel burned out, stop. Use it less. The point is
-leverage, not addiction.
+If you start to feel burned out, stop. Use it less. Letting a tool
+run you is the same trap as the old job, just with a new tool.
 
 → [reference/burn-out.md](../reference/burn-out.md) is more on this.
 
@@ -120,6 +120,6 @@ Ready?
 
 ---
 
-→ Next: [02 — Get the damn thing running](../02-the-install/)
+→ Next: [02: Get the damn thing running](../02-the-install/)
 
 **Last verified: 2026-05-16 with Claude Code 2.1.138**

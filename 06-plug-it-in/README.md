@@ -1,6 +1,6 @@
 [← back to the book](../README.md)
 
-# 06 — Plug it into your other apps
+# 06: Plug it into your other apps
 
 You've installed Claude Code. You've made it write a file for you.
 You've given it project context with CLAUDE.md. You've bolted on a
@@ -77,7 +77,7 @@ A few honest notes:
 
 ---
 
-## the actual steps — time to roll up your sleeves
+## the actual steps: time to roll up your sleeves
 
 1. Open your terminal (same one from chapter 02).
 
@@ -110,7 +110,7 @@ A few honest notes:
    and use the Pocket Casts MCP to find 5 podcast episodes that
    would help me keep learning about the topics in this book.
    ```
-   *Yes, the URL is this book's own repo. Meta, I know — but it
+   *Yes, the URL is this book's own repo. Meta, I know, but it
    makes the demo concrete since you already know what's in it.*
 
 6. Watch Claude work:
@@ -207,6 +207,6 @@ Six chapters down. One short closing chapter to go.
 
 ---
 
-→ Next: [07 — You made it. Now what.](../07-you-made-it/)
+→ Next: [07: You made it. Now what.](../07-you-made-it/)
 
 **Last verified: 2026-05-16 with Claude Code 2.1.138**
