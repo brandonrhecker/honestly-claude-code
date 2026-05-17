@@ -25,8 +25,9 @@ Here's what you can do that they can't:
 
 You can now hold your own. Some honest translations:
 
-- "AI-powered" usually means "Claude or GPT wrapped around
-  something."
+- "AI-powered" usually means "Claude, GPT, Gemini, Grok (or
+  whatever the newest model is when you're reading this) wrapped
+  around something."
 - "Will AI take my job?" depends on whether you understand it.
   You're now in the camp that does.
 
