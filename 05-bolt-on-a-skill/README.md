@@ -5,10 +5,11 @@
 You've installed Claude Code. You've had it write a file for you.
 You've taught it about your project.
 
-This chapter: install superpowers (the #1 community Claude Code
-plugin, by Jesse Vincent), use its brainstorming skill on a weekend
-meal-prep routine you'll actually stick with, then uninstall the
-whole thing. That last part is also a skill worth having.
+This chapter: we'll install superpowers (the #1 community Claude
+Code plugin, by Jesse Vincent), use its brainstorming skill on a
+weekend meal-prep routine you'll actually stick with, then we'll
+uninstall the whole thing. That last part is also a skill worth
+having.
 
 ---
 
