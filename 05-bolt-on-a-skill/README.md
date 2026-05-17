@@ -5,10 +5,6 @@
 You've installed Claude Code. You've had it write a file for you.
 You've taught it about your project.
 
-CLAUDE.md handles project-specific context. Skills handle the
-opposite: reusable workflows that work in any project. You install
-a skill once, invoke it with a slash command, Claude follows it.
-
 This chapter: install superpowers (the #1 community Claude Code
 plugin, by Jesse Vincent), use its brainstorming skill on a weekend
 meal-prep routine you'll actually stick with, then uninstall the
