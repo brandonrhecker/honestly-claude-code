@@ -48,7 +48,7 @@ Pick your OS. Follow that section. Skip the others.
    ```
    *Removes the `claude` command if you installed via npm.*
 
-3. (Only if step 2 failed — "not installed", "command not found",
+3. (Only if step 2 failed: "not installed", "command not found",
    etc.) Skip npm entirely and delete the binary directly. Find
    where it lives:
    ```bash
@@ -105,7 +105,7 @@ Pick your OS. Follow that section. Skip the others.
    npm uninstall -g @anthropic-ai/claude-code
    ```
 
-3. (Only if step 2 failed — "not installed", "command not found",
+3. (Only if step 2 failed: "not installed", "command not found",
    etc.) Skip npm entirely. Find where the binary lives:
    ```powershell
    where claude
@@ -152,7 +152,7 @@ follow this section, not the Windows one.
    npm uninstall -g @anthropic-ai/claude-code
    ```
    If that fails (`npm: command not found`, `not installed`, or
-   similar), DO NOT install npm just for this — your terminal might
+   similar), DO NOT install npm just for this. Your terminal might
    even helpfully suggest `sudo apt install npm`. Ignore that.
    Instead, skip npm and delete the binary directly:
    ```bash
