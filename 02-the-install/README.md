@@ -103,8 +103,13 @@ Pick your OS. Follow that section. Skip the others.
 1. Install Node.js for Windows from https://nodejs.org. Click the
    big green button labeled "LTS" and run the installer with
    default options.
-2. Open **Windows Terminal** or **PowerShell**: Windows key, type
-   `Terminal`, hit Enter.
+2. Open **Windows Terminal**:
+   - Press your `Windows` key (the one with the Windows logo on
+     your keyboard).
+   - Type `Terminal`.
+   - Hit Enter.
+
+   A dark window opens. That's your terminal. Keep it open.
 3. Install Claude Code. On Windows we use `npm.cmd` (not `npm`)
    because PowerShell's default security policy blocks the
    `npm.ps1` script. The `-g` flag means "global" so Claude is
