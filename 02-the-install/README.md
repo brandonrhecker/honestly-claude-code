@@ -105,12 +105,17 @@ Pick your OS. Follow that section. Skip the others.
    default options.
 2. Open **Windows Terminal** or **PowerShell**: Windows key, type
    `Terminal`, hit Enter.
-3. Install Claude Code using npm (Node Package Manager, which came
-   with Node). The `-g` flag means "global" so Claude is available
-   from any folder:
+3. Install Claude Code. On Windows we use `npm.cmd` (not `npm`)
+   because PowerShell's default security policy blocks the
+   `npm.ps1` script. The `-g` flag means "global" so Claude is
+   available from any folder:
    ```powershell
-   npm install -g @anthropic-ai/claude-code
+   npm.cmd install -g @anthropic-ai/claude-code
    ```
+   *The `.cmd` shim does the exact same thing as `npm` but bypasses
+   PowerShell's script restrictions. If you skip the `.cmd` and try
+   plain `npm`, you'll see "running scripts is disabled on this
+   system." That's the policy talking.*
 4. Confirm:
    ```powershell
    claude --version
@@ -163,6 +168,7 @@ Didn't work? You didn't do anything wrong. Don't throw anything yet. We'll get t
 |---|---|---|
 | `claude: command not found` | Node + npm aren't on your PATH | Close and reopen the terminal. If still broken, the Node install didn't finish. Re-run that step. |
 | `EACCES: permission denied` on `npm install` | `EACCES` is "access denied". npm is trying to write to a system folder it doesn't have permission for | On Mac, make sure you used the NVM install above (not Homebrew or the `.pkg` installer). Don't use `sudo`. |
+| `running scripts is disabled on this system` (Windows) | PowerShell's execution policy blocks the `npm.ps1` script | Use `npm.cmd install -g @anthropic-ai/claude-code` instead. The `.cmd` shim bypasses the policy. |
 | `nvm: command not found` after install | Your shell didn't reload | Close and reopen the terminal. New shells pick up the nvm config. |
 | Browser login spins forever | Pop-up blocker, third-party cookies disabled, or the auth tab failed to open | Copy the URL the terminal printed and open it manually in a fresh browser tab. |
 | `npm ERR! 403` or similar network error | Internet or proxy issue | Check your internet. If you're on a corporate network or VPN, you might be blocked from the npm registry. Try a personal network. |
