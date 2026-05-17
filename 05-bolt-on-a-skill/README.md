@@ -25,10 +25,9 @@ conscience. Quick check before we touch the marketplace:
 
 ## why bother bolting on skills
 
-You just taught Claude about your project with CLAUDE.md. That's
-*project context* — what THIS folder is. Skills are a different
-layer: pre-built workflows that work in any folder, regardless of
-project.
+You just taught Claude about your project with CLAUDE.md (That's
+project context). Skills are a different layer: pre-built and
+reusable workflows that work in ANY project.
 
 Think of it this way. CLAUDE.md = what your project is. Skills =
 techniques anyone can use. Both can be active at once.
