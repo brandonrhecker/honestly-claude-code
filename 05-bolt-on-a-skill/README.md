@@ -30,8 +30,11 @@ You just taught Claude about your project with CLAUDE.md (That's
 project context). Skills are a different layer: pre-built and
 reusable workflows that work in ANY project.
 
-Think of it this way. CLAUDE.md = what your project is. Skills =
-techniques anyone can use. Both can be active at once.
+Think of it this way:
+
+- **CLAUDE.md** = what your project is
+- **Skills** = techniques anyone can use
+- **Both** can be active at once
 
 A skill is a pre-built mini-instruction set you install once and
 trigger with a slash command (`/skill-name`). Like keyboard
