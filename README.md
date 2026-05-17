@@ -12,8 +12,8 @@ Mind your business.
 ---
 
 I work in AI. I don't think it's going to save the world, and I don't
-think it's going to end it. It's going to keep burning people out,
-and we're going to have to figure that out as we go.
+think it's going to end it. Yes, it's going to burn people out,
+but we're going to have to figure that out as we go.
 
 This is a book for the humans I know who don't want to get left behind,
 but also don't want to be hyped into using something they don't
