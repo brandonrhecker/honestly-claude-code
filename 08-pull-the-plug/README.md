@@ -38,11 +38,30 @@ back at neutral.
 
 1. Open your terminal (same one from chapter 02).
 
-2. Uninstall the Claude Code CLI:
+2. Uninstall the Claude Code CLI.
+
+   First try (works for most installs):
    ```bash
    npm uninstall -g @anthropic-ai/claude-code
    ```
-   *Removes the `claude` command from your machine.*
+   *Removes the `claude` command if you installed via npm.*
+
+   If that says "not installed" or doesn't remove the `claude`
+   command, you installed it via a different path. Find where the
+   binary actually lives:
+   ```bash
+   which claude
+   ```
+   *Prints the file path, e.g. `/usr/local/bin/claude` or
+   `/home/you/.local/bin/claude`.*
+
+   Then delete the file at that path:
+   ```bash
+   rm $(which claude)
+   ```
+   *Mac and Linux. On Windows, run `where claude` to find the path,
+   then delete the file via File Explorer or `Remove-Item` in
+   PowerShell.*
 
 3. Remove the Claude Code config folder.
 
@@ -142,7 +161,7 @@ The damn thing won't go away cleanly? Probably one of these.
 | Symptom | What it means | What to do |
 |---|---|---|
 | `claude --version` still works after uninstall | Either the uninstall didn't finish or there's a leftover binary somewhere | Run `which claude` (Mac/Linux) or `where claude` (Windows) to find it. Delete the file. |
-| `npm uninstall -g` says "not installed" | npm doesn't know about it. Either it was already uninstalled, or it was installed via a different method | Try `which claude` to find where it lives, then delete manually. |
+| `npm uninstall -g` says "not installed" | npm doesn't know about it. Either it was already uninstalled, or it was installed via a different method | Use the `which claude` + `rm $(which claude)` fallback from step 2 above. |
 | You removed `~/.claude/` but Claude Code is still configured | You launched Claude Code in a project folder that had its own `.claude/` directory | Delete `.claude/` from inside that project folder too. |
 | Anthropic still charged you next month | Cancellation didn't go through on their end | Email Anthropic support; double-check Settings → Plans shows "Free." |
 
