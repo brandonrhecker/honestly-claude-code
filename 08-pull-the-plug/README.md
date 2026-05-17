@@ -104,9 +104,15 @@ Pick your OS. Follow that section. Skip the others.
    ```powershell
    npm uninstall -g @anthropic-ai/claude-code
    ```
+   If you get an error about `running scripts is disabled on this
+   system`, that's PowerShell blocking the `npm.ps1` script. Use
+   `npm.cmd` instead, which bypasses the policy:
+   ```powershell
+   npm.cmd uninstall -g @anthropic-ai/claude-code
+   ```
 
-3. (Only if step 2 failed: "not installed", "command not found",
-   etc.) Skip npm entirely. Find where the binary lives:
+3. (Only if step 2 still failed: "not installed", "command not
+   found", etc.) Skip npm entirely. Find where the binary lives:
    ```powershell
    where claude
    ```
