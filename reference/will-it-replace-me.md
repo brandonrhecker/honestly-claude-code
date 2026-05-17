@@ -2,11 +2,10 @@
 
 # Will it replace me?
 
-This is a question you can't honestly answer in a sentence, which
-is why every short answer you've seen sucks. The doomers say yes,
-you're cooked. The consultants say no, but only if you "embrace
+The honest answer doesn't fit in a sentence, which is why every
+short version you've seen is junk. The doomers say yes, you're
+cooked. The consultants say no, but only if you "embrace
 transformation." Neither of them knows your specific situation.
-Here's the longer answer.
 
 ---
 
@@ -19,8 +18,8 @@ Roles getting hit first:
 
 - **Tier-1 customer service:** chatbots handle the basic intake.
   Humans only get escalations.
-- **Copy editing and proofreading:** first-pass cleanup is a
-  Claude prompt away.
+- **Copy editing and proofreading:** first-pass cleanup is a Claude
+  prompt away.
 - **Junior coding work:** boilerplate, simple bug fixes, scaffolding.
 - **Transcription and captioning:** Whisper and friends do it in
   real time.
@@ -29,8 +28,8 @@ Roles getting hit first:
 - **Basic graphic design:** templates, banners, simple social assets.
 - **Data entry and data labeling:** pattern-recognition tasks are
   core AI territory.
-- **Paralegal first-pass document review:** the grunt work of
-  legal research.
+- **Paralegal first-pass document review:** the grunt work of legal
+  research.
 
 If you're in one of these, you're not paranoid. The honest move is
 to either climb up the value chain in your current field (the
@@ -62,10 +61,10 @@ The bar moves whether you adopt or not. Refusing to use the tools
 doesn't keep the bar where it was. It just leaves you below it.
 
 **Even "safe" roles face pay compression.** When the broader job
-market loosens, employers get leverage everywhere. Nurses, plumbers,
-teachers, in-person salespeople (roles AI can't touch) still feel
-it. Your wages crawl slower. Your raise is smaller. Nobody fires
-you. The math just gets quietly harder.
+market loosens, employers get the upper hand everywhere. Nurses,
+plumbers, teachers, in-person salespeople (roles AI can't touch)
+still feel it. Your wages crawl slower. Your raise is smaller.
+Nobody fires you. The math just gets quietly harder.
 
 None of these is a guarantee. All three are pressure. The truthful
 answer to "will AI affect my job" is yes, probably, even if it
@@ -73,22 +72,24 @@ doesn't replace you outright.
 
 ---
 
-## 3. what leverage actually looks like
+## 3. where this leaves you
 
-Here's the thing the LinkedIn posts keep getting wrong: leverage
-isn't a checklist. It's a position.
+The LinkedIn posts keep telling you to "future-proof your career"
+with a 12-step framework. That's not how this works.
 
-The position is: you understand what this thing is and what it
-isn't. You can use it. You can tell when its output is good and
-when it's bullshit. You're not waiting for someone to translate
-"AI" for you, because you ARE the person doing the translating.
+Where it actually leaves you is here: you understand what this
+thing is and what it isn't. You can use it. You can tell when its
+output is good and when it's bullshit. You're not waiting for
+someone to translate "AI" for you, because you ARE the person
+doing the translating.
 
-You're already in that camp by reading this book. The work now is
-to stay there. Keep using it. Keep noticing what's changing. Keep
-being the person in the room who can tell hype from reality.
+That's already most of the game. You're in that camp by reading
+this book. The work now is to stay there. Keep using it. Pay
+attention to what changes. Most people won't, and that's the gap
+that keeps you ahead.
 
-That's it. That's the leverage. Nobody can take it from you, and
-the only way to lose it is to stop paying attention.
+Nobody can take that from you. The only way to lose it is to look
+away.
 
 ---
 
