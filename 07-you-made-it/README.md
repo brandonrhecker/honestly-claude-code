@@ -2,7 +2,7 @@
 
 # 07: You made it. Now what.
 
-You made it through the path. While people on LinkedIn are still
+You did it. That's all, folks. You made it through to the end. While people on LinkedIn are still
 "leveraging AI for synergistic outcomes," you actually know how the
 thing works.
 
