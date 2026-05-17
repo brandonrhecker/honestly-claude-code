@@ -87,6 +87,8 @@ use brainstorming to plan your meal-prep routine.
    ```bash
    claude
    ```
+   *First time in this folder, Claude Code asks "Is this a folder
+   you trust?" Pick **"Yes, I trust this folder"** + Enter.*
 
 4. Register Jesse Vincent's superpowers marketplace:
    ```

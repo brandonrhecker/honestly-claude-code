@@ -93,6 +93,8 @@ A few honest notes:
    ```bash
    claude
    ```
+   *First time in this folder, Claude Code asks "Is this a folder
+   you trust?" Pick **"Yes, I trust this folder"** + Enter.*
 
 4. Confirm the MCP is wired up. Type this inside Claude:
    ```

@@ -82,6 +82,8 @@ something using your rules.
    ```bash
    claude
    ```
+   *First time in this folder, Claude Code asks "Is this a folder
+   you trust?" Pick **"Yes, I trust this folder"** + Enter.*
 
 4. Ask Claude to write your CLAUDE.md for you. Paste this:
 

@@ -87,6 +87,10 @@ literally seeing it render right now.)
    ```bash
    claude
    ```
+   *First time in this folder, Claude Code asks "Is this a folder
+   you trust?" Pick **"Yes, I trust this folder"** + Enter. (Same
+   one-time-per-folder safety check from chapter 02. You'll see it
+   every time you launch Claude in a new folder.)*
 
 4. When you see the prompt, paste this (or change it for a trip
    you're actually planning):
