@@ -34,6 +34,12 @@ You don't have to be the loudest. You just have to be the one who
 knows the difference between a prompt, a skill, an MCP, and a
 CLAUDE.md.
 
+## where to go from here
+
+Those podcast recommendations Claude pulled for you back in chapter
+06? Go listen to them. You already did the hard part of finding
+them.
+
 That's the book. Go play.
 
 ---
