@@ -103,13 +103,20 @@ use brainstorming to plan your meal-prep routine.
    That's what the marketplace declares itself as in its config.
    Confusing, normal.*
 
-6. Reload plugins so Claude Code picks up what you just installed:
+6. Claude Code will ask where to install superpowers. Pick **"Install
+   for you (user scope)"**.
+   *That makes the plugin available from any folder you launch Claude
+   in. The other options install it just for this project or share
+   it with teammates via the project's git repo. For personal use,
+   "Install for you" is right.*
+
+7. Reload plugins so Claude Code picks up what you just installed:
    ```
    /reload-plugins
    ```
    *Activates everything without restarting your session.*
 
-7. Now invoke the brainstorming skill on your meal-prep idea. Paste
+8. Now invoke the brainstorming skill on your meal-prep idea. Paste
    this:
 
    ```
@@ -122,14 +129,14 @@ use brainstorming to plan your meal-prep routine.
    *The "3 clarifying questions max" guardrail keeps this conversation
    short. Without it, brainstorming will happily go on for 20 turns.*
 
-8. Claude asks you 3 questions about your situation (your schedule,
+9. Claude asks you 3 questions about your situation (your schedule,
    what you usually eat, what's gone wrong before). Answer naturally.
 
-9. After the questions, Claude proposes one meal-prep approach. Read
-   it. If it works, great. If not, push back: "make it simpler" or
-   "I don't have time for that, what else."
+10. After the questions, Claude proposes one meal-prep approach. Read
+    it. If it works, great. If not, push back: "make it simpler" or
+    "I don't have time for that, what else."
 
-10. When you're satisfied (or done experimenting), exit:
+11. When you're satisfied (or done experimenting), exit:
     ```
     /exit
     ```
@@ -179,19 +186,33 @@ marketplace add` → `/plugin install` → `/reload-plugins`.
 Skills you didn't end up loving are easy to remove. Two levels:
 
 **Remove just the plugin** (keeps the marketplace registered):
+
 ```
 /plugin uninstall superpowers@superpowers-dev
+```
+
+Then reload so Claude Code picks up the removal:
+
+```
 /reload-plugins
 ```
+
 *All ~20 superpowers skills are gone. The marketplace stays registered
 in case you want to install something else from it later.*
 
 **Remove the whole marketplace** (also removes any plugins you
 installed from it):
+
 ```
 /plugin marketplace remove superpowers-dev
+```
+
+Then reload:
+
+```
 /reload-plugins
 ```
+
 *Total reset. Claude Code forgets the marketplace exists.*
 
 This is a normal part of trying new things. Don't keep stuff
