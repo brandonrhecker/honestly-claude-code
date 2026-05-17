@@ -4,126 +4,131 @@
 
 You've installed Claude Code. You've made it write a file for you.
 You've given it project context with CLAUDE.md. You've bolted on a
-skill. Claude can do a lot inside the folder you launched it from.
+skill. Claude already has built-in web tools: it can fetch a URL or
+search the web on its own.
 
-What it can't do yet: reach outside that folder. Want it to read a
-webpage, check your email, or look at your calendar? It's blind to
-all of that.
+What it CAN'T do natively: talk to specific apps and services. Your
+podcast app, your calendar, your notes app, your inbox. Claude
+doesn't know how to reach any of those unless you build it a bridge.
 
-MCP fixes that.
+MCP is that bridge.
 
-This chapter: we'll install uv (a small Python tool we need), then
-add the fetch MCP so Claude can pull URLs. We'll point it at a real
-webpage (Ted Lasso's Wikipedia page, because why not), get a
-summary, then uninstall the whole thing when we're done.
+This chapter: we'll install the Pocket Casts MCP so Claude can
+recommend podcasts based on what you're learning. We'll point it at
+this book's repo URL and ask for episodes that'd help you keep
+going. Then we'll uninstall.
 
 ---
 
 ## quick check before we start
 
-Six chapters down, one to go. Before we plug Claude into the outside
-world, make sure:
+One chapter from the finish line. Before we plug Claude into the
+outside world, make sure:
 
 - You've installed Claude Code.
-- You've used `/plugin install` at least once (chapter 05 covered this).
-- You've got internet that works on your machine.
+- You've used the plugin system at least once (chapter 05 covered this).
+- You've got internet that actually works on your machine.
 
 ---
 
 ## why bother plugging it into other apps
 
-Skills extend what Claude knows how to DO. MCPs extend where Claude
-can REACH.
+Claude can already fetch URLs and search the web with its built-in
+tools. So why bother with MCP?
 
-Without MCP, Claude only sees the folder you launched it from. With
-MCP, Claude can read webpages, query databases, check your calendar,
-read your email, whatever the MCP server exposes. The MCP server
-acts as a bridge between Claude and the outside thing.
+Built-in tools are generic. They know "the web" but not "your
+podcast app," "your calendar," "your inbox," "your CRM." Those are
+specific services with their own data and their own way of doing
+things.
 
-The win: stop copy-pasting things into Claude. Let it go fetch what
-it needs.
+MCP gives Claude specific connections to specific services. An MCP
+server is a small program that knows how to translate between
+Claude and one particular service. Install the Pocket Casts MCP and
+Claude can search Pocket Casts' catalog. Install the Slack MCP and
+Claude can read your Slack messages. And so on.
+
+The win: stop being limited to what Claude was born knowing. Plug
+it into your stuff.
 
 ---
 
 ## first, a word about MCP
 
 MCP = Model Context Protocol. It's the standard for "let an AI
-assistant talk to outside apps." Anthropic created it. Lots of tools
-support it now.
+assistant talk to outside apps." Anthropic created it. Lots of
+tools support it now.
 
 The way it works:
 
 - Someone writes a small program (an **MCP server**) that knows how
-  to talk to a specific thing: a website, your calendar, a database,
+  to talk to one specific thing: an app, a database, a website,
   whatever.
-- You tell Claude Code "here's an MCP server, use it when relevant."
+- You tell Claude Code about that server with `claude mcp add`.
 - Claude can now reach that thing from any folder.
 
-Heads up: this is the most technical chapter in the book. Take it
-slow. The payoff is real.
+A few honest notes:
+
+- MCPs are more technical to set up than skills. This is the most
+  technical chapter in the book. Take it slow.
+- Many MCPs need an API key or login. Some are open and free. We're
+  using a free, no-login one today (Pocket Casts).
+- An MCP only adds the connection. Whether Claude uses it well
+  depends on how you ask.
 
 ---
 
 ## the actual steps — time to roll up your sleeves
 
-We're installing two things:
+We're doing two things:
 
-1. **uv**, a Python tool runner we need because the fetch MCP is
-   written in Python. Quick install.
-2. **fetch MCP**, the actual thing that lets Claude read webpages.
-
-Then we point Claude at Ted Lasso's Wikipedia page (callback to
-chapter 04, because why not) and have it summarize.
+1. Tell Claude Code about the Pocket Casts MCP server.
+2. Ask Claude to read this book's repo URL and recommend podcast
+   episodes about the topics covered.
 
 1. Open your terminal (same one from chapter 02).
 
-2. Install uv. Paste this:
-   ```bash
-   curl -LsSf https://astral.sh/uv/install.sh | sh
+2. Register the Pocket Casts MCP. Paste this:
    ```
-   *Drops a single binary at `~/.local/bin/uv` (or the equivalent on
-   Windows) and adds one line to your shell config. Doesn't touch
-   system Python or any system folders. Fully reversible.*
-
-3. Close and reopen your terminal so the new uv install shows up.
-   Then verify:
-   ```bash
-   uv --version
+   claude mcp add --transport http pocketcasts https://mcp.pocketcasts.com
    ```
-   *You should see something like `uv 0.4.x`. If "command not
-   found," close and reopen the terminal again. Sometimes it takes
-   a fresh window.*
+   *Reads as: "Register an MCP called `pocketcasts` that lives at
+   `https://mcp.pocketcasts.com`. Use HTTP transport." No API key,
+   no signup, no auth. Pocket Casts hosts the MCP for free.*
 
-4. Tell Claude Code about the fetch MCP. Paste this:
-   ```bash
-   claude mcp add fetch -- uvx mcp-server-fetch
-   ```
-   *Reads as: "register an MCP called `fetch`. When you need it, run
-   `uvx mcp-server-fetch`." The first time Claude actually uses it,
-   `uvx` downloads the package on its own. No extra setup ritual.*
-
-5. Launch Claude Code:
+3. Launch Claude Code:
    ```bash
    claude
    ```
 
-6. Tell Claude to fetch the Ted Lasso Wikipedia page. Paste this:
+4. Confirm the MCP is wired up. Type this inside Claude:
    ```
-   Fetch https://en.wikipedia.org/wiki/Ted_Lasso and summarize the
-   show in 3-5 sentences.
+   /mcp
+   ```
+   *You should see `pocketcasts` in the list. If not, see "in case
+   of emergency" below.*
+
+5. Now ask Claude to read this book and recommend podcasts. Paste:
+   ```
+   Fetch https://github.com/brandonrhecker/claude-code-for-humans
+   and use the Pocket Casts MCP to find 5 podcast episodes that
+   would help me keep learning about the topics in this book.
    ```
 
-7. Claude will use the fetch MCP to pull the page, read it, and
-   summarize. You'll see it call the MCP tool, then write the
-   summary.
+6. Watch Claude work:
+   - It uses built-in WebFetch to read the repo.
+   - It pulls out the main topics (Claude Code, AI for non-engineers,
+     learning AI tools, etc.).
+   - It uses the Pocket Casts MCP to search podcasts on those topics.
+   - It returns a list of episodes with titles and where to listen.
 
-8. Exit when you're done:
+7. Exit when you're done:
    ```
    /exit
    ```
 
-> Claude just reached out to the internet and brought back something
-> useful. That's what MCP unlocks across every app you connect it to.
+> You just had Claude combine its built-in web tools with a brand-new
+> MCP connection to deliver something neither could do alone. That's
+> the actual point of MCP.
 
 ---
 
@@ -131,17 +136,21 @@ chapter 04, because why not) and have it summarize.
 
 You did three things:
 
-- **Installed uv**, Python's modern package runner. It can now spin
-  up any Python tool on demand without polluting your system.
-- **Registered the fetch MCP** with Claude Code using `claude mcp
-  add`. Claude Code now knows the bridge exists.
-- **Used it** by asking Claude to fetch a URL. Claude called the
-  MCP server, got the webpage as readable text, and summarized it.
+- **Registered an MCP server** with `claude mcp add`. Claude Code
+  now knows there's a bridge to Pocket Casts' podcast catalog.
+- **Verified it** with `/mcp` inside Claude Code.
+- **Used two tools together** in one prompt: built-in WebFetch (to
+  read the repo) AND the Pocket Casts MCP (to find related episodes).
 
-The pattern for any MCP is the same: install the underlying tool if
-needed, register it with `claude mcp add`, then use natural language.
-You don't have to "invoke" MCPs explicitly the way you invoke skills
-with `/skill-name`. Claude reaches for them when relevant.
+The pattern for any MCP is the same: register it with `claude mcp
+add`, verify with `/mcp`, then use it through natural conversation.
+You don't invoke MCPs with slash commands the way you invoke skills.
+Claude reaches for them when relevant.
+
+The Pocket Casts MCP we picked is unusually frictionless: free, no
+auth, hosted by Pocket Casts themselves. Most MCPs need an API key
+or an account login. That's just the trade. A service that knows
+about your data needs your permission to read it.
 
 ---
 
@@ -149,56 +158,49 @@ with `/skill-name`. Claude reaches for them when relevant.
 
 | Where | What's there |
 |---|---|
-| https://github.com/modelcontextprotocol/servers | Official MCP servers. Includes fetch, time, weather, filesystem, git, memory, and more. |
-| Search GitHub for `awesome-mcp-servers` | Community-maintained lists of MCP servers across many categories. |
+| https://github.com/modelcontextprotocol/servers | Official MCP servers from the protocol team. Fetch, time, weather, filesystem, git, memory, and more. |
+| Search GitHub for `awesome-mcp-servers` | Community-maintained lists across many categories. |
 | https://modelcontextprotocol.io | The official MCP docs. |
 
-When you install a new MCP, it's the same pattern every time:
-install the runtime (if needed) → `claude mcp add` → use it.
+When you install a new MCP, the pattern is the same as today:
+register the server with `claude mcp add`, confirm with `/mcp`, then
+use it.
 
 ---
 
 ## how to remove it (when you're done experimenting)
 
-Two levels.
-
-**Remove just the fetch MCP** (keeps uv installed for next time):
 ```bash
-claude mcp remove fetch
+claude mcp remove pocketcasts
 ```
-*Claude Code forgets the fetch MCP. uv stays on your machine for
-any other MCPs you want to install later.*
+*Claude Code forgets the MCP. Nothing else changes on your machine.
+Pocket Casts itself wasn't installed locally; the MCP just pointed
+at their hosted server.*
 
-**Remove uv too** (full reset):
-```bash
-uv cache clean       # removes any cached MCP packages
-uv self uninstall    # removes uv itself
-```
-*Works on Mac, Windows, and Linux. uv knows where its own files
-live on each OS.*
+That's it. No `/reload` step, no cleanup. Cleaner than plugins.
 
 ---
 
 ## in case of emergency
 
-First time plugging Claude into the outside world has friction. Not
-your fault. Probably one of these.
+Welcome to your first MCP install. Things can go sideways. Probably
+one of these.
 
 | Symptom | What it means | What to do |
 |---|---|---|
-| `uv: command not found` | uv installed but PATH didn't update | Close and reopen the terminal completely. If still broken, re-run the install command. |
-| `claude mcp add` says it can't find `claude` | Same root cause as the install chapter (Claude Code not on PATH) | Close and reopen the terminal. Run `claude --version` to confirm Claude Code itself works. |
-| Claude says it can't reach the URL | The fetch MCP isn't actually wired up | Outside Claude, run `claude mcp list` to see what's registered. If `fetch` isn't there, redo step 4. |
-| Claude fetched the page but the summary is wrong or incomplete | The page is long and fetch truncated it | Ask Claude to "fetch in chunks" or pick a shorter page. |
-| You want to start over | Easy | `claude mcp remove fetch`, then redo step 4. |
+| `claude mcp add` says it can't find `claude` | Claude Code isn't on your PATH | Close and reopen the terminal. Run `claude --version` to confirm. |
+| `/mcp` shows pocketcasts as "failed" or "disconnected" | The HTTP endpoint isn't responding | Try again in a minute. If still down, `claude mcp remove pocketcasts` outside Claude and re-add. |
+| Claude says it can't find any podcasts | Maybe the topic search came up empty | Try a more general topic, or ask Claude to "tell me what topics you extracted from the URL" so you can refine your ask. |
+| Claude lists shows but no specific episodes | Pocket Casts searches by topic then lists recent episodes from matching shows. Sometimes shows don't have recent matches | Ask Claude to "list 3 recent episodes from [show name]" to drill down. |
+| You changed your mind | Easy | `claude mcp remove pocketcasts` and you're back to neutral. |
 
 ---
 
 ## now you can
 
-- Install MCP servers with `claude mcp add`
-- Let Claude reach outside the launch folder to apps and websites
-- List your registered MCPs with `claude mcp list`
+- Register an MCP server with `claude mcp add`
+- Confirm it's working with `/mcp`
+- Use built-in tools and MCPs together in one prompt
 - Remove MCPs cleanly with `claude mcp remove`
 - Know where to find more MCPs when you need them
 
