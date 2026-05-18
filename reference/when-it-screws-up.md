@@ -18,9 +18,9 @@ like this:
 - **Citations that don't exist.** Author names, paper titles, page
   numbers, all fabricated, all rendered with the confident
   formatting of real citations.
-- **Code that imports libraries that aren't real.** The library
-  name sounds plausible. The function signature looks right. It
-  doesn't exist on the package registry.
+- **Made-up tools or commands.** Claude will tell you to install
+  something that doesn't exist, or run a command that isn't real.
+  Sounds correct. Doesn't work.
 - **Quotes attributed to people who never said them.** Often
   rendered with quotation marks and a fake date for extra
   credibility.
@@ -49,8 +49,9 @@ the ones to never trust blindly:
   specific advice.
 - **Citations and sources for anything you'll publish.** Always
   verify.
-- **Code that touches production systems.** Always read it line
-  by line before clicking yes.
+- **Commands Claude wants to run on your computer.** Especially
+  anything that deletes, installs, or moves files. Always read it
+  line by line before clicking yes.
 - **Specific dates, numbers, or named people.** Especially recent
   events.
 - **Anything you'll send to another human as fact.** If you'd be
@@ -92,8 +93,8 @@ defeats the whole "human in the loop" point.
 
 Trust goes up when:
 
-- You can verify the answer cheaply (run the code, search for the
-  quote, check the date)
+- You can verify the answer cheaply (try it and see if it works,
+  search for the quote, check the date)
 - You're using Claude to organize information you already gave it
   (summarize this file, reformat that data)
 - The task has low stakes and you'd catch a mistake easily
@@ -121,7 +122,7 @@ still use what they give you. You don't take any of it as fact
 without checking the things that matter.
 
 That's the whole game. The people who do well with this tool are
-the ones who never forgot to check.
+the ones who never forget to check.
 
 ---
 
