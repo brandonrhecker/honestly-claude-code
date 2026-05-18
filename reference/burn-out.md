@@ -10,8 +10,6 @@ AI is everywhere now, whether you use it or not. Even if you
 never open Claude, the people around you are. The result is a
 kind of tiredness most of us don't have a name for yet.
 
-This piece is about staying yourself in that world.
-
 ---
 
 ## 1. what burnout looks like now
