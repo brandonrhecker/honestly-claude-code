@@ -2,10 +2,9 @@
 
 # Burning out in an automated world
 
-Open your inbox. Most of the emails could've been written by the
-same person. Open LinkedIn. The posts blur into each other. Open
-the latest pitch deck or marketing page your team shared. You've
-seen this template before.
+Open LinkedIn. The posts blur into each other. Open the latest
+pitch deck or marketing page your team shared. You've seen this
+template before.
 
 AI is everywhere now, whether you use it or not. Even if you
 never open Claude, the people around you are. The result is a
