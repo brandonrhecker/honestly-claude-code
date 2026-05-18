@@ -51,6 +51,18 @@ understand what you need along the way.
 You taught him to talk in chapter 04, and the brainstorming skill
 from chapter 05 will kick in. Time to put him to work.
 
+---
+
+One last thing. The part this book can't teach you is the part that
+ends up mattering most: knowing when NOT to use it. When to write
+the email yourself because the relationship is the point. When to
+do the work by hand because the thinking is the point. When to
+close the terminal because you're tired and the next move can wait.
+
+The tool is the tool. You're the one deciding what's worth your
+time. That's the actual skill, and you already had it before you
+opened this book.
+
 That's the book. Go play.
 
 ---
