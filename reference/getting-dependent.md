@@ -2,13 +2,12 @@
 
 # Getting dependent
 
-You go to write a quick email and your hand drifts to open
-Claude. You sit down to start a draft and feel stuck without it.
-The wifi drops for an hour and you don't know what to do with
-yourself.
+You reach for Claude before you've thought about the problem.
+You feel stuck without it. You can't remember how you used to
+start a draft.
 
-If any of that sounds familiar, you're not broken. You're
-noticing something real.
+Congratulations. You're a power user. That's the polite word for
+dependent.
 
 ---
 
