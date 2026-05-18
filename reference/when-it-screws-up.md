@@ -49,8 +49,8 @@ the ones to never trust blindly:
   specific advice.
 - **Citations and sources for anything you'll publish.** Always
   verify.
-- **Code that touches production systems.** Always read the diff
-  before approving.
+- **Code that touches production systems.** Always read it line
+  by line before clicking yes.
 - **Specific dates, numbers, or named people.** Especially recent
   events.
 - **Anything you'll send to another human as fact.** If you'd be
@@ -80,9 +80,10 @@ doesn't matter. The one or two claims your decision actually
 rests on: those, you check. Search for them. Read the actual
 source.
 
-**Read what it wrote.** When Claude proposes a file edit, read
-the diff before approving. When Claude writes you a draft, read
-every sentence. The check is YOU. Approving without reading
+**Read what it wrote.** When Claude proposes a file edit, read it
+line by line before you click yes. Even when half of it might as
+well be in Greek, look anyway. When Claude writes you a draft,
+read every sentence. The check is YOU. Approving without reading
 defeats the whole "human in the loop" point.
 
 ---
