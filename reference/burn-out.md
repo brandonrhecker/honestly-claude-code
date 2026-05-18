@@ -2,12 +2,14 @@
 
 # Burning out in an automated world
 
-AI is on you whether you use it or not. The marketing makes it
-sound like the choice is yours: opt in and get faster, opt out
-and stay you. The actual situation is messier. Even if you never
-open Claude, the people around you are using it. The market is
-using it. Your inbox is full of things it touched. Your feed is
-half-generated. You're living inside it.
+Open your inbox. Most of the emails could've been written by the
+same person. Open LinkedIn. The posts blur into each other. Open
+the latest pitch deck or marketing page your team shared. You've
+seen this template before.
+
+AI is everywhere now, whether you use it or not. Even if you
+never open Claude, the people around you are. The result is a
+kind of tiredness most of us don't have a name for yet.
 
 This piece is about staying yourself in that world.
 
@@ -18,27 +20,30 @@ This piece is about staying yourself in that world.
 Some of it comes from using AI directly. Some of it comes from
 existing near it. Both are real:
 
-- **Constant verification.** You finish a Claude session and your
-  brain has been quietly cross-checking everything it said for an
-  hour. Exhausting in a way that doing the work yourself isn't.
+- **Constant verification.** You finish a Claude session and
+  your brain has been quietly cross-checking everything it said
+  for an hour. Exhausting in a way that doing the work yourself
+  isn't.
 - **Decision fatigue.** Every output is "do I take this, edit
   this, redo this, or scrap it?" Multiplied across a day, it
   compounds.
-- **The dread of falling behind.** You watch peers ship faster
-  and don't know whether you can sustain matching them. Even if
-  you could, you're not sure you want to.
-- **Hollow-content fatigue.** You read more, retain less. Half of
-  what you're skimming has the suspicious smoothness of a
-  machine, and your brain knows it before you do.
-- **Identity drag.** You start wondering whether your voice is
-  still yours. The work might be. The doubt costs energy anyway.
+- **The dread of falling behind.** A coworker writes the report
+  in 20 minutes that used to take you an afternoon. You don't
+  know whether you can sustain matching them. Even if you could,
+  you're not sure you want to.
+- **Hollow-content fatigue.** You scroll past ten LinkedIn posts
+  in a row. None of them stick. They all sound like the same
+  person wrote them, because they kind of did.
+- **Identity drag.** You finish a piece of writing and it
+  doesn't feel like you wrote it. Even when you did. The doubt
+  costs energy.
 - **Always-on availability of help.** When you could solve any
   problem in 30 seconds, you stop letting problems sit. The
-  thinking that happens between question and answer never gets a
-  chance to happen.
+  thinking that happens between question and answer never gets
+  a chance to happen.
 
-These symptoms don't recover the way normal tiredness does. A
-weekend off doesn't reset them. That's the tell.
+These don't recover the way normal tiredness does. A weekend off
+doesn't reset them. That's the tell.
 
 ---
 
@@ -57,9 +62,9 @@ copying each other (and the model copying everyone) until the
 outputs converge. The plain word for it is **the blend**. Either
 way, it's already happening.
 
-People who get pulled into the blend stop standing out. They also
-stop standing for anything. Both costs are real. Neither is on a
-dashboard yet.
+People who get pulled into the blend stop standing out. They
+also stop standing for anything. Both costs are real. Neither is
+on a dashboard yet.
 
 ---
 
@@ -81,53 +86,52 @@ it.** If a paragraph reads like the model could've written it,
 it's already lost. Make it yours again.
 
 **Don't use it when you're tired.** Tired brains can't verify
-output or hold a distinct voice. You'll either approve garbage or
-let the blend take you.
+output or hold a distinct voice. You'll either approve garbage
+or let the blend take you.
 
 **Take credit for your work.** The collaboration is real. The
 output is yours. The model is a tool, not a co-author. The
 identity drag dissolves when you name it.
 
-**Let problems sit again.** Not every question needs an answer in
-90 seconds. Some of your best thinking happens between asking and
-being given the answer, if you let it.
+**Let problems sit again.** Not every question needs an answer
+in 90 seconds. Some of your best thinking happens between
+asking and being given the answer, if you let it.
 
 ---
 
 ## 4. the system part
 
-Some of this isn't on you. If your employer rolled out AI tools
-with a productivity expectation attached, you're feeling a
-squeeze you didn't agree to. If your industry is converging on
-the same AI workflow, you're competing against people running the
-same playbook with the same outputs. Neither situation is in your
-head.
+Some of this isn't on you. If your boss rolled out AI tools
+with a "now you can do more" expectation attached, you're
+feeling a squeeze you didn't agree to. If everyone in your job
+is using the same tools to ship the same things, you're
+competing against people running the same playbook.
 
 A few questions worth asking:
 
-- Has my expected output gone up since AI was introduced? By how
-  much?
+- Has my expected output gone up since AI was introduced? By
+  how much?
 - Am I being measured on AI-assisted volume without my workflow
   being redesigned for it?
 - Is everyone on my team starting to sound the same?
 - Is anyone tracking whether the people on my team are okay?
 
 If the answers point at trouble, you're not paranoid. You're
-early. Write it down. The first people to put words on this stuff
-are the ones who shape the conversation later.
+early. Write it down. The first people to put words on this
+stuff are the ones who shape the conversation later.
 
 ---
 
 ## 5. where this leaves you
 
 The automated world rewards two opposite things at the same
-time: speed (AI handles that) and distinction (only you can). The
-people who do well over the long run aren't the fastest. They're
-the ones who stayed recognizable.
+time. Speed: AI handles that. Distinction: only you can. The
+people who do well over the long run aren't the fastest.
+They're the ones who stayed recognizable.
 
-You don't have to use AI every day. You don't have to use it for
-everything. You're allowed to like it for some things, hate it
-for others, and walk away when you need to.
+You don't have to use AI every day. You don't have to use it
+for everything. You're allowed to like it for some things, hate
+it for others, and walk away when you need to.
 
 The thing that makes you different is the thing that makes you
 valuable. Don't blend in just because everyone else is.
