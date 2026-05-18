@@ -43,7 +43,7 @@ Common questions, answered short:
 - **Will this replace my job?** → [reference/will-it-replace-me.md](reference/will-it-replace-me.md)
 - **Is my data safe?** → [reference/is-my-data-safe.md](reference/is-my-data-safe.md)
 - **What if I get dependent on it?** → [reference/getting-dependent.md](reference/getting-dependent.md)
-- **What it gets wrong (and how to catch it)** → [reference/when-it-fucks-up.md](reference/when-it-fucks-up.md)
+- **What it gets wrong (and how to catch it)** → [reference/when-it-screws-up.md](reference/when-it-screws-up.md)
 - **How to not burn out using AI** → [reference/burn-out.md](reference/burn-out.md)
 
 ---

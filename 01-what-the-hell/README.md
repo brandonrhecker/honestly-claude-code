@@ -87,7 +87,7 @@ The fix isn't to never use it. The fix is to never trust it blindly.
 Especially on facts, names, dates, code, or anything that matters.
 You're the human; you're the check.
 
-→ [reference/when-it-fucks-up.md](../reference/when-it-fucks-up.md)
+→ [reference/when-it-screws-up.md](../reference/when-it-screws-up.md)
 covers this.
 
 ---
