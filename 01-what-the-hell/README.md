@@ -25,6 +25,23 @@ computer in a useful way.
 
 ---
 
+> **about where this book actually lives**
+>
+> The PDF in your hands is a snapshot. The real version of this book
+> lives on the internet, in what engineers call a "repo." If you've
+> heard "git repo" thrown around and felt left out, congrats: it's a
+> folder. Engineers have a special word for folder. That's the whole
+> mystery.
+>
+> By the time you're reading this, the online version has probably
+> gotten newer. That's the deal with snapshots. Yours is fine. The
+> online one is just a little less wrong.
+>
+> Read the latest at github.com/brandonrhecker/honestly-claude-code.
+> No account. No software. Pretend it's just a webpage. It is.
+
+---
+
 ## what it's not
 
 - **Not a chatbot.** A chatbot just talks. This does things: edits
