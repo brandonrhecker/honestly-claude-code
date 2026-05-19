@@ -38,21 +38,23 @@ If that's you, start with [chapter 01](01-what-the-hell/).
 
 ## stuff you should know to fit in
 
-Common questions, answered short:
+Common questions, answered short. Long versions live in chapter 09.
 
-- **Will this replace my job?** → [reference/will-it-replace-me.md](reference/will-it-replace-me.md)
-- **Is my data safe?** → [reference/is-my-data-safe.md](reference/is-my-data-safe.md)
-- **What if I get dependent on it?** → [reference/getting-dependent.md](reference/getting-dependent.md)
-- **What it gets wrong (and how to catch it)** → [reference/when-it-screws-up.md](reference/when-it-screws-up.md)
-- **How to not burn out using AI** → [reference/burn-out.md](reference/burn-out.md)
+- **Will this replace my job?** → [Will it replace me?](09-questions-you-came-here-with/README.md#will-it-replace-me)
+- **Is my data safe?** → [Is my data safe?](09-questions-you-came-here-with/README.md#is-my-data-safe)
+- **What if I get dependent on it?** → [Getting dependent](09-questions-you-came-here-with/README.md#getting-dependent)
+- **What it gets wrong (and how to catch it)** → [When it screws up](09-questions-you-came-here-with/README.md#when-it-screws-up)
+- **How to not burn out using AI** → [Burning out in an automated world](09-questions-you-came-here-with/README.md#burning-out-in-an-automated-world)
 
 ---
 
 ## the actual book starts here
 
-Seven chapters, in order. By the end you'll have Claude installed,
-a project it knows about, a custom skill, a hook into another app,
-and a sense of where to go next. Split the chapters however you want.
+Nine chapters, in order. By the end of chapter 07 you'll have Claude
+installed, a project it knows about, a custom skill, a hook into
+another app, and a sense of where to go next. Chapter 08 covers
+uninstalling. Chapter 09 has the honest answers to the fears you
+walked in with. Split them however you want.
 
 | # | Chapter |
 |---|---|
@@ -63,17 +65,17 @@ and a sense of where to go next. Split the chapters however you want.
 | 05 | [Bolt on a skill](05-bolt-on-a-skill/) |
 | 06 | [Plug it into your other apps](06-plug-it-in/) |
 | 07 | [You made it. Now what.](07-you-made-it/) |
+| 08 | [Pull the plug](08-pull-the-plug/) |
+| 09 | [The questions you came here with](09-questions-you-came-here-with/) |
 
 ---
 
-## stuff for later when you're bored
+## quick reference
 
-These exist for when you need them. They're not part of the walkthrough.
-
-| Folder | What's in it |
+| File | What's in it |
 |---|---|
-| `reference/` | Cheat sheets, glossary, daily commands, versions |
+| [Cheat sheet](reference/cheat-sheet.md) | Commands at a glance |
 
 ---
 
-**Last verified: 2026-05-16 with Claude Code 2.1.138**
+**Last verified: 2026-05-19 with Claude Code 2.1.138**

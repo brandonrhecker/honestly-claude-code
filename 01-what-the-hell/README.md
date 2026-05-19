@@ -61,7 +61,7 @@ What works best: learn enough to know what it's good at and what it
 isn't, then use it where it actually helps. Ignore the hype where it
 doesn't.
 
-→ [reference/will-it-replace-me.md](../reference/will-it-replace-me.md)
+→ [Chapter 09: *Will it replace me?*](../09-questions-you-came-here-with/README.md#will-it-replace-me)
 has more.
 
 ---
@@ -73,7 +73,7 @@ processed. Files Claude reads stay on YOUR computer unless you
 explicitly ask it to share them somewhere. By default it can't access
 the internet.
 
-→ [reference/is-my-data-safe.md](../reference/is-my-data-safe.md) is
+→ [Chapter 09: *Is my data safe?*](../09-questions-you-came-here-with/README.md#is-my-data-safe) is
 the longer version.
 
 ---
@@ -87,7 +87,7 @@ The fix isn't to never use it. The fix is to never trust it blindly.
 Especially on facts, names, dates, code, or anything that matters.
 You're the human; you're the check.
 
-→ [reference/when-it-screws-up.md](../reference/when-it-screws-up.md)
+→ [Chapter 09: *When it screws up*](../09-questions-you-came-here-with/README.md#when-it-screws-up)
 covers this.
 
 ---
@@ -101,7 +101,7 @@ you'll feel dumb. That's normal.
 If you start to feel burned out, stop. Use it less. Letting a tool
 run you is the same trap as the old job, just with a new tool.
 
-→ [reference/burn-out.md](../reference/burn-out.md) is more on this.
+→ [Chapter 09: *Burning out in an automated world*](../09-questions-you-came-here-with/README.md#burning-out-in-an-automated-world) is more on this.
 
 ---
 
