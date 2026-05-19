@@ -78,19 +78,4 @@ These exist for when you need them. They're not part of the walkthrough.
 
 ---
 
-## a note on the rebuild
-
-This repo is being rewritten as a book for humans, not as personal notes.
-The previous version (the personal knowledge-base form) is still
-available at the `v1-original` git tag if you want to see it:
-
-```bash
-git checkout v1-original
-```
-
-Chapter folders will appear here as the rewrite ships, one chapter
-per commit.
-
----
-
 **Last verified: 2026-05-16 with Claude Code 2.1.138**
