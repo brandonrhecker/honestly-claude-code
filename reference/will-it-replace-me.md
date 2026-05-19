@@ -3,9 +3,10 @@
 # Will it replace me?
 
 The honest answer doesn't fit in a sentence, which is why every
-short version you've seen is junk. The doomers say yes, you're
-cooked. The consultants say no, but only if you "embrace
-transformation." Neither of them knows your specific situation.
+short version you've seen is junk. The doomers say the end times
+are here. The consultants say you'll be fine, but only if you
+"embrace transformation." Neither of them knows your specific
+situation.
 
 ---
 
