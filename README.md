@@ -73,8 +73,6 @@ These exist for when you need them. They're not part of the walkthrough.
 | Folder | What's in it |
 |---|---|
 | `reference/` | Cheat sheets, glossary, daily commands, versions |
-| `concepts/` | Shit to remember (deeper explanations for when you want them) |
-| `best-practices/` | How to not make a mess of your setup |
 
 ---
 
