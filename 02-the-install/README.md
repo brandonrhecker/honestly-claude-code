@@ -12,6 +12,22 @@ you type `claude` into a terminal and the AI answers.
 You need a computer (Mac, Windows, or Linux), internet, and an
 Anthropic account with a paid plan.
 
+### will my crappy old laptop handle this?
+
+Probably, yes. Claude Code is a terminal app. The thinking happens
+on Anthropic's servers, not your computer. Your machine is just
+the keyboard and screen.
+
+Realistic bar:
+
+- A computer made in the last 8 years or so
+- Mac, Windows 10/11, or any current Linux
+- ~2 GB of free disk space (for Node + Claude Code)
+- A real internet connection (this is the bottleneck, not your CPU)
+
+If your laptop can run Chrome with a few tabs open without
+crying, it can run Claude Code.
+
 ### what it actually costs
 
 Anthropic gives you a few options. The honest breakdown:
@@ -46,6 +62,25 @@ If you have a free account, jump to step 4 to upgrade.
 5. Pick **Pro**. Add a credit card.
 6. Done. The same account works for both the claude.ai chat website
    AND the Claude Code tool you're about to install.
+
+### what can Claude see on my machine?
+
+Fair question. Short version: only the folder you launch it from.
+
+When you type `claude` inside, say, `~/my-novel/`, that folder and
+its subfolders are Claude's whole world for that session. It can
+read those files, edit them, and run shell commands inside.
+
+It cannot:
+
+- See your other folders (tax returns, family photos, the
+  cringe doc from 2014)
+- Touch other apps on your machine
+- Rummage through your hard drive on its own
+
+Chapter 09 has the longer version: what goes to Anthropic when you
+chat, what stays on your computer, and the stuff you should still
+think twice about pasting.
 
 ---
 
