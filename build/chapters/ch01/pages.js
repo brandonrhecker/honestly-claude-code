@@ -1,13 +1,30 @@
 /*
  * Chapter 01 — "So what the hell is Claude Code"
- * Renders 11 pages: cover, what-it-is, repo tangent, what-it's-not,
- * why-bother, 4 fear pages, recap, bridge-to-ch02.
+ *
+ * 11 pages total. Order matches the exports in renderPages() at the bottom:
+ *   1. Chapter opener (cover)
+ *   2. Concept: What it actually is
+ *   3. Tangent: The repo (skippable, lavender wash)
+ *   4. Concept: What it's not
+ *   5. Concept: Why anyone bothers
+ *   6-9. Four "fear" pages (replace-me / data / makes-shit-up / burnout)
+ *   10. Recap (chapter-on-one-page)
+ *   11. Bridge to chapter 02
+ *
+ * Voice and lexicon rules: see /CLAUDE.md and feedback_brandon_banned_lexicon
+ * memory. Zero em dashes anywhere. Design tokens + class catalog: /DESIGN.md.
  */
 
 import { rail, railDone, footer, fearPage } from '../../shared/components.js';
 
 export const chapterTitle = 'Honestly, Claude Code, ch.01';
 
+/**
+ * Page 1 — Chapter opener (cover). The hero page.
+ * Layout: watercolor wash, "01" number, title with handwritten orange
+ * underline, "you are here" annotation, sticker illustration, KPI row
+ * (Difficulty / Time / Value), two dark knowledge panels with emoji badges.
+ */
 function pageChapterOpener() {
   return `
     <section class="page">
@@ -100,6 +117,11 @@ function pageChapterOpener() {
   `;
 }
 
+/**
+ * Page 2 — "What it actually is"
+ * Body page with marginalia. Defines terminal + Anthropic in the sidebar.
+ * Lavender "Plain English" card for the term "terminal".
+ */
 function pageConceptWhatItIs() {
   return `
     <section class="page">
@@ -146,6 +168,12 @@ function pageConceptWhatItIs() {
   `;
 }
 
+/**
+ * Page 3 — Tangent: "About where this book actually lives"
+ * Skippable explainer about the GitHub repo. Lavender rail wash signals
+ * the tangent character. Includes the "curious-leaner" sticker and a
+ * QR-code card pointing to the repo URL.
+ */
 function pageTangentRepo() {
   return `
     <section class="page">
@@ -194,6 +222,12 @@ function pageTangentRepo() {
   `;
 }
 
+/**
+ * Page 4 — "What it's not"
+ * 2x2 grid of "not X" cards with small orange × badges. Each card flags
+ * an assumption to drop (not a chatbot / not autonomous / not for engineers
+ * only / not magic).
+ */
 function pageWhatItsNot() {
   return `
     <section class="page">
@@ -239,6 +273,11 @@ function pageWhatItsNot() {
   `;
 }
 
+/**
+ * Page 5 — "Why anyone bothers"
+ * Body page with marginalia + orange one-liner card. The marginalia gives
+ * concrete examples with chapter cross-references.
+ */
 function pageWhyBother() {
   return `
     <section class="page">
@@ -283,6 +322,7 @@ function pageWhyBother() {
   `;
 }
 
+/** Page 6 — Fear #1: "Am I going to lose my job?" Uses fearPage() template. */
 function pageFearReplace() {
   return fearPage({
     pageNum: 6,
@@ -303,6 +343,7 @@ function pageFearReplace() {
   });
 }
 
+/** Page 7 — Fear #2: "Is my data safe?" Uses fearPage() template. */
 function pageFearData() {
   return fearPage({
     pageNum: 7,
@@ -321,6 +362,7 @@ function pageFearData() {
   });
 }
 
+/** Page 8 — Fear #3: "What if it just makes shit up?" Uses fearPage() template. */
 function pageFearLies() {
   return fearPage({
     pageNum: 8,
@@ -341,6 +383,7 @@ function pageFearLies() {
   });
 }
 
+/** Page 9 — Fear #4: "About burnout." Uses fearPage() template. */
 function pageFearBurnout() {
   return fearPage({
     pageNum: 9,
@@ -359,6 +402,11 @@ function pageFearBurnout() {
   });
 }
 
+/**
+ * Page 10 — Recap. "The whole chapter, on one page."
+ * railDone() with a ✓ on the final dot. 2×3 grid of numbered takeaways.
+ * Lavender "one thing to remember" card + QR placeholder.
+ */
 function pageRecap() {
   return `
     <section class="page">
@@ -426,6 +474,12 @@ function pageRecap() {
   `;
 }
 
+/**
+ * Page 11 — Bridge to chapter 2. "You finished · Chapter 1."
+ * Progress bar (1/9), big up-next card with "02" + chapter 2 title +
+ * zen-arm-up sticker in a circular emblem. Brandon's signature at the
+ * bottom: "honestly, brandon. still not an algorithm".
+ */
 function pageNext() {
   return `
     <section class="page">

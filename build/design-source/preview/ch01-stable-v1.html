@@ -1,0 +1,1382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Honestly, Claude Code, ch.01</title>
+<link rel="stylesheet" href="../../assets/fonts.css" />
+<style>
+/*
+ * Honestly, Claude Code - book styles
+ * Ported from build/design-source/honestly-claude-code-design/Template.html
+ * Page size: 6 x 8 in. Print-color-adjust forced on.
+ */
+
+:root {
+  --paper:       #faf4ef;
+  --paper-deep:  #ece2d0;
+  --ink:         #1f1d1a;
+  --ink-soft:    #4a4540;
+  --ink-mute:    #7a7268;
+  --rule:        #d8cdb8;
+
+  --orange:      #d96033;
+  --orange-deep: #b94c25;
+  --orange-soft: #f0b59b;
+  --navy:        #3a5466;
+  --navy-deep:   #283a48;
+  --lav:         #c5b8c9;
+  --lav-soft:    #ddd2dc;
+
+  --code-bg:     #1f1d1a;
+  --code-bg-2:   #2a2724;
+  --code-fg:     #efe7d7;
+  --code-mute:   #8b837a;
+
+  --page-w: 6in;
+  --page-h: 8in;
+}
+
+*, *::before, *::after {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+  color-adjust: exact !important;
+  box-sizing: border-box;
+}
+html, body { margin: 0; padding: 0; background: #fff; color: var(--ink); }
+body {
+  font-family: 'Source Sans 3', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 11pt;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============ PAGE SHELL ============ */
+.page {
+  width: var(--page-w);
+  height: var(--page-h);
+  background: var(--paper);
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(217,96,51,0.04), transparent 40%),
+    radial-gradient(circle at 88% 92%, rgba(58,84,102,0.04), transparent 45%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.48  0 0 0 0 0.38  0 0 0 0.08 0'/></filter><rect width='220' height='220' filter='url(%23n)'/></svg>");
+  background-blend-mode: multiply, multiply, multiply;
+  position: relative;
+  overflow: hidden;
+  color: var(--ink);
+  isolation: isolate;
+  page-break-after: always;
+  break-after: page;
+}
+.page:last-of-type { page-break-after: auto; break-after: auto; }
+.page::after {
+  content: "";
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 50% 100%, transparent 70%, rgba(70,55,35,.10) 100%),
+    radial-gradient(ellipse at 50% 0%, transparent 75%, rgba(70,55,35,.07) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.page-num {
+  position: absolute; left: 0; bottom: 0;
+  width: .42in; height: .32in;
+  background: var(--orange);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Archivo', sans-serif; font-weight: 800;
+  font-size: 11.5pt;
+  z-index: 4;
+}
+.footer-bar {
+  position: absolute; left: .42in; right: 0; bottom: 0;
+  height: .32in;
+  background: var(--orange);
+  color: #fff;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 .22in 0 .18in;
+  font-family: 'Archivo', sans-serif;
+  font-size: 7.2pt; letter-spacing: .18em; font-weight: 700;
+  z-index: 4;
+}
+.footer-bar .crumb {
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .01em; font-weight: 500; text-transform: none;
+  font-size: 6pt; opacity: .95;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  max-width: 4.4in;
+}
+.footer-bar .crumb b { color: #fff; }
+.footer-bar .sep { opacity: .5; margin: 0 .12in; }
+
+/* ============ STEP RAIL ============ */
+.rail-wrap {
+  position: absolute; top: 0; left: 0; right: 0;
+  height: .78in;
+  z-index: 3;
+  overflow: hidden;
+}
+.rail-wash {
+  position: absolute; inset: 0;
+  background: radial-gradient(110% 80% at 50% 30%, var(--orange) 0%, var(--orange) 55%, transparent 70%);
+  opacity: .95;
+  filter: url(#torn);
+}
+.rail-wash.lav  { background: radial-gradient(110% 80% at 50% 30%, var(--lav)  0%, var(--lav)  55%, transparent 70%); }
+.rail-wash.navy { background: radial-gradient(110% 80% at 50% 30%, var(--navy) 0%, var(--navy) 55%, transparent 70%); }
+.rail-wash::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.35 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay; opacity: .5;
+}
+.rail {
+  position: absolute; left: 0; right: 0; top: 50%;
+  transform: translateY(-50%);
+  display: flex; align-items: center; justify-content: center;
+  gap: 0;
+  padding: 0 .35in;
+  z-index: 2;
+}
+.rail .dot {
+  width: .28in; height: .28in;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.8px solid #fff;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 8.5pt;
+  position: relative; flex: 0 0 auto;
+}
+.rail .dot.now {
+  background: #fff; color: var(--orange);
+  transform: scale(1.18);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.25);
+}
+.rail .seg {
+  flex: 1 1 auto;
+  height: 1.5px;
+  background: repeating-linear-gradient(to right, rgba(255,255,255,.85) 0 4px, transparent 4px 7px);
+  max-width: .32in;
+}
+
+/* ============ TYPOGRAPHY ============ */
+.eyebrow {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700; letter-spacing: .18em;
+  font-size: 8.5pt;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.eyebrow .dot-sep { color: var(--orange); margin: 0 .07em; font-weight: 900; }
+
+.ch-num {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 900;
+  color: var(--orange);
+  font-size: 84pt;
+  line-height: .85;
+  letter-spacing: -.04em;
+  margin: .05in 0 .08in -.04in;
+}
+.ch-title {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 34pt;
+  line-height: .95;
+  letter-spacing: -.005em;
+}
+
+.section-h {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 18pt;
+  letter-spacing: -.01em;
+  line-height: 1.05;
+  color: var(--ink);
+}
+.section-script {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  font-size: 22pt;
+  line-height: 1;
+  color: var(--orange);
+}
+
+.lede {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11.5pt;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.body p { margin: 0 0 .12in 0; }
+.body p:last-child { margin-bottom: 0; }
+.body strong { color: var(--ink); font-weight: 700; }
+.body em { font-style: italic; }
+
+.small { font-size: 8.5pt; }
+.mono  { font-family: 'JetBrains Mono', monospace; }
+
+/* ============ LEARN / BUILD CARDS ============ */
+.lb-grid {
+  position: absolute; left: .42in; right: .42in; bottom: .5in;
+  display: grid; grid-template-columns: 1fr 1fr; gap: .22in;
+  z-index: 2;
+}
+.lb {
+  background: var(--code-bg);
+  border-radius: 14px;
+  padding: .5in .22in .18in;
+  color: #fff;
+  position: relative;
+  min-height: 3.0in;
+  box-shadow: 0 6px 0 -4px rgba(0,0,0,.25);
+}
+.lb .lb-badge {
+  position: absolute; top: -.32in; left: 50%; transform: translateX(-50%);
+  width: .86in; height: .86in;
+  background: var(--orange);
+  border: 5px solid var(--paper);
+  border-radius: 50%;
+  color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 0 rgba(0,0,0,.10);
+}
+.lb.b .lb-badge { background: var(--navy); }
+.lb .lb-badge .ico  {
+  font-size: 22pt; line-height: 1;
+  font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+}
+.lb .lb-badge .num  { font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 18pt; line-height: .9; }
+.lb .lb-badge .unit { font-family: 'Source Sans 3', sans-serif; font-size: 7.5pt; opacity: .92; margin-top: 1px; }
+.lb h4 {
+  margin: .05in 0 .1in;
+  text-align: center;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 500;
+  font-size: 11.5pt;
+  color: #fff;
+  padding-bottom: .1in;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+}
+.lb ol, .lb ul { margin: .18in 0 0 .04in; padding: 0; list-style: none; }
+.lb li {
+  display: flex; gap: .14in; align-items: center;
+  margin: 0 0 .1in;
+  font-size: 10.5pt;
+}
+.lb .chk {
+  width: 14px; height: 14px; flex: 0 0 14px;
+  border: 1.5px solid var(--orange);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--orange);
+  font-size: 10pt; line-height: 1;
+}
+.lb .num-step {
+  width: 14px; flex: 0 0 14px;
+  color: var(--orange); font-weight: 800; font-family: 'Archivo', sans-serif;
+  text-align: center;
+}
+
+/* ============ ILLUS PLACEHOLDER ============ */
+.illus {
+  background:
+    repeating-linear-gradient(135deg, var(--paper-deep) 0 8px, transparent 8px 16px),
+    var(--paper);
+  border: 1px dashed rgba(58,84,102,.4);
+  border-radius: 8px;
+  color: var(--ink-mute);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8pt;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: .12in;
+  line-height: 1.4;
+}
+
+/* ============ METRIC SIGNIFIERS ============ */
+.metrics-section {
+  display: flex; flex-direction: column;
+  align-items: center;
+  gap: .06in;
+  width: 100%;
+}
+.metrics-section .umbrella {
+  font-family: 'Caveat', cursive; font-size: 13pt; font-weight: 600;
+  color: var(--ink);
+  line-height: 1.05;
+  text-align: center;
+  white-space: nowrap;
+  transform: rotate(-.6deg);
+}
+.metrics-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .08in;
+  width: 100%;
+  align-items: start;
+}
+.metric-mini {
+  display: flex; flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: .02in;
+}
+.metric-mini .mini-illus {
+  width: .45in; height: .45in;
+  display: flex; align-items: center; justify-content: center;
+}
+.metric-mini .mini-illus svg,
+.metric-mini .mini-illus img {
+  width: 100%; height: 100%; display: block; overflow: visible;
+  object-fit: contain;
+}
+.metric-mini .mini-illus img.difficulty-icon {
+  width: 82%; height: 82%; margin: auto;
+}
+.metric-mini .mini-lbl {
+  font-family: 'Archivo', sans-serif; font-weight: 600; letter-spacing: .04em;
+  font-size: 7pt; color: var(--ink);
+  margin-top: .02in;
+}
+.metric-mini .mini-val {
+  font-family: 'Caveat', cursive; font-weight: 700; font-size: 13pt;
+  line-height: 1;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 1px;
+}
+.metric-mini.easy  .mini-val { color: #7fb068; }
+.metric-mini.med   .mini-val { color: #5a92cf; }
+.metric-mini.high  .mini-val { color: #7fb068; }
+.metric-mini.time  .mini-val { color: #5a92cf; }
+.metric-mini.hard  .mini-val { color: #d96033; }
+
+/* ============ MARGINALIA COLUMN ============ */
+.body-wrap {
+  position: absolute;
+  top: .95in; left: .42in; right: .42in; bottom: .7in;
+  display: grid;
+  grid-template-columns: 1fr 1.5in;
+  gap: .22in;
+  z-index: 2;
+}
+.marg {
+  border-left: 1.5px solid var(--orange);
+  padding: 0 0 0 .14in;
+  font-size: 8.5pt;
+  color: var(--ink-soft);
+  line-height: 1.4;
+}
+.marg .marg-block { margin-bottom: .18in; }
+.marg .marg-block:last-child { margin-bottom: 0; }
+.marg .marg-lbl {
+  font-family: 'Archivo', sans-serif; font-weight: 700; letter-spacing: .16em;
+  font-size: 6.8pt; color: var(--orange); text-transform: uppercase;
+  display: flex; align-items: center; gap: .08in; margin-bottom: .05in;
+}
+.marg .marg-lbl .ico { font-size: 9pt; }
+.marg .marg-lbl.navy { color: var(--navy); }
+.marg .marg-term {
+  font-family: 'JetBrains Mono', monospace; font-size: 8pt;
+  color: var(--ink); font-weight: 500;
+}
+.marg .xref {
+  font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 7.5pt;
+  color: var(--navy); letter-spacing: .05em;
+}
+.marg .xref b { color: var(--orange); }
+
+/* ============ CALLOUT CARDS ============ */
+.card {
+  background: var(--paper-deep);
+  border-radius: 10px;
+  padding: .18in .2in;
+}
+.card-title {
+  font-family: 'Archivo', sans-serif; font-weight: 800;
+  font-size: 10pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--navy);
+  display: flex; align-items: center; gap: .08in;
+  margin-bottom: .1in;
+}
+.card-title .ico {
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--navy); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 9pt; font-weight: 900;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ============ WIN / CELEBRATION ============ */
+.win-burst {
+  position: absolute; inset: 0;
+  background: radial-gradient(60% 50% at 50% 45%, var(--orange) 0%, var(--orange) 45%, transparent 70%);
+  z-index: 1;
+}
+.win-burst::before, .win-burst::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.3 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay; opacity: .55;
+}
+.rays {
+  position: absolute; inset: 0; z-index: 2; pointer-events: none;
+  background:
+    conic-gradient(from 0deg at 50% 45%,
+      transparent 0 4deg, rgba(255,255,255,.35) 4deg 4.4deg, transparent 4.4deg 22deg,
+      transparent 22deg 30deg, rgba(255,255,255,.25) 30deg 30.5deg, transparent 30.5deg 50deg,
+      transparent 50deg 60deg, rgba(255,255,255,.3) 60deg 60.5deg, transparent 60.5deg 80deg,
+      transparent 80deg 92deg, rgba(255,255,255,.25) 92deg 92.4deg, transparent 92.4deg 120deg,
+      transparent 120deg 130deg, rgba(255,255,255,.3) 130deg 130.5deg, transparent 130.5deg 158deg,
+      transparent 158deg 170deg, rgba(255,255,255,.25) 170deg 170.5deg, transparent 170.5deg 200deg,
+      transparent 200deg 215deg, rgba(255,255,255,.3) 215deg 215.5deg, transparent 215.5deg 240deg,
+      transparent 240deg 252deg, rgba(255,255,255,.25) 252deg 252.5deg, transparent 252.5deg 280deg,
+      transparent 280deg 295deg, rgba(255,255,255,.3) 295deg 295.5deg, transparent 295.5deg 320deg,
+      transparent 320deg 335deg, rgba(255,255,255,.25) 335deg 335.5deg, transparent 335.5deg 360deg);
+  mask: radial-gradient(circle at 50% 45%, transparent 1.1in, #000 1.15in, #000 2.4in, transparent 2.6in);
+  -webkit-mask: radial-gradient(circle at 50% 45%, transparent 1.1in, #000 1.15in, #000 2.4in, transparent 2.6in);
+}
+
+/* ============ RECAP & NEXT ============ */
+.recap-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: .18in;
+}
+.recap-item {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: .14in .14in .14in .42in;
+  position: relative;
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+  line-height: 1.4;
+  min-height: .78in;
+}
+.recap-item .n {
+  position: absolute; left: .12in; top: .13in;
+  width: .24in; height: .24in;
+  background: var(--orange); color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Archivo', sans-serif; font-weight: 800; font-size: 9pt;
+}
+.recap-item b {
+  color: var(--ink); display: block;
+  font-family: 'Archivo', sans-serif; font-weight: 700; font-size: 9.5pt;
+  margin-bottom: .04in;
+}
+
+/* QR placeholder */
+.qr {
+  width: .9in; height: .9in;
+  background:
+    conic-gradient(from 0deg at 50% 50%, var(--ink) 0 25%, transparent 25% 50%, var(--ink) 50% 75%, transparent 75% 100%),
+    var(--paper);
+  background-size: 8px 8px, 100% 100%;
+  border: .06in solid #fff;
+  box-shadow: 0 0 0 1px var(--rule);
+  position: relative;
+}
+.qr::before, .qr::after {
+  content: ""; position: absolute;
+  width: .22in; height: .22in;
+  border: .04in solid var(--ink);
+  background: #fff;
+}
+.qr::before { top: .04in; left:  .04in; }
+.qr::after  { top: .04in; right: .04in; }
+.qr .br {
+  position: absolute; bottom: .04in; left: .04in;
+  width: .22in; height: .22in;
+  border: .04in solid var(--ink); background: #fff;
+}
+
+/* watercolor brush stroke */
+.wash {
+  position: absolute; z-index: 1;
+  border-radius: 50%;
+  filter: blur(.5px);
+  mix-blend-mode: multiply;
+  opacity: .85;
+}
+.wash.lav      { background: radial-gradient(closest-side, var(--lav)         30%, transparent 75%); }
+.wash.org      { background: radial-gradient(closest-side, var(--orange-soft) 35%, transparent 78%); }
+.wash.org-deep { background: radial-gradient(closest-side, var(--orange)      35%, transparent 78%); }
+.wash.navy     { background: radial-gradient(closest-side, var(--navy)        30%, transparent 78%); }
+
+/* underline stroke */
+.stroke-under { display: inline-block; position: relative; }
+.stroke-under::after {
+  content: ""; position: absolute; left: -2%; right: -2%; bottom: -.1em; height: .18em;
+  background: var(--orange); border-radius: 50%;
+  transform: skewX(-12deg) scaleY(.7);
+  opacity: .95;
+}
+
+/* tiny icons */
+.ico-circle {
+  width: .34in; height: .34in; border-radius: 50%;
+  background: var(--orange); color: #fff;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 800; font-family: 'Archivo', sans-serif;
+  font-size: 11pt;
+}
+.ico-circle.navy { background: var(--navy); }
+.ico-circle.lav  { background: var(--lav); color: var(--navy); }
+
+/* doodles + stickies */
+.doodle {
+  font-family: 'Caveat', cursive;
+  color: var(--ink-soft);
+  font-weight: 500;
+  line-height: 1;
+  display: inline-flex; align-items: center; gap: .04in;
+}
+.doodle.orange { color: var(--orange); }
+.doodle.navy   { color: var(--navy); }
+.arrow {
+  display: inline-block;
+  width: .55in; height: .28in;
+  vertical-align: middle;
+}
+.sticky {
+  position: absolute;
+  background: #fff7d6;
+  padding: .08in .12in;
+  border-radius: 2px;
+  font-family: 'Caveat', cursive;
+  font-size: 11.5pt;
+  color: var(--ink);
+  line-height: 1.1;
+  box-shadow:
+    2px 3px 0 -1px rgba(0,0,0,.08),
+    0 .04in 0 -.02in rgba(217,96,51,.18);
+  transform: rotate(-3deg);
+  z-index: 6;
+  max-width: 1.7in;
+}
+.sticky.tilt-r { transform: rotate(2.5deg); }
+.sticky::before {
+  content: ""; position: absolute; left: 50%; top: -.04in;
+  width: .5in; height: .08in; background: rgba(217,96,51,.35);
+  transform: translateX(-50%) rotate(-2deg);
+  border-radius: 1px;
+}
+.sticky b {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800; font-size: 7.5pt; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--orange);
+  display: block; line-height: 1; margin-bottom: .04in;
+}
+
+.annot {
+  font-family: 'Caveat', cursive;
+  font-size: 13pt;
+  color: var(--orange);
+  line-height: 1;
+}
+.annot.ink { color: var(--ink-soft); }
+
+/* ============ NOT-THIS LIST (for "what it's not") ============ */
+.notlist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .18in;
+  margin-top: .12in;
+}
+.not-item {
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: .16in .16in .16in .42in;
+  position: relative;
+  min-height: 1.1in;
+}
+.not-item .x {
+  position: absolute; left: .16in; top: .18in;
+  width: .2in; height: .2in;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Archivo', sans-serif; font-weight: 900;
+  font-size: 9pt; line-height: 1;
+}
+.not-item .lbl {
+  font-family: 'Archivo', sans-serif; font-weight: 800;
+  font-size: 9.5pt; letter-spacing: .04em;
+  color: var(--ink);
+  margin-bottom: .04in;
+}
+.not-item .desc {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9.5pt;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+
+/* ============ FEAR-CALLOUT MODULE ============ */
+.fear {
+  position: absolute;
+  left: .42in; right: .42in;
+  top: 1in; bottom: .7in;
+  z-index: 2;
+  display: flex; flex-direction: column;
+}
+.fear .fear-eyebrow {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 800;
+  font-size: 8.5pt;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--orange);
+  display: flex; align-items: center; gap: .1in;
+}
+.fear .fear-eyebrow::before {
+  content: ""; width: .22in; height: 2px; background: var(--orange);
+}
+.fear .fear-q {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 32pt;
+  line-height: 1;
+  margin: .16in 0 .4in;
+  max-width: 4.6in;
+}
+.fear .fear-q em {
+  color: var(--orange);
+  font-style: normal;
+  position: relative;
+  display: inline-block;
+}
+.fear .fear-q em::after {
+  content: ""; position: absolute; left: -2%; right: -2%; bottom: -.06em; height: .14em;
+  background: var(--orange); border-radius: 50%;
+  transform: skewX(-12deg) scaleY(.65);
+  opacity: .55;
+}
+.fear .fear-body {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 4.6in;
+}
+.fear .fear-body p { margin: 0 0 .12in; }
+.fear .fear-body p:last-child { margin-bottom: 0; }
+.fear .fear-body strong { color: var(--ink); font-weight: 700; }
+
+.fear .fear-tldr {
+  margin-top: .2in;
+  background: var(--paper-deep);
+  border-left: 3px solid var(--orange);
+  padding: .12in .16in;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 9.5pt;
+  line-height: 1.45;
+  color: var(--ink);
+  border-radius: 0 6px 6px 0;
+  max-width: 4.6in;
+}
+.fear .fear-tldr b {
+  font-family: 'Archivo', sans-serif; font-weight: 800;
+  font-size: 7.5pt; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--orange); display: block; margin-bottom: .04in;
+}
+
+.fear .fear-xref {
+  margin-top: auto;
+  align-self: stretch;
+  background: var(--orange);
+  color: #fff;
+  border-radius: 10px;
+  padding: .14in .18in;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: .18in;
+  box-shadow: 0 8px 0 -6px rgba(0,0,0,.25);
+}
+.fear .fear-xref .x-text { flex: 1 1 auto; min-width: 0; }
+.fear .fear-xref .x-lbl {
+  font-family: 'Archivo', sans-serif; font-weight: 800;
+  font-size: 7.5pt; letter-spacing: .18em; text-transform: uppercase;
+  opacity: .9;
+}
+.fear .fear-xref .x-title {
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 11pt;
+  line-height: 1.2;
+  margin-top: .03in;
+}
+.fear .fear-xref .x-title em { font-style: italic; color: #fff; opacity: .95; }
+.fear .fear-xref .x-arrow {
+  font-family: 'Caveat', cursive;
+  font-size: 26pt;
+  line-height: .9;
+  margin-left: auto;
+  white-space: nowrap;
+  flex: 0 0 auto;
+}
+
+/* Title page block */
+.title-block {
+  position: absolute;
+  left: .42in; right: .42in;
+  top: 1.05in;
+  z-index: 2;
+}
+.intro-body {
+  position: absolute;
+  left: .42in; right: .42in;
+  top: 4.5in;
+  bottom: .85in;
+  z-index: 2;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 11pt;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.intro-body p { margin: 0 0 .12in; }
+.intro-body strong { color: var(--ink); font-weight: 700; }
+
+/* ============ PRINT ============ */
+@page { size: 6in 8in; margin: 0; }
+@media print {
+  html, body { background: #fff !important; padding: 0 !important; margin: 0 !important; }
+  .page { box-shadow: none !important; margin: 0 !important; }
+}
+
+</style>
+</head>
+<body>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <filter id="torn">
+          <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="2" seed="3" />
+          <feDisplacementMap in="SourceGraphic" scale="8" />
+        </filter>
+        <filter id="torn-soft">
+          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5" />
+          <feDisplacementMap in="SourceGraphic" scale="6" />
+        </filter>
+      </defs>
+    </svg>
+  
+
+    <section class="page">
+      <img src="../../assets/watercolor-gray.png" alt=""
+           style="position:absolute; left:-.7in; width:8.2in; top:.6in; height:3.6in; z-index:1; pointer-events:none; mix-blend-mode:multiply; opacity:.92;"/>
+
+      
+    <div class="rail-wrap">
+      <div class="rail-wash"></div>
+      <div class="rail"><div class="dot now">1</div><span class="seg"></span><div class="dot">2</div><span class="seg"></span><div class="dot">3</div><span class="seg"></span><div class="dot">4</div><span class="seg"></span><div class="dot">5</div><span class="seg"></span><div class="dot">6</div><span class="seg"></span><div class="dot">7</div><span class="seg"></span><div class="dot">8</div><span class="seg"></span><div class="dot">9</div></div>
+    </div>
+  
+
+      <div style="position:absolute; left:.42in; right:.42in; top:1.05in; bottom:4.1in; display:grid; grid-template-columns:1fr 1.95in; gap:.18in; z-index:2;">
+        <div style="position:relative;">
+          <div class="eyebrow">CHAPTER 1 <span class="dot-sep">&bull;</span> ORIENTATION</div>
+          <div class="ch-num">01</div>
+          <div class="annot ink" style="position:absolute; left:1.5in; top:.42in; transform:rotate(-5deg); font-size:13pt; white-space:nowrap;">&larr; you are here</div>
+          <div style="display:inline-block;">
+            <div class="ch-title" style="position:relative; white-space:nowrap;">So what the hell<br/>is Claude Code</div>
+            <svg viewBox="0 0 220 14" preserveAspectRatio="none" style="display:block; width:2.6in; height:.18in; margin-top:.04in; margin-left:.05in;" aria-hidden="true">
+              <path d="M 2 8 Q 28 2 60 6 T 130 5 Q 170 3 218 7" stroke="#d96033" stroke-width="6" stroke-linecap="round" fill="none" opacity=".88"/>
+              <path d="M 8 11 Q 50 9 110 10 T 210 11" stroke="#d96033" stroke-width="2" stroke-linecap="round" fill="none" opacity=".55"/>
+            </svg>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:.12in;">
+          <div style="height:1.6in; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+            <img src="../../assets/stickers/panicked-hands-behind-head.png" alt="" style="width:290%; height:290%; object-fit:contain; display:block; position:relative; left:-5px; top:10px;" />
+          </div>
+          <div class="metrics-section" style="margin-top:0;">
+            <div class="umbrella">what you're signing up for</div>
+            <div class="metrics-row">
+              <div class="metric-mini easy">
+                <div class="mini-illus">
+                  <img src="../../assets/difficulty/easy.png" alt="" class="difficulty-icon" />
+                </div>
+                <div class="mini-lbl">Difficulty</div>
+                <div class="mini-val">Easy</div>
+              </div>
+              <div class="metric-mini med">
+                <div class="mini-illus">
+                  <img src="../../assets/time/clock_with_numbers_hands_white_center.svg.svg" alt="" />
+                </div>
+                <div class="mini-lbl">Time</div>
+                <div class="mini-val" style="color:#5a92cf;">5-10 min</div>
+              </div>
+              <div class="metric-mini high">
+                <div class="mini-illus">
+                  <svg viewBox="0 0 70 56" aria-hidden="true">
+                    <path d="M 3 52 L 3 26 Q 3 4 35 4 Q 67 4 67 26 L 67 52 Z" fill="#101010" stroke="#1a1a1a" stroke-width="2"/>
+                    <path d="M 14 36 A 21 21 0 0 1 22 21" stroke="#d96033" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+                    <path d="M 25 18 A 21 21 0 0 1 45 18" stroke="#5a92cf" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+                    <path d="M 48 21 A 21 21 0 0 1 56 36" stroke="#7fb068" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+                    <line x1="35" y1="36" x2="52" y2="23" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
+                    <circle cx="35" cy="36" r="2.6" fill="#1a1a1a" stroke="#666" stroke-width=".8"/>
+                  </svg>
+                </div>
+                <div class="mini-lbl">Value</div>
+                <div class="mini-val">Yes</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lb-grid">
+        <div class="lb">
+          <div class="lb-badge">
+            <div class="ico">&#127891;</div>
+          </div>
+          <h4>You'll know</h4>
+          <ul>
+            <li><span class="chk">&#10003;</span>What it actually is</li>
+            <li><span class="chk">&#10003;</span>What it isn't (and why)</li>
+            <li><span class="chk">&#10003;</span>Why anyone bothers</li>
+          </ul>
+        </div>
+        <div class="lb b">
+          <div class="lb-badge">
+            <div class="ico">&#129488;</div>
+          </div>
+          <h4>Hard questions</h4>
+          <ol>
+            <li><span class="num-step">1</span>Will it replace me?</li>
+            <li><span class="num-step">2</span>Is my data safe?</li>
+            <li><span class="num-step">3</span>What if it makes stuff up?</li>
+            <li><span class="num-step">4</span>Am I going to burn out?</li>
+          </ol>
+        </div>
+      </div>
+
+      
+    <div class="page-num">1</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; SO WHAT THE HELL IS THIS <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01-what-the-hell</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      
+    <div class="rail-wrap">
+      <div class="rail-wash"></div>
+      <div class="rail"><div class="dot now">1</div><span class="seg"></span><div class="dot">2</div><span class="seg"></span><div class="dot">3</div><span class="seg"></span><div class="dot">4</div><span class="seg"></span><div class="dot">5</div><span class="seg"></span><div class="dot">6</div><span class="seg"></span><div class="dot">7</div><span class="seg"></span><div class="dot">8</div><span class="seg"></span><div class="dot">9</div></div>
+    </div>
+  
+      <div class="body-wrap">
+        <div>
+          <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 1 OF 9</div>
+          <div class="section-h" style="margin:.06in 0 .04in;">What it <span class="stroke-under">actually</span> is.</div>
+          <div class="annot ink" style="font-size:13pt; margin:-.04in 0 .4in; transform:rotate(-1deg);">(short version: you type, claude does things.)</div>
+          <div class="body" style="max-width:3.4in;">
+            <p>Claude Code is a thing you type into your computer's terminal. You talk to it. It can <strong>read</strong> your files, <strong>write</strong> new ones, <strong>run</strong> commands, and remember things between sessions.</p>
+            <p>It's not a website. It's not a copilot in your sidebar. It runs in a terminal window. The same place a developer would run code.</p>
+            <p>Underneath, it's <strong>Claude</strong> (the AI made by Anthropic) wired up to your computer in a useful way.</p>
+          </div>
+
+          <div class="card" style="margin-top:.16in; background:var(--lav-soft); border-radius:8px; padding:.12in .16in; max-width:3.4in;">
+            <div class="card-title" style="margin-bottom:.06in;"><span class="ico">i</span>Plain English</div>
+            <div class="small" style="color:var(--ink-soft);">A "<span class="mono" style="background:#fff; padding:1px 5px; border-radius:3px; border:1px solid var(--rule);">terminal</span>" is a text window. You type a sentence, the computer does something. Press <span class="mono" style="background:#fff; padding:1px 5px; border-radius:3px; border:1px solid var(--rule);">Enter</span> to send.</div>
+          </div>
+        </div>
+
+        <div class="marg">
+          <div class="marg-block">
+            <div class="marg-lbl"><span class="ico">&#128214;</span>PLAIN ENGLISH</div>
+            <div><span class="marg-term">terminal</span>: the text window. Also called "console" or "command line." Same thing.</div>
+          </div>
+          <div class="marg-block">
+            <div class="marg-lbl"><span class="ico">&#128214;</span>PLAIN ENGLISH</div>
+            <div><span class="marg-term">Anthropic</span>: the company that makes Claude.</div>
+          </div>
+          <div class="marg-block">
+            <div class="marg-lbl navy"><span class="ico">&#8599;</span>ALSO HELPFUL</div>
+            <div>What it's <em>not</em>: <span class="xref">section <b>3</b></span></div>
+            <div style="margin-top:.04in;">Why bother: <span class="xref">section <b>4</b></span></div>
+          </div>
+          <div class="marg-block">
+            <div class="marg-lbl"><span class="ico">&#10551;</span>RABBIT HOLE</div>
+            <div style="font-style:italic;">The word "shell" comes from the fact it wraps the kernel. You will never need to care about this.</div>
+          </div>
+        </div>
+      </div>
+      
+    <div class="page-num">2</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; WHAT IT ACTUALLY IS <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      
+    <div class="rail-wrap">
+      <div class="rail-wash lav"></div>
+      <div class="rail"><div class="dot">1</div><span class="seg"></span><div class="dot now">2</div><span class="seg"></span><div class="dot">3</div><span class="seg"></span><div class="dot">4</div><span class="seg"></span><div class="dot">5</div><span class="seg"></span><div class="dot">6</div><span class="seg"></span><div class="dot">7</div><span class="seg"></span><div class="dot">8</div><span class="seg"></span><div class="dot">9</div></div>
+    </div>
+  
+
+      <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
+        <div style="display:flex; align-items:baseline; gap:.16in;">
+          <div class="eyebrow" style="color:#7a6680;">TANGENT <span class="dot-sep" style="color:#7a6680;">&#10551;</span> SKIPPABLE</div>
+          <div class="small" style="color:var(--ink-mute);">(it's fine to skip this, meet you on the next page)</div>
+        </div>
+
+        <div style="margin:.12in 0 .22in;">
+          <div class="ch-title" style="font-size:24pt; line-height:.95; color:var(--ink);">About where this<br/>book actually <em>lives</em>.</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1.5in 1fr; gap:.22in;">
+          <div style="height:1.7in; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+            <img src="../../assets/stickers/curious-leaner.png" alt="" style="width:220%; height:220%; object-fit:contain; display:block;" />
+          </div>
+          <div class="body" style="font-size:10pt; line-height:1.5; color:var(--ink-soft);">
+            <p>The PDF in your hands is a <strong>snapshot</strong>. The real version of this book lives on the internet, in what engineers call a "repo." If you've heard "git repo" thrown around and felt left out, congrats, it's a folder. Engineers have a special word for folder. That's the whole mystery.</p>
+            <p>By the time you're reading this, the online version has probably gotten newer.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:.2in; display:grid; grid-template-columns:1fr .9in; gap:.18in; align-items:center;">
+          <div class="card" style="background:var(--lav-soft); padding:.14in .18in;">
+            <div class="card-title" style="margin-bottom:.04in; color:var(--navy);"><span class="ico" style="background:var(--navy);">&#127760;</span>READ THE LATEST</div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:9.5pt; color:var(--ink); margin-bottom:.04in;">github.com/brandonrhecker/honestly-claude-code</div>
+            <div class="small" style="color:var(--ink-soft);">No account. No software. Pretend it's just a webpage. It is.</div>
+          </div>
+          <div style="text-align:center;">
+            <div class="qr"><div class="br"></div></div>
+            <div class="small" style="color:var(--ink-mute); margin-top:.05in; font-family:'JetBrains Mono'; font-size:7pt;">scan: repo</div>
+          </div>
+        </div>
+
+        <div class="sticky tilt-r" style="bottom:.85in; right:.4in;">
+          <b>NO PANIC</b>
+          you don't need git<br/>to read the book.
+        </div>
+      </div>
+
+      
+    <div class="page-num">3</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; TANGENT &nbsp;&rsaquo;&nbsp; THE REPO <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01#repo</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      
+    <div class="rail-wrap">
+      <div class="rail-wash"></div>
+      <div class="rail"><div class="dot">1</div><span class="seg"></span><div class="dot">2</div><span class="seg"></span><div class="dot now">3</div><span class="seg"></span><div class="dot">4</div><span class="seg"></span><div class="dot">5</div><span class="seg"></span><div class="dot">6</div><span class="seg"></span><div class="dot">7</div><span class="seg"></span><div class="dot">8</div><span class="seg"></span><div class="dot">9</div></div>
+    </div>
+  
+      <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
+        <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 3 OF 9</div>
+        <div style="display:flex; align-items:baseline; justify-content:space-between; gap:.18in; margin-top:.04in;">
+          <div class="section-h">What it's <span class="stroke-under">not</span>.</div>
+          <div style="font-family:'Caveat'; color:var(--orange); font-size:22pt; line-height:.9; transform:rotate(-2deg);">four things, mostly</div>
+        </div>
+        <div class="lede" style="font-size:10pt; max-width:4.6in; margin-top:.08in;">It helps to name what this isn't before naming what it is. Otherwise you'll keep importing baggage from the last AI thing you saw.</div>
+
+        <div class="notlist">
+          <div class="not-item">
+            <div class="x">&times;</div>
+            <div class="lbl">Not a chatbot.</div>
+            <div class="desc">A chatbot just talks. This does things. Edits files, runs commands, looks at git.</div>
+          </div>
+          <div class="not-item">
+            <div class="x">&times;</div>
+            <div class="lbl">Not autonomous.</div>
+            <div class="desc">It asks permission before doing anything destructive. You're the human in the loop.</div>
+          </div>
+          <div class="not-item">
+            <div class="x">&times;</div>
+            <div class="lbl">Not for engineers only.</div>
+            <div class="desc">You don't need to know how to code. You do need to be willing to type into a terminal. There's a difference.</div>
+          </div>
+          <div class="not-item">
+            <div class="x">&times;</div>
+            <div class="lbl">Not magic.</div>
+            <div class="desc">It will get things wrong. Sometimes spectacularly. We'll cover how to catch it.</div>
+          </div>
+        </div>
+
+        <div class="sticky" style="bottom:1in; left:.3in;">
+          <b>TAKEAWAY</b>
+          if it scares you,<br/>good. that's<br/>useful skepticism.
+        </div>
+      </div>
+      
+    <div class="page-num">4</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; WHAT IT'S NOT <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01#not</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      
+    <div class="rail-wrap">
+      <div class="rail-wash"></div>
+      <div class="rail"><div class="dot">1</div><span class="seg"></span><div class="dot">2</div><span class="seg"></span><div class="dot">3</div><span class="seg"></span><div class="dot now">4</div><span class="seg"></span><div class="dot">5</div><span class="seg"></span><div class="dot">6</div><span class="seg"></span><div class="dot">7</div><span class="seg"></span><div class="dot">8</div><span class="seg"></span><div class="dot">9</div></div>
+    </div>
+  
+      <div class="body-wrap">
+        <div>
+          <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 4 OF 9</div>
+          <div class="section-h" style="margin:.06in 0 .04in;">Why anyone <span class="stroke-under">bothers</span>.</div>
+          <div class="annot ink" style="font-size:13pt; margin:-.04in 0 .4in; transform:rotate(-1deg);">(it's not about the hype.)</div>
+          <div class="body" style="max-width:3.4in;">
+            <p>You can hand off the tedious stuff. The "I have this file, can you rename it and update the references" stuff. The "organize my downloads folder by date" stuff. The "write me a checklist for the trip I'm planning" stuff.</p>
+            <p>It's not going to replace you. It's going to handle the work that's <strong>beneath</strong> you so you can do the work that <strong>isn't</strong>.</p>
+          </div>
+
+          <div class="card" style="margin-top:.16in; background:var(--orange); color:#fff; border-radius:10px; padding:.14in .18in; max-width:3.4in; box-shadow:0 6px 0 -4px rgba(0,0,0,.25);">
+            <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:7.5pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:.04in;">THE ONE-LINER</div>
+            <div style="font-family:'Caveat',cursive; font-size:18pt; line-height:1.05;">Boring work, gone. Real work, still yours.</div>
+          </div>
+        </div>
+
+        <div class="marg">
+          <div class="marg-block">
+            <div class="marg-lbl"><span class="ico">&#128161;</span>FOR EXAMPLE</div>
+            <div>Rename 200 photos by date. <span class="xref">ch. <b>03</b></span></div>
+          </div>
+          <div class="marg-block">
+            <div class="marg-lbl"><span class="ico">&#128161;</span>FOR EXAMPLE</div>
+            <div>Draft a checklist from a half-baked idea. <span class="xref">ch. <b>04</b></span></div>
+          </div>
+          <div class="marg-block">
+            <div class="marg-lbl"><span class="ico">&#128161;</span>FOR EXAMPLE</div>
+            <div>Organize a folder you've been avoiding. <span class="xref">ch. <b>03</b></span></div>
+          </div>
+          <div class="marg-block">
+            <div class="marg-lbl navy"><span class="ico">&#8599;</span>BUT WAIT</div>
+            <div>The next 4 sections are the honest ones. Read them.</div>
+          </div>
+        </div>
+      </div>
+      
+    <div class="page-num">5</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; WHY ANYONE BOTHERS <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01#why</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      
+    <div class="rail-wrap">
+      <div class="rail-wash"></div>
+      <div class="rail"><div class="dot">1</div><span class="seg"></span><div class="dot">2</div><span class="seg"></span><div class="dot">3</div><span class="seg"></span><div class="dot">4</div><span class="seg"></span><div class="dot now">5</div><span class="seg"></span><div class="dot">6</div><span class="seg"></span><div class="dot">7</div><span class="seg"></span><div class="dot">8</div><span class="seg"></span><div class="dot">9</div></div>
+    </div>
+  
+      <div class="fear-sticky" style="top:.4in; right:.4in; transform:rotate(2.5deg);">
+         <b>HEADS UP</b>this is the<br/>least cheerful<br/>part of the book.
+       </div>
+      <div class="fear">
+        <div class="fear-eyebrow">BUT WAIT &nbsp;&middot;&nbsp; SECTION 5 OF 9</div>
+        <div class="fear-q">Am I going to <em>lose my job</em>?</div>
+        <div class="fear-body">
+      <p>Honest answer: maybe parts of it, probably not the whole thing.</p>
+      <p>The people who lean hardest into AI tools tend to climb faster, not get replaced. The people who refuse to touch it tend to get left behind. Neither's a great option.</p>
+      <p>What works best: learn enough to know what it's <strong>good at</strong> and what it <strong>isn't</strong>, then use it where it actually helps. Ignore the hype where it doesn't.</p>
+    </div>
+        <div class="fear-tldr"><b>TL;DR</b>Refusing to engage is its own risk. So is going all-in. The middle path is boring and it works.</div>
+        <div class="fear-xref">
+          <div class="x-text">
+            <div class="x-lbl">MORE IN CHAPTER 09</div>
+            <div class="x-title"><em>Will it replace me?</em> The long version.</div>
+          </div>
+          <div class="x-arrow">&rarr;</div>
+        </div>
+      </div>
+      
+    <div class="page-num">6</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; BUT WAIT &nbsp;&rsaquo;&nbsp; WILL IT REPLACE ME <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01#replace</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      
+    <div class="rail-wrap">
+      <div class="rail-wash"></div>
+      <div class="rail"><div class="dot">1</div><span class="seg"></span><div class="dot">2</div><span class="seg"></span><div class="dot">3</div><span class="seg"></span><div class="dot">4</div><span class="seg"></span><div class="dot">5</div><span class="seg"></span><div class="dot now">6</div><span class="seg"></span><div class="dot">7</div><span class="seg"></span><div class="dot">8</div><span class="seg"></span><div class="dot">9</div></div>
+    </div>
+  
+      
+      <div class="fear">
+        <div class="fear-eyebrow">BUT WAIT &nbsp;&middot;&nbsp; SECTION 6 OF 9</div>
+        <div class="fear-q">Is my <em>data safe</em>?</div>
+        <div class="fear-body">
+      <p>Short version: your <strong>conversations</strong> go to Anthropic's servers to get processed. <strong>Files</strong> Claude reads stay on your computer unless you explicitly ask it to share them somewhere.</p>
+      <p>By default it <strong>can't access the internet</strong>. That's important. If you don't give it the wifi keys, it can't phone home with your stuff.</p>
+    </div>
+        <div class="fear-tldr"><b>TL;DR</b>Conversations leave. Files stay. The thing has to ask you before it goes online.</div>
+        <div class="fear-xref">
+          <div class="x-text">
+            <div class="x-lbl">MORE IN CHAPTER 09</div>
+            <div class="x-title"><em>Is my data safe?</em> The long version.</div>
+          </div>
+          <div class="x-arrow">&rarr;</div>
+        </div>
+      </div>
+      
+    <div class="page-num">7</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; BUT WAIT &nbsp;&rsaquo;&nbsp; IS MY DATA SAFE <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01#data</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      
+    <div class="rail-wrap">
+      <div class="rail-wash"></div>
+      <div class="rail"><div class="dot">1</div><span class="seg"></span><div class="dot">2</div><span class="seg"></span><div class="dot">3</div><span class="seg"></span><div class="dot">4</div><span class="seg"></span><div class="dot">5</div><span class="seg"></span><div class="dot">6</div><span class="seg"></span><div class="dot now">7</div><span class="seg"></span><div class="dot">8</div><span class="seg"></span><div class="dot">9</div></div>
+    </div>
+  
+      <div class="fear-sticky" style="top:.4in; right:.4in; transform:rotate(2.5deg);">
+         <b>TRUE STORY</b>it will cite a<br/>book that does<br/>not exist.
+       </div>
+      <div class="fear">
+        <div class="fear-eyebrow">BUT WAIT &nbsp;&middot;&nbsp; SECTION 7 OF 9</div>
+        <div class="fear-q">What if it just <em>makes shit up</em>?</div>
+        <div class="fear-body">
+      <p>It does, sometimes. <strong>Confidently. With zero hedging.</strong> That's the most important thing about it to remember.</p>
+      <p>The fix isn't to never use it. The fix is to never <strong>trust it blindly</strong>. Especially on facts, names, dates, code, or anything that matters.</p>
+      <p>You're the human. You're the check.</p>
+    </div>
+        <div class="fear-tldr"><b>TL;DR</b>Yes, it lies. Confidently. Your job is to check. That part hasn’t changed.</div>
+        <div class="fear-xref">
+          <div class="x-text">
+            <div class="x-lbl">MORE IN CHAPTER 09</div>
+            <div class="x-title"><em>When it screws up.</em> The long version.</div>
+          </div>
+          <div class="x-arrow">&rarr;</div>
+        </div>
+      </div>
+      
+    <div class="page-num">8</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; BUT WAIT &nbsp;&rsaquo;&nbsp; IT MAKES STUFF UP <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01#lies</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      
+    <div class="rail-wrap">
+      <div class="rail-wash"></div>
+      <div class="rail"><div class="dot">1</div><span class="seg"></span><div class="dot">2</div><span class="seg"></span><div class="dot">3</div><span class="seg"></span><div class="dot">4</div><span class="seg"></span><div class="dot">5</div><span class="seg"></span><div class="dot">6</div><span class="seg"></span><div class="dot">7</div><span class="seg"></span><div class="dot now">8</div><span class="seg"></span><div class="dot">9</div></div>
+    </div>
+  
+      
+      <div class="fear">
+        <div class="fear-eyebrow">THE HONEST PART &nbsp;&middot;&nbsp; SECTION 8 OF 9</div>
+        <div class="fear-q">About <em>burnout</em>.</div>
+        <div class="fear-body">
+      <p>Using AI is going to take mental energy you weren't spending before. Some days it'll save you hours. Some days it'll waste an hour and you'll feel dumb. That's normal.</p>
+      <p>If you start to feel burned out, <strong>stop</strong>. Use it less. Letting a tool run you is the same trap as the old job, just with a new tool.</p>
+    </div>
+        <div class="fear-tldr"><b>TL;DR</b>It will save you time some days and cost you time others. If it starts owning you, walk away for a while.</div>
+        <div class="fear-xref">
+          <div class="x-text">
+            <div class="x-lbl">MORE IN CHAPTER 09</div>
+            <div class="x-title"><em>Burning out in an automated world.</em> The long version.</div>
+          </div>
+          <div class="x-arrow">&rarr;</div>
+        </div>
+      </div>
+      
+    <div class="page-num">9</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; THE HONEST PART &nbsp;&rsaquo;&nbsp; BURNOUT <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01#burnout</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      
+    <div class="rail-wrap">
+      <div class="rail-wash"></div>
+      <div class="rail"><div class="dot">1</div><span class="seg"></span><div class="dot">2</div><span class="seg"></span><div class="dot">3</div><span class="seg"></span><div class="dot">4</div><span class="seg"></span><div class="dot">5</div><span class="seg"></span><div class="dot">6</div><span class="seg"></span><div class="dot">7</div><span class="seg"></span><div class="dot">8</div><span class="seg"></span><div class="dot now">&#10003;</div></div>
+    </div>
+  
+      <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
+        <div style="display:flex; align-items:baseline; justify-content:space-between;">
+          <div>
+            <div class="eyebrow" style="color:var(--ink-mute);">CHAPTER 1 &nbsp;&middot;&nbsp; RECAP</div>
+            <div class="section-h" style="margin:.06in 0 0;">The whole chapter,<br/>on one page.</div>
+          </div>
+          <div style="text-align:right;">
+            <div style="font-family:'Caveat'; color:var(--orange); font-size:30pt; line-height:.9;">tl;dr</div>
+            <div class="small" style="color:var(--ink-mute); margin-top:.04in;">tear this page out if you want</div>
+          </div>
+        </div>
+
+        <div class="recap-grid" style="margin-top:.22in;">
+          <div class="recap-item">
+            <div class="n">1</div>
+            <b>It runs in your terminal.</b>
+            Not a website, not a sidebar. A text window you type at.
+          </div>
+          <div class="recap-item">
+            <div class="n">2</div>
+            <b>It does, not just talks.</b>
+            Reads your files, writes new ones, runs commands. With permission.
+          </div>
+          <div class="recap-item">
+            <div class="n">3</div>
+            <b>It's not magic, it's not your replacement.</b>
+            It'll get things wrong. You're the human, you're the check.
+          </div>
+          <div class="recap-item">
+            <div class="n">4</div>
+            <b>It can save you real time on real tasks.</b>
+            Boring work gone. Real work still yours.
+          </div>
+          <div class="recap-item">
+            <div class="n">5</div>
+            <b>Your fears are legitimate.</b>
+            We'll cover them honestly in ch. 9.
+          </div>
+          <div class="recap-item">
+            <div class="n">6</div>
+            <b>Burned out? Stop.</b>
+            Don't let a tool run you. That's the old trap.
+          </div>
+        </div>
+
+        <div style="margin-top:.2in; display:grid; grid-template-columns:1fr .9in; gap:.18in; align-items:center;">
+          <div class="card" style="background:var(--lav-soft); padding:.14in .18in;">
+            <div class="card-title" style="margin-bottom:.04in;"><span class="ico">&#9733;</span>ONE THING TO REMEMBER</div>
+            <div style="font-family:'Caveat'; font-size:18pt; color:var(--ink); line-height:1.05;">
+              The fears are real. The answers are nuanced. Both can be true.
+            </div>
+          </div>
+          <div style="text-align:center;">
+            <div class="qr"><div class="br"></div></div>
+            <div class="small" style="color:var(--ink-mute); margin-top:.05in; font-family:'JetBrains Mono'; font-size:7pt;">scan: ch.01</div>
+          </div>
+        </div>
+      </div>
+      
+    <div class="page-num">10</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">CH.1 &nbsp;&middot;&nbsp; THE WHOLE THING ON ONE PAGE <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/01#recap</span></div>
+    </div>
+  
+    </section>
+  
+
+    <section class="page">
+      <div class="wash org" style="left:-1in; bottom:-1in; width:4in; height:3in; opacity:.55;"></div>
+      <div class="wash lav" style="right:-.8in; top:-.8in; width:3.2in; height:2.4in; opacity:.55;"></div>
+
+      <div style="position:absolute; left:.42in; right:.42in; top:.6in; bottom:.7in; z-index:2;">
+        <div style="display:flex; align-items:center; justify-content:space-between;">
+          <div class="eyebrow" style="color:var(--ink-mute);">YOU FINISHED &nbsp;<span class="dot-sep">&bull;</span>&nbsp; CHAPTER 1</div>
+          <div style="display:flex; align-items:center; gap:.08in; color:var(--orange); font-family:'Caveat'; font-size:18pt;">
+            <span>turn the page</span>
+            <span style="font-size:26pt; line-height:1;">&rarr;</span>
+          </div>
+        </div>
+
+        <div style="margin-top:.16in;">
+          <div style="display:flex; align-items:center; gap:.06in;">
+            <div style="font-family:'Archivo'; font-weight:800; font-size:8pt; letter-spacing:.1em; color:var(--ink-soft);">WHERE YOU ARE</div>
+            <div style="flex:1; height:8px; background:var(--paper-deep); border-radius:99px; position:relative; overflow:hidden;">
+              <div style="position:absolute; left:0; top:0; bottom:0; width:11%; background:var(--orange);"></div>
+            </div>
+            <div style="font-family:'Archivo'; font-weight:800; font-size:8pt; color:var(--orange);">1 / 9</div>
+          </div>
+        </div>
+
+        <div style="margin-top:.2in; background:#fff; border-radius:14px; padding:.18in .22in; box-shadow:0 14px 30px -16px rgba(0,0,0,.25); position:relative;">
+          <div style="display:flex; align-items:flex-start; gap:.2in;">
+            <div>
+              <div class="eyebrow" style="color:var(--orange);">UP NEXT &nbsp;<span class="dot-sep">&bull;</span>&nbsp; CHAPTER 2</div>
+              <div style="font-family:'Archivo'; font-weight:900; font-size:46pt; color:var(--orange); line-height:.9; margin:.02in 0;">02</div>
+              <div class="ch-title" style="font-size:21pt; line-height:.95;">Get the damn<br/>thing running.</div>
+              <div class="lede" style="font-size:9.5pt; max-width:3.1in; margin-top:.08in;">
+                Install Claude Code on your machine. We do Mac, Windows, and Linux. Pick one, skip the rest.
+              </div>
+            </div>
+            <div style="margin-left:auto; text-align:center;">
+              <div style="width:1.25in; height:1.25in; border-radius:50%; overflow:hidden; display:flex; align-items:center; justify-content:center;">
+                <img src="../../assets/stickers/zen-arm-up.png" alt="" style="width:240%; height:240%; object-fit:contain; display:block;" />
+              </div>
+              <div style="font-family:'Archivo'; font-weight:800; font-size:7.5pt; letter-spacing:.1em; color:var(--ink-mute); margin-top:.05in;">STARTS NEXT</div>
+              <div style="font-family:'Archivo'; font-weight:900; font-size:20pt; color:var(--orange); line-height:.9;">&rarr;</div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:.12in; margin-top:.14in; padding-top:.12in; border-top:1px dashed var(--rule);">
+            <div>
+              <div class="eyebrow" style="font-size:6.8pt; color:var(--navy);">YOU WILL DO</div>
+              <div class="small" style="color:var(--ink-soft); margin-top:.04in;">Install Claude on your actual machine.</div>
+            </div>
+            <div>
+              <div class="eyebrow" style="font-size:6.8pt; color:var(--navy);">YOU WILL SEE</div>
+              <div class="small" style="color:var(--ink-soft); margin-top:.04in;">Claude say hello back in plain English.</div>
+            </div>
+            <div>
+              <div class="eyebrow" style="font-size:6.8pt; color:var(--navy);">DIFFICULTY</div>
+              <div class="small" style="color:var(--ink-soft); margin-top:.04in;">Still easy. Promise.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="position:absolute; bottom:0; left:0; right:0; display:flex; justify-content:space-between; align-items:flex-end; gap:.2in;">
+          <div style="max-width:3in;">
+            <div style="font-family:'Caveat'; font-size:18pt; color:var(--ink); line-height:1; white-space:nowrap;">see you on the next page</div>
+            <div class="small" style="color:var(--ink-mute); margin-top:.04in;">honestly, <b style="color:var(--ink);">brandon</b>. still not an algorithm</div>
+          </div>
+          <div style="text-align:center; flex:0 0 auto;">
+            <div class="qr"><div class="br"></div></div>
+            <div class="small" style="color:var(--ink-mute); margin-top:.04in; font-family:'JetBrains Mono'; font-size:7pt;">repo &middot; ch.02</div>
+          </div>
+        </div>
+      </div>
+
+      
+    <div class="page-num">11</div>
+    <div class="footer-bar">
+      <div>YOU ARE HERE</div>
+      <div class="crumb">UP NEXT &nbsp;&middot;&nbsp; GET THE DAMN THING RUNNING <span class="sep">&middot;</span> <span style="font-family:'JetBrains Mono'; font-size:6pt; opacity:.75;">/02-the-install</span></div>
+    </div>
+  
+    </section>
+  
+</body>
+</html>
