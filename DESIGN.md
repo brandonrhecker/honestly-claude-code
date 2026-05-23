@@ -7,19 +7,19 @@ Written as the project context for [claude.ai/design](https://claude.ai/design).
 
 A screen-read PDF book rendered from per-chapter markdown via headless Chrome (puppeteer). Page size **6 × 8 inches**. The aesthetic is "ink on cream paper" with chunky hand-drawn doodle illustrations.
 
-The build pipeline lives in `build/`. Chapter 01 is shipped at design quality; chapters 02-09 still need design rollout (the same templates).
+The build pipeline lives in `_pdf-build/`. Chapter 01 is shipped at design quality; chapters 02-09 still need design rollout (the same templates).
 
 ## Voice direction
 
 - **Bourdain-of-AI**: observational, world-weary, anti-doom, anti-hype
-- Anti-corporate, anti-textbook. The book reads more like an essay than a manual
+- Anti-corporate, anti-textbook. The book reads more like an enganging walkthrough with infographics than a manual
 - Lowercase used intentionally in handwritten captions and signatures
 - **ZERO em dashes** (use commas, colons, or periods). No exceptions
 - See repo CLAUDE.md for full voice contract and banned-lexicon rules
 
 ## Color tokens
 
-Defined in `build/styles.css` as CSS custom properties:
+Defined in `_pdf-build/styles.css` as CSS custom properties:
 
 | Token | Value | Use |
 |---|---|---|
@@ -43,7 +43,7 @@ Defined in `build/styles.css` as CSS custom properties:
 
 ## Type stack
 
-Loaded via `build/assets/fonts.css`:
+Loaded via `_pdf-build/assets/fonts.css`:
 
 - **Archivo** — titles, badges, numbers (heavy sans, weights 700-900)
 - **Source Sans 3** — body copy (regular sans)
@@ -57,7 +57,7 @@ Page padding: `0.42in` left/right, `1in` top, `0.7in` bottom (typical body page)
 
 ## Components (function name → file)
 
-All components in `build/shared/components.js` return HTML template strings:
+All components in `_pdf-build/shared/components.js` return HTML template strings:
 
 | Component | Function | What it does |
 |---|---|---|
@@ -67,7 +67,7 @@ All components in `build/shared/components.js` return HTML template strings:
 | Fear page | `fearPage({pageNum, sectionIndex, eyebrow, question, body, tldr, xrefLabel, xrefTitle, stickyBody, footerCrumb, footerSlug})` | Whole-page template for "honest reader anxieties" (used 4× in ch01). Big Caveat question, body, TL;DR strip, cross-reference card, optional sticky note. |
 | SVG filter defs | `svgDefs()` | Hidden SVG `<defs>` for `#torn` and `#torn-soft` filter references used elsewhere. |
 
-## CSS classes (in `build/styles.css`)
+## CSS classes (in `_pdf-build/styles.css`)
 
 ### Layout primitives
 
@@ -166,7 +166,7 @@ All components in `build/shared/components.js` return HTML template strings:
 
 ## Asset library
 
-In `build/assets/`:
+In `_pdf-build/assets/`:
 
 - **`doodles/`** — 91 hand-drawn SVG icons (arrows, lock, light bulb, etc.) named functionally (`arrow-up-chunky-01.svg`, `light-bulb.svg`). `_original-mapping.txt` shows the rename history.
 - **`stickers/`** — 40 awkward-doodle PNG stickers, the long egg-shaped character in different emotional poses. Three currently used: `panicked-hands-behind-head.png` (ch01 cover), `curious-leaner.png` (ch01 repo callout), `zen-arm-up.png` (ch01 bridge to ch02).
@@ -187,7 +187,7 @@ Both feel "ink on cream paper." The orange accent (`--orange`) and navy (`--navy
 ## Build pipeline
 
 ```
-build/
+_pdf-build/
 ├── build-chapter.js          # node build-chapter.js ch01
 ├── shared/components.js      # rail, footer, svgDefs, fearPage
 ├── chapters/<ch>/pages.js    # chapter-specific page renderers

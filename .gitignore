@@ -16,10 +16,10 @@ desktop.ini
 CLAUDE.md
 
 # Build pipeline output (PDFs, page PNGs, contact sheets)
-build/out/
+_pdf-build/out/
 
 # npm dependencies
-build/node_modules/
+_pdf-build/node_modules/
 
 # Brainstorming skill session artifacts (visual companion files)
 .superpowers/

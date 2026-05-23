@@ -74,7 +74,7 @@ walked in with. Split them however you want.
 
 | File | What's in it |
 |---|---|
-| [Cheat sheet](reference/cheat-sheet.md) | Commands at a glance |
+| [Cheat sheet](10-reference/cheat-sheet.md) | Commands at a glance |
 
 ---
 

@@ -5,6 +5,8 @@
 # What it captures:
 #   - The chapter's pages.js (chapter-specific code)
 #   - The rendered PDF (visual artifact of this iteration)
+#   - The rendered HTML with asset paths rewritten so it opens from
+#     the snapshot location (preview surface for claude.ai/design etc.)
 #
 # Snapshots go to chapters/<ch>/snapshots/v<N>-<YYYY-MM-DD>/
 # Version number auto-increments based on existing snapshots.
@@ -24,6 +26,7 @@ ROOT="$(dirname "$(realpath "$0")")"
 CH_DIR="$ROOT/chapters/$CH"
 SNAP_ROOT="$CH_DIR/snapshots"
 PDF="$ROOT/out/chapters/$CH/$CH.pdf"
+HTML="$ROOT/out/chapters/$CH/$CH.html"
 PAGES_JS="$CH_DIR/pages.js"
 
 if [[ ! -d "$CH_DIR" ]]; then
@@ -32,6 +35,10 @@ if [[ ! -d "$CH_DIR" ]]; then
 fi
 if [[ ! -f "$PDF" ]]; then
   echo "error: rendered PDF not found at $PDF — run 'npm run build' first."
+  exit 1
+fi
+if [[ ! -f "$HTML" ]]; then
+  echo "error: rendered HTML not found at $HTML — run 'npm run build' first."
   exit 1
 fi
 
@@ -47,9 +54,16 @@ mkdir -p "$DEST"
 cp "$PAGES_JS" "$DEST/pages.js"
 cp "$PDF" "$DEST/$CH.pdf"
 
+# Copy HTML with asset paths rewritten so it opens from the snapshot
+# location. Source paths are ../../../assets/ (from out/chapters/<ch>/);
+# snapshot location is chapters/<ch>/snapshots/v<N>/ which is 4 levels
+# deep from build/, so paths become ../../../../assets/.
+sed 's|\.\./\.\./\.\./assets/|\.\./\.\./\.\./\.\./assets/|g' "$HTML" > "$DEST/$CH.html"
+
 echo "Snapshot saved: $DEST"
 echo "  $DEST/pages.js"
 echo "  $DEST/$CH.pdf"
+echo "  $DEST/$CH.html"
 echo ""
 echo "Suggested next step: tag the code in git so you can roll back the"
 echo "  whole repo state (including shared/styles) for this iteration:"
