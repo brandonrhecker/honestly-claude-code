@@ -1,0 +1,45 @@
+# Reverse map from new sticker name to original number.
+# Use this to identify which "awkward_doodle_sticker_NN.png" a renamed
+# file used to be if any of my pose guesses turned out wrong.
+
+panicked-hands-behind-head.png   -> awkward_doodle_sticker_07  (used: ch01 cover)
+curious-leaner.png               -> awkward_doodle_sticker_05  (used: ch01 repo callout)
+zen-arm-up.png                   -> awkward_doodle_sticker_38  (used: ch01 bridge to ch02)
+
+panicked-variant-01.png          -> awkward_doodle_sticker_01
+drawing-or-writing.png           -> awkward_doodle_sticker_02
+pointing-up-small.png            -> awkward_doodle_sticker_03
+looking-up-awe.png               -> awkward_doodle_sticker_04
+looking-down.png                 -> awkward_doodle_sticker_06
+head-bowed.png                   -> awkward_doodle_sticker_08
+neutral-stare-01.png             -> awkward_doodle_sticker_09
+writing-or-pointing.png          -> awkward_doodle_sticker_10
+explaining-arm-raised.png        -> awkward_doodle_sticker_11
+holding-something-shocked.png    -> awkward_doodle_sticker_12
+arm-raised-01.png                -> awkward_doodle_sticker_13
+embarrassed-blushing.png         -> awkward_doodle_sticker_14
+covering-face.png                -> awkward_doodle_sticker_15
+holding-up-item.png              -> awkward_doodle_sticker_16
+neutral-stare-02.png             -> awkward_doodle_sticker_17
+waving-or-pointing.png           -> awkward_doodle_sticker_18
+covering-eyes.png                -> awkward_doodle_sticker_19
+pointing-finger.png              -> awkward_doodle_sticker_20
+neutral-stare-03.png             -> awkward_doodle_sticker_21
+thinking-pose.png                -> awkward_doodle_sticker_22
+round-figure-looking.png         -> awkward_doodle_sticker_23
+head-cocked-listening.png        -> awkward_doodle_sticker_24
+shocked-hands-up.png             -> awkward_doodle_sticker_25
+walking-hands-behind.png         -> awkward_doodle_sticker_26
+side-glance-smug.png             -> awkward_doodle_sticker_27
+holding-tool.png                 -> awkward_doodle_sticker_28
+shrugging-confused.png           -> awkward_doodle_sticker_29
+arms-up-yay.png                  -> awkward_doodle_sticker_30
+dancing-arms-out.png             -> awkward_doodle_sticker_31
+wearing-glasses-cool.png         -> awkward_doodle_sticker_32
+innocent-looking-up.png          -> awkward_doodle_sticker_33
+waving-off-no-thanks.png         -> awkward_doodle_sticker_34
+pointing-or-snake.png            -> awkward_doodle_sticker_35
+holding-red-item.png             -> awkward_doodle_sticker_36
+offering-something.png           -> awkward_doodle_sticker_37
+holding-something-out.png        -> awkward_doodle_sticker_39
+confused-lost.png                -> awkward_doodle_sticker_40

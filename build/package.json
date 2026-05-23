@@ -1,0 +1,16 @@
+{
+  "name": "honestly-claude-code-build",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Build pipeline for the Honestly, Claude Code PDF",
+  "type": "module",
+  "scripts": {
+    "build": "node build-chapter.js ch01",
+    "build:chapter": "node build-chapter.js"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.0",
+    "puppeteer": "^23.0.0",
+    "qrcode": "^1.5.4"
+  }
+}
