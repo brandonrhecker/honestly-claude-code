@@ -14,3 +14,12 @@ desktop.ini
 
 # Local project context for Claude Code (not for public)
 CLAUDE.md
+
+# Build pipeline output (PDFs, page PNGs, contact sheets)
+build/out/
+
+# npm dependencies
+build/node_modules/
+
+# Brainstorming skill session artifacts (visual companion files)
+.superpowers/

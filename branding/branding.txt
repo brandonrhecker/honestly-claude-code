@@ -1,6 +1,0 @@
-|       Hex | Color         | Notes                 |
-| --------: | ------------- | --------------------- |
-| `#F5EBE0` | Warm cream    | Main background       |
-| `#1A1411` | Warm black    | Primary text and ink  |
-| `#D4602F` | Burnt orange  | Main accent           |
-| `#DAD0D5` | Lavender gray | Soft secondary accent |
