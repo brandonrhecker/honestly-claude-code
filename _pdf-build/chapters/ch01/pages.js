@@ -33,56 +33,19 @@ function pageChapterOpener() {
 
       ${rail(1)}
 
-      <div style="position:absolute; left:.42in; right:.42in; top:1.05in; bottom:4.1in; display:grid; grid-template-columns:1fr 1.95in; gap:.18in; z-index:2;">
-        <div style="position:relative;">
-          <div class="eyebrow">CHAPTER 1 <span class="dot-sep">&bull;</span> ORIENTATION</div>
-          <div class="ch-num">01</div>
-          <div class="annot ink" style="position:absolute; left:1.5in; top:.42in; transform:rotate(-5deg); font-size:13pt; white-space:nowrap;">&larr; you are here</div>
-          <div style="display:inline-block;">
-            <div class="ch-title" style="position:relative; white-space:nowrap;">So what the hell<br/>is Claude Code</div>
-            <svg viewBox="0 0 220 14" preserveAspectRatio="none" style="display:block; width:2.6in; height:.18in; margin-top:.04in; margin-left:.05in;" aria-hidden="true">
-              <path d="M 2 8 Q 28 2 60 6 T 130 5 Q 170 3 218 7" stroke="#d96033" stroke-width="6" stroke-linecap="round" fill="none" opacity=".88"/>
-              <path d="M 8 11 Q 50 9 110 10 T 210 11" stroke="#d96033" stroke-width="2" stroke-linecap="round" fill="none" opacity=".55"/>
-            </svg>
-          </div>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:.12in;">
-          <div style="height:1.6in; display:flex; align-items:center; justify-content:center; overflow:hidden;">
-            <img src="../../../assets/stickers/panicked-hands-behind-head.png" alt="" style="width:290%; height:290%; object-fit:contain; display:block; position:relative; left:-5px; top:10px;" />
-          </div>
-          <div class="metrics-section" style="margin-top:0;">
-            <div class="umbrella">what you're signing up for</div>
-            <div class="metrics-row">
-              <div class="metric-mini easy">
-                <div class="mini-illus">
-                  <img src="../../../assets/difficulty/easy.png" alt="" class="difficulty-icon" />
-                </div>
-                <div class="mini-lbl">Difficulty</div>
-                <div class="mini-val">Easy</div>
-              </div>
-              <div class="metric-mini med">
-                <div class="mini-illus">
-                  <img src="../../../assets/time/clock_with_numbers_hands_white_center.svg.svg" alt="" />
-                </div>
-                <div class="mini-lbl">Time</div>
-                <div class="mini-val" style="color:#5a92cf;">5-10 min</div>
-              </div>
-              <div class="metric-mini high">
-                <div class="mini-illus">
-                  <svg viewBox="0 0 70 56" aria-hidden="true">
-                    <path d="M 3 52 L 3 26 Q 3 4 35 4 Q 67 4 67 26 L 67 52 Z" fill="#101010" stroke="#1a1a1a" stroke-width="2"/>
-                    <path d="M 14 36 A 21 21 0 0 1 22 21" stroke="#d96033" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-                    <path d="M 25 18 A 21 21 0 0 1 45 18" stroke="#5a92cf" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-                    <path d="M 48 21 A 21 21 0 0 1 56 36" stroke="#7fb068" stroke-width="2.4" fill="none" stroke-linecap="round"/>
-                    <line x1="35" y1="36" x2="52" y2="23" stroke="white" stroke-width="2.2" stroke-linecap="round"/>
-                    <circle cx="35" cy="36" r="2.6" fill="#1a1a1a" stroke="#666" stroke-width=".8"/>
-                  </svg>
-                </div>
-                <div class="mini-lbl">Value</div>
-                <div class="mini-val">Yes</div>
-              </div>
-            </div>
-          </div>
+      <img src="../../../assets/stickers/panicked-hands-behind-head.png" alt=""
+           style="position:absolute; right:-.37in; top:.4in; width:4.0in; z-index:2; object-fit:contain; pointer-events:none;" />
+
+      <div style="position:absolute; left:.42in; top:1.05in; z-index:3; max-width:2.85in;">
+        <div class="eyebrow">CHAPTER 1 <span class="dot-sep">&bull;</span> ORIENTATION</div>
+        <div class="ch-num">01</div>
+        <div class="annot ink" style="position:absolute; left:1.5in; top:.42in; transform:rotate(-5deg); font-size:13pt; white-space:nowrap;">&larr; you are here</div>
+        <div style="display:inline-block;">
+          <div class="ch-title" style="position:relative; white-space:nowrap;">So what the hell<br/>is Claude Code</div>
+          <svg viewBox="0 0 220 14" preserveAspectRatio="none" style="display:block; width:2.6in; height:.18in; margin-top:.04in; margin-left:.05in;" aria-hidden="true">
+            <path d="M 2 8 Q 28 2 60 6 T 130 5 Q 170 3 218 7" stroke="#d96033" stroke-width="6" stroke-linecap="round" fill="none" opacity=".88"/>
+            <path d="M 8 11 Q 50 9 110 10 T 210 11" stroke="#d96033" stroke-width="2" stroke-linecap="round" fill="none" opacity=".55"/>
+          </svg>
         </div>
       </div>
 
@@ -91,7 +54,7 @@ function pageChapterOpener() {
           <div class="lb-badge">
             <div class="ico">&#127891;</div>
           </div>
-          <h4>You'll know</h4>
+          <h4>You'll learn</h4>
           <ul>
             <li><span class="chk">&#10003;</span>What it actually is</li>
             <li><span class="chk">&#10003;</span>What it isn't (and why)</li>
@@ -102,7 +65,7 @@ function pageChapterOpener() {
           <div class="lb-badge">
             <div class="ico">&#129488;</div>
           </div>
-          <h4>Hard questions</h4>
+          <h4>Honest questions</h4>
           <ol>
             <li><span class="num-step">1</span>Will it replace me?</li>
             <li><span class="num-step">2</span>Is my data safe?</li>
@@ -132,7 +95,9 @@ function pageConceptWhatItIs() {
           <div class="section-h" style="margin:.06in 0 .04in;">What it <span class="stroke-under">actually</span> is.</div>
           <div class="annot ink" style="font-size:13pt; margin:-.04in 0 .4in; transform:rotate(-1deg);">(short version: you type, claude does things.)</div>
           <div class="body" style="max-width:3.4in;">
-            <p>Claude Code is a thing you type into your computer's terminal. You talk to it. It can <strong>read</strong> your files, <strong>write</strong> new ones, <strong>run</strong> commands, and remember things between sessions.</p>
+            <p>You're a little scared. Or skeptical. Or you've avoided this whole conversation for months because everyone around you sounds insufferable about AI. All reasonable.</p>
+            <p>This chapter is so we're talking about the same thing before you install anything.</p>
+            <p>Claude Code is a program you talk to in your computer's terminal and tell it to do things while looking like a hacker from TV. It can <strong>read</strong> your files, <strong>write</strong> new ones, <strong>run</strong> commands, and remember things between sessions.</p>
             <p>It's not a website. It's not a copilot in your sidebar. It runs in a terminal window. The same place a developer would run code.</p>
             <p>Underneath, it's <strong>Claude</strong> (the AI made by Anthropic) wired up to your computer in a useful way.</p>
           </div>
@@ -238,7 +203,7 @@ function pageWhatItsNot() {
           <div class="section-h">What it's <span class="stroke-under">not</span>.</div>
           <div style="font-family:'Caveat'; color:var(--orange); font-size:22pt; line-height:.9; transform:rotate(-2deg);">four things, mostly</div>
         </div>
-        <div class="lede" style="font-size:10pt; max-width:4.6in; margin-top:.08in;">It helps to name what this isn't before naming what it is. Otherwise you'll keep importing baggage from the last AI thing you saw.</div>
+        <div class="lede" style="font-size:10pt; max-width:4.6in; margin-top:.25in;">It helps to name what this isn't before naming what it is. Otherwise you'll keep importing baggage from the last AI thing you saw.</div>
 
         <div class="notlist">
           <div class="not-item">
@@ -414,54 +379,38 @@ function pageRecap() {
       <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
         <div style="display:flex; align-items:baseline; justify-content:space-between;">
           <div>
-            <div class="eyebrow" style="color:var(--ink-mute);">CHAPTER 1 &nbsp;&middot;&nbsp; RECAP</div>
-            <div class="section-h" style="margin:.06in 0 0;">The whole chapter,<br/>on one page.</div>
+            <div class="eyebrow" style="color:var(--ink-mute);">WHERE YOU ARE &nbsp;&middot;&nbsp; SECTION 9 OF 9</div>
+            <div class="section-h" style="margin:.06in 0 .04in;">Now you <span class="stroke-under">get it</span>.</div>
+            <div class="annot ink" style="margin:-.04in 0 .2in; font-size:13pt; transform:rotate(-1deg);">(if you're still here, you've got the gist.)</div>
           </div>
-          <div style="text-align:right;">
+          <div style="text-align:right; align-self:flex-start;">
             <div style="font-family:'Caveat'; color:var(--orange); font-size:30pt; line-height:.9;">tl;dr</div>
-            <div class="small" style="color:var(--ink-mute); margin-top:.04in;">tear this page out if you want</div>
           </div>
         </div>
 
-        <div class="recap-grid" style="margin-top:.22in;">
+        <div class="recap-grid" style="margin-top:.1in;">
           <div class="recap-item">
             <div class="n">1</div>
-            <b>It runs in your terminal.</b>
-            Not a website, not a sidebar. A text window you type at.
+            <div class="small" style="color:var(--ink-soft);"><strong style="color:var(--ink);">Claude Code is an AI that runs in your terminal</strong> and does real work on your files.</div>
           </div>
           <div class="recap-item">
             <div class="n">2</div>
-            <b>It does, not just talks.</b>
-            Reads your files, writes new ones, runs commands. With permission.
+            <div class="small" style="color:var(--ink-soft);"><strong style="color:var(--ink);">It's not magic, it's not your replacement,</strong> and it's not safe to trust blindly.</div>
           </div>
           <div class="recap-item">
             <div class="n">3</div>
-            <b>It's not magic, it's not your replacement.</b>
-            It'll get things wrong. You're the human, you're the check.
+            <div class="small" style="color:var(--ink-soft);"><strong style="color:var(--ink);">It can save you real time on real tasks.</strong></div>
           </div>
           <div class="recap-item">
             <div class="n">4</div>
-            <b>It can save you real time on real tasks.</b>
-            Boring work gone. Real work still yours.
-          </div>
-          <div class="recap-item">
-            <div class="n">5</div>
-            <b>Your fears are legitimate.</b>
-            We'll cover them honestly in ch. 9.
-          </div>
-          <div class="recap-item">
-            <div class="n">6</div>
-            <b>Burned out? Stop.</b>
-            Don't let a tool run you. That's the old trap.
+            <div class="small" style="color:var(--ink-soft);"><strong style="color:var(--ink);">Your fears are legitimate; the answers are nuanced.</strong></div>
           </div>
         </div>
 
         <div style="margin-top:.2in; display:grid; grid-template-columns:1fr .9in; gap:.18in; align-items:center;">
-          <div class="card" style="background:var(--lav-soft); padding:.14in .18in;">
-            <div class="card-title" style="margin-bottom:.04in;"><span class="ico">&#9733;</span>ONE THING TO REMEMBER</div>
-            <div style="font-family:'Caveat'; font-size:18pt; color:var(--ink); line-height:1.05;">
-              The fears are real. The answers are nuanced. Both can be true.
-            </div>
+          <div>
+            <div style="font-family:'Caveat'; font-size:26pt; color:var(--orange); line-height:1;">Ready?</div>
+            <div class="small" style="color:var(--ink-mute); margin-top:.06in;">Chapter 2 installs the thing. One page at a time.</div>
           </div>
           <div style="text-align:center;">
             <div class="qr"><div class="br"></div></div>
@@ -483,7 +432,8 @@ function pageRecap() {
 function pageNext() {
   return `
     <section class="page">
-      <div class="wash org" style="left:-1in; bottom:-1in; width:4in; height:3in; opacity:.55;"></div>
+      <img src="../../../assets/orange-watercolor-page-stain-left.png" alt="" aria-hidden="true"
+           style="position:absolute; left:0; bottom:0; width:3.2in; z-index:1; pointer-events:none; opacity:.9;" />
       <div class="wash lav" style="right:-.8in; top:-.8in; width:3.2in; height:2.4in; opacity:.55;"></div>
 
       <div style="position:absolute; left:.42in; right:.42in; top:.6in; bottom:.7in; z-index:2;">

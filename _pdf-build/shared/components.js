@@ -51,12 +51,12 @@ export function svgDefs() {
  *                                tangent/skippable pages).
  * @returns {string} HTML string.
  */
-export function rail(activeIndex, washClass = '') {
+export function rail(activeIndex, washClass = '', total = SECTION_COUNT) {
   const dots = [];
-  for (let i = 1; i <= SECTION_COUNT; i++) {
+  for (let i = 1; i <= total; i++) {
     const isNow = i === activeIndex;
     dots.push(`<div class="dot${isNow ? ' now' : ''}">${i}</div>`);
-    if (i < SECTION_COUNT) dots.push(`<span class="seg"></span>`);
+    if (i < total) dots.push(`<span class="seg"></span>`);
   }
   return `
     <div class="rail-wrap">
@@ -72,9 +72,9 @@ export function rail(activeIndex, washClass = '') {
  *
  * @returns {string} HTML string.
  */
-export function railDone() {
+export function railDone(total = SECTION_COUNT) {
   const dots = [];
-  for (let i = 1; i <= SECTION_COUNT - 1; i++) {
+  for (let i = 1; i <= total - 1; i++) {
     dots.push(`<div class="dot">${i}</div><span class="seg"></span>`);
   }
   dots.push(`<div class="dot now">&#10003;</div>`);
@@ -145,7 +145,7 @@ export function footer(pageNum, crumb, slug, opts = {}) {
  * @param {string} opts.footerSlug   — URL slug for the footer.
  * @returns {string} HTML string.
  */
-export function fearPage({ pageNum, sectionIndex, eyebrow, question, body, tldr, xrefLabel, xrefTitle, stickyBody, footerCrumb, footerSlug }) {
+export function fearPage({ pageNum, sectionIndex, eyebrow, question, body, tldr, xrefLabel, xrefTitle, stickyBody, footerCrumb, footerSlug, railTotal = SECTION_COUNT }) {
   const stickyHtml = stickyBody
     ? `<div class="fear-sticky" style="top:.4in; right:.4in; transform:rotate(2.5deg);">
          ${stickyBody}
@@ -153,7 +153,7 @@ export function fearPage({ pageNum, sectionIndex, eyebrow, question, body, tldr,
     : '';
   return `
     <section class="page">
-      ${rail(sectionIndex)}
+      ${rail(sectionIndex, '', railTotal)}
       ${stickyHtml}
       <div class="fear">
         <div class="fear-eyebrow">${eyebrow}</div>

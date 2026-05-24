@@ -28,6 +28,7 @@ async function buildHtml() {
 <html lang="en">
 <head>
 <meta charset="utf-8" />
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
 <title>${chapterTitle}</title>
 <link rel="stylesheet" href="../../../assets/fonts.css" />
 <style>

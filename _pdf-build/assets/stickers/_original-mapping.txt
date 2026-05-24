@@ -43,3 +43,4 @@ holding-red-item.png             -> awkward_doodle_sticker_36
 offering-something.png           -> awkward_doodle_sticker_37
 holding-something-out.png        -> awkward_doodle_sticker_39
 confused-lost.png                -> awkward_doodle_sticker_40
+holding-brain.png                -> (added separately, not in original set)  (used: ch04 cover)
