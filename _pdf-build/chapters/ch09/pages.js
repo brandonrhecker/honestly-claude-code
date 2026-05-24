@@ -69,12 +69,27 @@ function pageDataSafe() {
     eyebrow: 'THE HONEST PART',
     question: 'Is my data <em>safe</em>?',
     body: `
-      <p>The honest answer is "yes, mostly, and here's where you should still pay attention." The marketing-y answer is "Anthropic is committed to your privacy." The internet-paranoid answer is "they're stealing your soul." Both of those are useless. Here's what actually happens.</p>
-      <p><strong>What stays on your machine:</strong> the files in your project folder (unless Claude reads one to answer you), your <code>~/.claude/</code> folder, your session transcript, and any code Claude writes to disk. Claude Code can't reach the internet without your approval.</p>
-      <p><strong>What leaves your machine:</strong> the prompt you typed, the contents of any files Claude needed to read, and Claude's output. It has to. The model lives on Anthropic's servers, not yours.</p>
-      <p><strong>Does Anthropic train on your conversations?</strong> As of 2026: no, not by default for Pro, Max, and API users. Free claude.ai users are asked to opt in or out. Policies change. Read the current one at anthropic.com/legal/privacy before you assume.</p>
-      <p><strong>The actual risk</strong> isn't Anthropic reading your files. It's what you paste in. Don't paste API keys, passwords, customer data, anything covered by NDA or HIPAA, or anything you'd regret having in a log somewhere.</p>
+      <p style="margin-bottom:.1in;">The honest answer is "yes, mostly, and here's where you should still pay attention." Here's what actually happens.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:.07in;">
+        <div style="background:var(--paper-deep); padding:.09in .11in; border-radius:6px; border-top:2px solid var(--orange);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--orange); margin-bottom:.04in;">STAYS ON YOUR MACHINE</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">Your project files, <span style="font-family:'JetBrains Mono'; font-size:.82em; background:var(--rule); padding:1px 3px; border-radius:3px;">~/.claude/</span> folder, session transcript, code Claude writes to disk. Claude can't reach the internet without your approval.</div>
+        </div>
+        <div style="background:var(--paper-deep); padding:.09in .11in; border-radius:6px; border-top:2px solid var(--ink-mute);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-mute); margin-bottom:.04in;">LEAVES YOUR MACHINE</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">Your prompt, the contents of any files Claude needed to read, and Claude's output. It has to. The model lives on Anthropic's servers, not yours.</div>
+        </div>
+        <div style="background:var(--paper-deep); padding:.09in .11in; border-radius:6px; border-top:2px solid var(--ink-mute);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-mute); margin-bottom:.04in;">TRAINING ON YOUR CHATS?</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">No, not by default for Pro, Max, and API users. Free users are asked to opt in or out. Policies change. Check anthropic.com/legal/privacy before you assume.</div>
+        </div>
+        <div style="background:var(--paper-deep); padding:.09in .11in; border-radius:6px; border-top:2px solid var(--orange);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--orange); margin-bottom:.04in;">THE ACTUAL RISK</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">What you paste in. Don't paste API keys, passwords, customer data, anything covered by NDA or HIPAA, or anything you'd regret having in a log.</div>
+        </div>
+      </div>
     `,
+    compact: true,
     tldr: ' Claude Code sends your prompts and relevant file contents to Anthropic. Paid plans don\'t train on them. The real risk is what you paste.',
     xrefLabel: 'FULL BREAKDOWN',
     xrefTitle: 'anthropic.com/legal/privacy',
@@ -91,15 +106,22 @@ function pageWhenItScrewsUp() {
     eyebrow: 'THE HONEST PART',
     question: 'When it <em>screws up</em>?',
     body: `
-      <p>Claude is going to confidently tell you something false. Sometimes spectacularly false. With perfect grammar and zero hesitation. This is the most important thing to know before you trust it with anything that matters.</p>
-      <p><strong>What hallucinations look like:</strong> citations that don't exist, made-up commands, quotes attributed to people who never said them, confident wrong math, plausible-sounding biographical details that are wrong, filenames or paths that don't exist in your project.</p>
-      <p><strong>Highest-risk topics:</strong> anything with legal or financial stakes, medical information (especially dosages), citations you'll publish, commands Claude wants to run on your computer, specific dates and numbers, anything you'll send to another human as fact.</p>
-      <p><strong>Lower-risk:</strong> brainstorming, reformatting content, explaining concepts you already understand at a basic level, first drafts you'll edit anyway.</p>
-      <p><strong>How to catch it:</strong> ask "how do you know that?" Verify the one or two claims your decision actually rests on. Read what it wrote, line by line, before you click yes.</p>
+      <p style="margin-bottom:.07in;">Claude is going to confidently tell you something false. Sometimes spectacularly false. With perfect grammar and zero hesitation. This is the most important thing to know before you trust it with anything that matters.</p>
+      <p style="margin-bottom:.07in;"><strong>What hallucinations look like:</strong> citations that don't exist, made-up commands, quotes attributed to people who never said them, confident wrong math, plausible-sounding biographical details that are wrong, filenames or paths that don't exist in your project.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:.07in; margin-bottom:.07in;">
+        <div style="background:var(--paper-deep); padding:.09in .11in; border-radius:6px; border-top:2px solid var(--orange);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--orange); margin-bottom:.04in;">HIGH RISK</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">Legal or financial stakes, medical info (dosages especially), citations you'll publish, commands Claude wants to run, specific dates and numbers, anything you'll send to another human as fact.</div>
+        </div>
+        <div style="background:var(--paper-deep); padding:.09in .11in; border-radius:6px; border-top:2px solid var(--ink-mute);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-mute); margin-bottom:.04in;">LOWER RISK</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">Brainstorming, reformatting content, explaining concepts you already understand, first drafts you'll edit anyway.</div>
+        </div>
+      </div>
+      <p style="margin-bottom:0;"><strong>How to catch it:</strong> ask "how do you know that?" Verify the one or two claims your decision actually rests on. Read what it wrote, line by line, before you click yes.</p>
     `,
+    compact: true,
     tldr: ' Claude will confidently make things up. Read everything it wants to change. Verify anything that matters. The check is you.',
-    xrefLabel: 'THE PATTERN',
-    xrefTitle: 'If Claude states a fact, ask for the source. If it\'s vague or suspicious, it\'s probably made up.',
     footerCrumb: "CH.9 &nbsp;&middot;&nbsp; WHEN IT SCREWS UP",
     footerSlug: "/09#screwup",
     railTotal: 5,
@@ -113,14 +135,15 @@ function pageWillItReplaceMe() {
     eyebrow: 'THE HONEST PART',
     question: 'Will it <em>replace me</em>?',
     body: `
-      <p>The honest answer doesn't fit in a sentence. The doomers say the end times are here. The consultants say you'll be fine if you "embrace transformation." Neither knows your specific situation.</p>
-      <p><strong>Direct-replacement risk:</strong> Some jobs are already being affected. Right now. Tier-1 customer service, copy editing, junior coding work, transcription, first-draft copywriting, basic graphic design, data entry, paralegal first-pass document review. If you're in one of these, the honest move is to climb up the value chain or pivot toward judgment, relationships, or physical presence.</p>
-      <p><strong>Second-order risk (even if your job is "safe"):</strong> When some jobs disappear, those workers apply for the remaining ones. Hiring tightens everywhere. AI-augmented output becomes the new baseline. Even "safe" roles see pay compression as the broader job market loosens.</p>
-      <p><strong>Where this leaves you:</strong> you understand what this thing is and isn't. You can use it. You can tell when its output is good and when it's wrong. You're not waiting for someone to translate "AI" for you. That's already most of the game.</p>
+      <p style="margin-bottom:.05in;">The honest answer doesn't fit in a sentence. The doomers say the end times are here. The consultants say you'll be fine if you "embrace transformation." Neither knows your specific situation.</p>
+      <p style="margin-bottom:.05in;"><strong>Direct-replacement risk:</strong> Some jobs are already being affected. Right now. Tier-1 customer service, copy editing, junior coding work, transcription, first-draft copywriting, basic graphic design, data entry, paralegal first-pass document review. If you're in one of these, the honest move is to climb up the value chain or pivot toward judgment, relationships, or physical presence.</p>
+      <p style="margin-bottom:.15in;"><strong>Second-order risk (even if your job is "safe"):</strong> When some jobs disappear, those workers apply for the remaining ones. Hiring tightens everywhere. AI-augmented output becomes the new baseline. Even "safe" roles see pay compression as the broader job market loosens.</p>
+      <div style="padding:.09in .14in; border-left:3px solid var(--orange); background:var(--paper-deep); border-radius:0 6px 6px 0;">
+        <div style="font-family:'Caveat',cursive; font-weight:700; font-size:19pt; line-height:1.15; color:var(--ink);">You're not waiting for someone to translate "AI" for you. <span style="color:var(--orange);">That's already most of the game.</span></div>
+      </div>
     `,
+    compact: true,
     tldr: ' Some roles are already affected. The people who do well are the ones who understand the tool well enough to use it and catch it.',
-    xrefLabel: 'THE HONEST MOVE',
-    xrefTitle: 'Climb the value chain. Or pivot toward judgment, relationships, or physical presence.',
     footerCrumb: "CH.9 &nbsp;&middot;&nbsp; WILL IT REPLACE ME",
     footerSlug: "/09#replace",
     railTotal: 5,
@@ -134,15 +157,16 @@ function pageGettingDependent() {
     eyebrow: 'THE HONEST PART',
     question: 'Am I getting <em>dependent</em>?',
     body: `
-      <p>You reach for Claude before you've thought about the problem. You feel stuck without it. You can't remember how you used to start a draft. Congratulations: that's the slide.</p>
-      <p><strong>What dependency looks like:</strong> reaching for Claude before you've thought about the problem, panic when it's down, forgetting how you used to do things you used to do, outsourcing things you actually wanted to do yourself.</p>
-      <p><strong>The two kinds:</strong> healthy reliance (you use it because it's the right tool; you could do without; you just don't want to) versus unhealthy dependency (you can't do without; the skill has gone soft; the choice isn't yours anymore).</p>
-      <p><strong>Skills that go soft first:</strong> writing your own first sentence, holding a thought long enough to develop it, sitting with the discomfort of not knowing, knowing when something is good without asking, trust in your own judgment.</p>
-      <p><strong>The fix:</strong> pick three things that stay yours. Notice the reach before you open Claude. Let yourself be stuck for five minutes first. Practice the manual version once a week.</p>
+      <p style="margin-bottom:.05in;">You reach for Claude before you've thought about the problem. You feel stuck without it. You can't remember how you used to start a draft. Congratulations: that's the slide.</p>
+      <p style="margin-bottom:.05in;"><strong>What dependency looks like:</strong> reaching for Claude before you've thought about the problem, panic when it's down, forgetting how you used to do things you used to do, outsourcing things you actually wanted to do yourself.</p>
+      <p style="margin-bottom:.05in;"><strong>The two kinds:</strong> healthy reliance (you use it because it's the right tool; you could do without; you just don't want to) versus unhealthy dependency (you can't do without; the skill has gone soft; the choice isn't yours anymore).</p>
+      <p style="margin-bottom:.1in;"><strong>Skills that go soft first:</strong> writing your own first sentence, holding a thought long enough to develop it, sitting with the discomfort of not knowing, knowing when something is good without asking, trust in your own judgment.</p>
+      <div style="padding:.09in .14in; border-left:3px solid var(--orange); background:var(--paper-deep); border-radius:0 6px 6px 0;">
+        <div style="font-family:'Caveat',cursive; font-weight:700; font-size:19pt; line-height:1.15; color:var(--ink);">Pick three things that stay yours. Notice the reach. <span style="color:var(--orange);">The choice stays yours.</span></div>
+      </div>
     `,
+    compact: true,
     tldr: ' The slide is slow. Pick three things to keep manual, on purpose. The goal isn\'t using it less. It\'s staying capable of doing without it.',
-    xrefLabel: 'THE RULE',
-    xrefTitle: 'The choice stays yours. Don\'t outsource the parts of you that matter most.',
     footerCrumb: "CH.9 &nbsp;&middot;&nbsp; GETTING DEPENDENT",
     footerSlug: "/09#dependent",
     railTotal: 5,
@@ -156,14 +180,32 @@ function pageBurningOut() {
     eyebrow: 'THE HONEST PART',
     question: 'What about <em>burning out</em>?',
     body: `
-      <p>AI is everywhere now, whether you use it or not. Even if you never open Claude, the people around you are. The result is a kind of tiredness most of us don't have a name for yet.</p>
-      <p><strong>What it looks like:</strong> constant verification exhausting your brain in a way that doing the work yourself doesn't. Decision fatigue from "do I take this, edit this, redo this, or scrap it?" multiplied across a day. Hollow-content fatigue from scrolling past posts that all sound like the same person wrote them, because they kind of did. Identity drag from finishing a piece of writing that doesn't feel like you wrote it.</p>
-      <p><strong>The sameness problem:</strong> same tools, same prompts, same outputs. Emails sound the same. Decks look the same. Articles read the same. The technical word for this is mimetic behavior. The plain word for it is the blend. People who get pulled in stop standing out and stop standing for anything.</p>
-      <p><strong>The fix:</strong> use it less on purpose. Stay weird on purpose. Pick the unusual word. Keep the sentence that wouldn't have been generated. Notice when your work could've been generated, and rewrite it. Take credit for your work. The model is a tool, not a co-author.</p>
+      <p style="margin-bottom:.05in;">AI is everywhere now, whether you use it or not. Even if you never open Claude, the people around you are. The result is a kind of tiredness most of us don't have a name for yet.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:.05in; margin-bottom:.05in;">
+        <div style="background:var(--paper-deep); padding:.07in .09in; border-radius:6px; border-top:2px solid var(--orange);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--orange); margin-bottom:.03in;">VERIFICATION FATIGUE</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">Constant fact-checking exhausts your brain in a way doing the work yourself doesn't.</div>
+        </div>
+        <div style="background:var(--paper-deep); padding:.07in .09in; border-radius:6px; border-top:2px solid var(--ink-mute);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-mute); margin-bottom:.03in;">DECISION FATIGUE</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">"Take it, edit it, redo it, or scrap it?" Multiplied across a full day.</div>
+        </div>
+        <div style="background:var(--paper-deep); padding:.07in .09in; border-radius:6px; border-top:2px solid var(--ink-mute);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-mute); margin-bottom:.03in;">HOLLOW-CONTENT FATIGUE</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">Scrolling past posts that all sound like the same person wrote them. Because they kind of did.</div>
+        </div>
+        <div style="background:var(--paper-deep); padding:.07in .09in; border-radius:6px; border-top:2px solid var(--orange);">
+          <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--orange); margin-bottom:.03in;">IDENTITY DRAG</div>
+          <div style="font-family:'Source Sans 3',sans-serif; font-size:9.5pt; line-height:1.4; color:var(--ink-soft);">Finishing a piece of writing that doesn't feel like you wrote it.</div>
+        </div>
+      </div>
+      <p style="margin-bottom:.07in;"><strong>The sameness problem:</strong> same tools, same prompts, same outputs. Emails sound the same. Decks look the same. Articles read the same. People who get pulled in stop standing out and stop standing for anything.</p>
+      <div style="padding:.07in .14in; border-left:3px solid var(--orange); background:var(--paper-deep); border-radius:0 6px 6px 0;">
+        <div style="font-family:'Caveat',cursive; font-weight:700; font-size:19pt; line-height:1.15; color:var(--ink);">Stay weird on purpose. <span style="color:var(--orange);">The model is a tool, not a co-author.</span></div>
+      </div>
     `,
+    compact: true,
     tldr: ' AI burnout is real. The antidote is weirdness, on purpose. The automated world rewards both speed and distinction. Only you can supply the second one.',
-    xrefLabel: 'THE RULE',
-    xrefTitle: 'The thing that makes you different is the thing that makes you valuable. Don\'t blend in just because everyone else is.',
     footerCrumb: "CH.9 &nbsp;&middot;&nbsp; BURNING OUT",
     footerSlug: "/09#burnout",
     railTotal: 5,

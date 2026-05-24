@@ -94,6 +94,8 @@ function pageWhatGetsInstalled() {
           <div class="section-h" style="margin:.06in 0 .04in;">First, a word about <span class="stroke-under">what got installed</span>.</div>
           <div class="annot ink" style="margin:-.04in 0 .35in; font-size:13pt; transform:rotate(-1deg);">(take what you need, skip the rest.)</div>
           <div class="body" style="max-width:3.4in;">
+            <p>You tried it. Maybe it's not for you. Maybe you're moving to a new machine and want a clean install. Maybe you're switching tools. Whatever the reason, getting Claude Code off your computer should be as easy as putting it on.</p>
+            <p>No hard feelings. This chapter walks you through the full uninstall: the CLI, the configs, the demo folders, the optional supporting stuff. Take what you need, skip what you don't.</p>
             <p>When you went through chapter 02 and the chapters after it, a few things landed on your machine. Removing them one at a time, in order, leaves your machine back at neutral.</p>
           </div>
           <div style="display:flex; flex-direction:column; gap:.1in; margin-top:.14in; max-width:3.4in;">
@@ -160,11 +162,11 @@ function pageMacSteps() {
 
         <div style="margin-top:.1in; display:grid; grid-template-columns:1fr 1fr; gap:.12in; max-width:4.6in;">
           <div style="background:var(--paper-deep); border-radius:6px; padding:.09in .12in;">
-            <div class="eyebrow" style="font-size:6.8pt; color:var(--ink-mute); margin-bottom:.06in;">OPTIONAL: DEMO FOLDERS</div>
+            <div class="eyebrow" style="font-size:6.8pt; color:var(--ink-mute); margin-bottom:.06in; min-height:3em;">OPTIONAL: DEMO FOLDERS</div>
             ${term(false, [{ t: 'rm -rf ~/claude-experiments' }], true)}
           </div>
           <div style="background:var(--paper-deep); border-radius:6px; padding:.09in .12in;">
-            <div class="eyebrow" style="font-size:6.8pt; color:var(--ink-mute); margin-bottom:.06in;">OPTIONAL: REMOVE NVM + NODE</div>
+            <div class="eyebrow" style="font-size:6.8pt; color:var(--ink-mute); margin-bottom:.06in; min-height:3em;">OPTIONAL: REMOVE NVM + NODE</div>
             ${term(false, [{ t: 'nvm uninstall --lts' }, { t: 'rm -rf ~/.nvm' }], true)}
             <div class="small" style="color:var(--ink-mute); margin-top:.06in;">Then open <span class="mono" style="font-size:.8em; background:var(--paper-deep); padding:1px 3px; border-radius:2px; border:1px solid var(--rule);">~/.zshrc</span> and delete the lines that mention nvm.</div>
           </div>
@@ -186,25 +188,25 @@ function pageWindowsSteps() {
           <div style="font-family:'Caveat'; color:var(--orange); font-size:20pt; line-height:.9; transform:rotate(-2deg); white-space:nowrap;">open Windows Terminal</div>
         </div>
 
-        <div style="margin-top:.12in;">
-          <div class="eyebrow" style="color:var(--ink-mute); margin-bottom:.08in;">STEP 1 &nbsp;&middot;&nbsp; UNINSTALL THE CLI</div>
+        <div style="margin-top:.08in;">
+          <div class="eyebrow" style="color:var(--ink-mute); margin-bottom:.06in;">STEP 1 &nbsp;&middot;&nbsp; UNINSTALL THE CLI</div>
           ${term(true, [{ t: 'npm uninstall -g @anthropic-ai/claude-code' }])}
-          <div class="small" style="color:var(--ink-mute); margin-top:.05in; max-width:4.4in;">If you see an error about running scripts being disabled, use <span class="mono" style="font-size:.85em; background:var(--paper-deep); padding:1px 4px; border-radius:3px; border:1px solid var(--rule);">npm.cmd</span> instead:</div>
+          <div class="small" style="color:var(--ink-mute); margin-top:.04in; max-width:4.4in;">If you see an error about running scripts being disabled, use <span class="mono" style="font-size:.85em; background:var(--paper-deep); padding:1px 4px; border-radius:3px; border:1px solid var(--rule);">npm.cmd</span> instead:</div>
           ${term(true, [{ t: 'npm.cmd uninstall -g @anthropic-ai/claude-code' }], true)}
         </div>
 
-        <div style="background:var(--paper-deep); border-radius:6px; padding:.09in .12in; margin-top:.08in; max-width:4.4in;">
-          <div class="eyebrow" style="font-size:6.8pt; color:var(--navy); margin-bottom:.06in;">IF STEP 1 STILL FAILS</div>
-          <div class="small" style="color:var(--ink); margin-bottom:.06in;">Find and delete the binary directly:</div>
+        <div style="background:var(--paper-deep); border-radius:6px; padding:.06in .12in; margin-top:.05in; max-width:4.4in;">
+          <div class="eyebrow" style="font-size:6.8pt; color:var(--navy); margin-bottom:.04in;">IF STEP 1 STILL FAILS</div>
+          <div class="small" style="color:var(--ink); margin-bottom:.04in;">Find and delete the binary directly:</div>
           ${term(true, [{ t: 'where claude' }, { t: 'Remove-Item (Get-Command claude).Source' }], true)}
         </div>
 
-        <div style="margin-top:.1in;">
-          <div class="eyebrow" style="color:var(--ink-mute); margin-bottom:.08in;">STEP 2 &nbsp;&middot;&nbsp; REMOVE THE CONFIG FOLDER</div>
+        <div style="margin-top:.08in;">
+          <div class="eyebrow" style="color:var(--ink-mute); margin-bottom:.06in;">STEP 2 &nbsp;&middot;&nbsp; REMOVE THE CONFIG FOLDER</div>
           ${term(true, [{ t: 'Remove-Item -Recurse -Force $env:USERPROFILE\\.claude' }])}
         </div>
 
-        <div style="margin-top:.1in; display:grid; grid-template-columns:1fr 1fr; gap:.12in; max-width:4.6in;">
+        <div style="margin-top:.08in; display:grid; grid-template-columns:1fr 1fr; gap:.12in; max-width:4.6in;">
           <div style="background:var(--paper-deep); border-radius:6px; padding:.09in .12in;">
             <div class="eyebrow" style="font-size:6.8pt; color:var(--ink-mute); margin-bottom:.06in;">OPTIONAL: DEMO FOLDERS</div>
             ${term(true, [{ t: 'Remove-Item -Recurse -Force $env:USERPROFILE\\claude-experiments' }], true)}

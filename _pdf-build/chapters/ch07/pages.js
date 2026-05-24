@@ -77,7 +77,7 @@ function pageWhatYouCanDo() {
         <div>
           <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 1 OF 4</div>
           <div class="section-h" style="margin:.06in 0 .04in;">What you can do <span class="stroke-under">now</span>.</div>
-          <div class="body" style="max-width:3.4in; margin-top:.08in;">
+          <div class="body" style="max-width:3.4in; margin-top:.25in;">
             <p>You did it. That's all, folks. You made it through to the end. While people on LinkedIn are still "leveraging AI for synergistic outcomes," you actually know how the thing works.</p>
             <p>Here's what you can do that they can't:</p>
           </div>

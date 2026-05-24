@@ -1,18 +1,19 @@
 /*
  * Chapter 06 — "Plug it into your other apps"
  *
- * 11 pages:
+ * 12 pages:
  *   1.  Chapter opener
- *   2.  Concept: Why bother (section 1 of 8)
- *   3.  Concept: What is MCP (section 2 of 8)
- *   4.  Setup: Register the MCP (section 3 of 8)
- *   5.  Setup: Launch + verify (section 4 of 8)
- *   6.  Setup: Ask Claude (section 5 of 8)
- *   7.  Concept: What just happened (section 6 of 8)
- *   8.  Tangent: Where to find more MCPs (section 7 of 8)
- *   9.  Ground rules: Remove it + emergency (section 8 of 8)
- *  10.  Recap
- *  11.  Bridge to chapter 07
+ *   2.  Concept: Intro / why bother (section 1 of 9)
+ *   3.  Concept: So why bother with MCP (section 2 of 9)
+ *   4.  Concept: What is MCP (section 3 of 9)
+ *   5.  Setup: Register the MCP (section 4 of 9)
+ *   6.  Setup: Launch + verify (section 5 of 9)
+ *   7.  Setup: Ask Claude (section 6 of 9)
+ *   8.  Concept: What just happened (section 7 of 9)
+ *   9.  Tangent: Where to find more MCPs (section 8 of 9)
+ *  10.  Ground rules: Remove it + emergency (section 9 of 9)
+ *  11.  Recap
+ *  12.  Bridge to chapter 07
  */
 
 import { rail, railDone, footer } from '../../shared/components.js';
@@ -51,7 +52,7 @@ function pageChapterOpener() {
     <section class="page">
       <img src="../../../assets/watercolor-gray.png" alt=""
            style="position:absolute; left:-.7in; width:8.2in; top:.6in; height:3.6in; z-index:1; pointer-events:none; mix-blend-mode:multiply; opacity:.92;"/>
-      ${rail(1, '', 8)}
+      ${rail(1, '', 9)}
       <img src="../../../assets/stickers/holding-up-puzzle.png" alt=""
            style="position:absolute; right:-.37in; top:.4in; width:4.0in; z-index:2; object-fit:contain; pointer-events:none;" />
       <div style="position:absolute; left:.42in; top:1.05in; z-index:3; max-width:2.85in;">
@@ -91,24 +92,20 @@ function pageChapterOpener() {
   `;
 }
 
-function pageWhyBother() {
+function pageIntro() {
   return `
     <section class="page">
-      ${rail(1, '', 8)}
+      ${rail(1, '', 9)}
       <div class="body-wrap">
         <div>
-          <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 1 OF 8</div>
+          <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 1 OF 9</div>
           <div class="section-h" style="margin:.06in 0 .04in;">Why bother plugging it into <span class="stroke-under">other apps</span>.</div>
-          <div class="annot ink" style="margin:-.04in 0 .35in; font-size:13pt; transform:rotate(-1deg);">(generic vs. specific.)</div>
+          <div class="annot ink" style="margin:-.04in 0 .35in; font-size:13pt; transform:rotate(-1deg);">(one chapter from the finish line.)</div>
           <div class="body" style="max-width:3.4in;">
             <p>You've installed Claude Code, made it write a file, given it project context with CLAUDE.md, and bolted on a skill. Claude already has built-in web tools: it can fetch a URL or search the web on its own.</p>
             <p>What it CAN'T do natively: talk to specific apps and services. Your podcast app, your calendar, your notes app, your inbox. Claude doesn't know how to reach any of those unless you build it a bridge.</p>
             <p>MCP is that bridge.</p>
             <p>This chapter: we'll install the Pocket Casts MCP so Claude can recommend podcasts based on what you're learning. We'll point it at this book's repo URL and ask for episodes that'd help you keep going. Then we'll uninstall.</p>
-            <p>Claude can already fetch URLs and search the web with its built-in tools. So why bother with MCP?</p>
-            <p>Built-in tools are generic. They know "the web" but not "your podcast app," "your calendar," "your inbox," "your CRM." Those are specific services with their own data and their own way of doing things.</p>
-            <p>MCP gives Claude specific connections to specific services. An MCP server is a small program that knows how to translate between Claude and one particular service. Install the Pocket Casts MCP and Claude can search Pocket Casts' catalog. Install the Slack MCP and Claude can read your Slack messages. And so on.</p>
-            <p>The win: stop being limited to what Claude was born knowing. Plug it into your stuff.</p>
           </div>
         </div>
         <div class="marg">
@@ -118,12 +115,8 @@ function pageWhyBother() {
           </div>
           <div class="marg-block">
             <div class="marg-lbl navy"><span class="ico">&#8599;</span>ALSO HELPFUL</div>
-            <div>What MCP actually is: <span class="xref">section <b>2</b></span></div>
-            <div style="margin-top:.04in;">Where to find more: <span class="xref">section <b>7</b></span></div>
-          </div>
-          <div class="marg-block">
-            <div class="marg-lbl"><span class="ico">&#128161;</span>BUILT-IN FIRST</div>
-            <div>Claude Code already has WebFetch and WebSearch. MCP is for when those aren't specific enough.</div>
+            <div>What MCP actually is: <span class="xref">section <b>3</b></span></div>
+            <div style="margin-top:.04in;">Where to find more: <span class="xref">section <b>8</b></span></div>
           </div>
         </div>
       </div>
@@ -132,13 +125,42 @@ function pageWhyBother() {
   `;
 }
 
+function pageWhyBother() {
+  return `
+    <section class="page">
+      ${rail(2, '', 9)}
+      <div class="body-wrap">
+        <div>
+          <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 2 OF 9</div>
+          <div class="section-h" style="margin:.06in 0 .04in;">So why bother with <span class="stroke-under">MCP</span>.</div>
+          <div class="annot ink" style="margin:-.04in 0 .35in; font-size:13pt; transform:rotate(-1deg);">(generic vs. specific.)</div>
+          <div class="body" style="max-width:3.4in;">
+            <p>Claude can already fetch URLs and search the web with its built-in tools. So why bother with MCP?</p>
+            <p>Built-in tools are generic. They know "the web" but not "your podcast app," "your calendar," "your inbox," "your CRM." Those are specific services with their own data and their own way of doing things.</p>
+            <p>MCP gives Claude specific connections to specific services. An MCP server is a small program that knows how to translate between Claude and one particular service. Install the Pocket Casts MCP and Claude can search Pocket Casts' catalog. Install the Slack MCP and Claude can read your Slack messages. And so on.</p>
+            <p>The win: stop being limited to what Claude was born knowing. Plug it into your stuff.</p>
+          </div>
+        </div>
+        <div class="marg">
+          <div class="marg-block">
+            <div class="marg-lbl navy"><span class="ico">&#8599;</span>ALSO HELPFUL</div>
+            <div>What MCP actually is: <span class="xref">section <b>3</b></span></div>
+            <div style="margin-top:.04in;">Where to find more: <span class="xref">section <b>8</b></span></div>
+          </div>
+        </div>
+      </div>
+      ${footer(3, "CH.6 &nbsp;&middot;&nbsp; WHY BOTHER", "/06#why")}
+    </section>
+  `;
+}
+
 function pageWhatIsMCP() {
   return `
     <section class="page">
-      ${rail(2, '', 8)}
+      ${rail(3, '', 9)}
       <div class="body-wrap">
         <div>
-          <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 2 OF 8</div>
+          <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 3 OF 9</div>
           <div class="section-h" style="margin:.06in 0 .04in;">First, a word about <span class="stroke-under">MCP</span>.</div>
           <div class="annot ink" style="margin:-.04in 0 .35in; font-size:13pt; transform:rotate(-1deg);">(three things to know.)</div>
 
@@ -184,7 +206,7 @@ function pageWhatIsMCP() {
           </div>
         </div>
       </div>
-      ${footer(3, "CH.6 &nbsp;&middot;&nbsp; WHAT IS MCP", "/06#mcp")}
+      ${footer(4, "CH.6 &nbsp;&middot;&nbsp; WHAT IS MCP", "/06#mcp")}
     </section>
   `;
 }
@@ -192,9 +214,9 @@ function pageWhatIsMCP() {
 function pageRegisterMCP() {
   return `
     <section class="page">
-      ${rail(3, '', 8)}
+      ${rail(4, '', 9)}
       <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
-        <div class="eyebrow" style="color:var(--ink-mute);">SETUP &nbsp;&middot;&nbsp; SECTION 3 OF 8</div>
+        <div class="eyebrow" style="color:var(--ink-mute);">SETUP &nbsp;&middot;&nbsp; SECTION 4 OF 9</div>
         <div style="display:flex; align-items:baseline; justify-content:space-between; gap:.18in; margin-top:.04in;">
           <div class="section-h">Register the Pocket Casts MCP.</div>
           <div style="font-family:'Caveat'; color:var(--orange); font-size:18pt; line-height:.9; transform:rotate(-2deg); white-space:nowrap;">one command</div>
@@ -230,7 +252,7 @@ function pageRegisterMCP() {
           </div>
         </div>
       </div>
-      ${footer(4, "CH.6 &nbsp;&middot;&nbsp; SETUP &nbsp;&rsaquo;&nbsp; REGISTER THE MCP", "/06#register")}
+      ${footer(5, "CH.6 &nbsp;&middot;&nbsp; SETUP &nbsp;&rsaquo;&nbsp; REGISTER THE MCP", "/06#register")}
     </section>
   `;
 }
@@ -238,9 +260,9 @@ function pageRegisterMCP() {
 function pageLaunchAndVerify() {
   return `
     <section class="page">
-      ${rail(4, '', 8)}
+      ${rail(5, '', 9)}
       <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
-        <div class="eyebrow" style="color:var(--ink-mute);">SETUP &nbsp;&middot;&nbsp; SECTION 4 OF 8</div>
+        <div class="eyebrow" style="color:var(--ink-mute);">SETUP &nbsp;&middot;&nbsp; SECTION 5 OF 9</div>
         <div style="display:flex; align-items:baseline; justify-content:space-between; gap:.18in; margin-top:.04in;">
           <div class="section-h">Launch it. Verify it.</div>
           <div style="font-family:'Caveat'; color:var(--orange); font-size:20pt; line-height:.9; transform:rotate(-2deg); white-space:nowrap;">confirm the bridge is up</div>
@@ -256,10 +278,10 @@ function pageLaunchAndVerify() {
           <div class="eyebrow" style="color:var(--ink-mute); margin-bottom:.08in;">STEP 3 &nbsp;&middot;&nbsp; VERIFY THE CONNECTION</div>
           ${term(false, [{ t: '/mcp' }], false, false)}
           <div class="small" style="color:var(--ink-mute); margin-top:.1in; max-width:4.4in;">You should see <strong style="color:var(--ink);">pocketcasts</strong> in the list. Press <span class="mono" style="font-size:.85em; background:var(--paper-deep); padding:1px 4px; border-radius:3px; border:1px solid var(--rule);">Esc</span> to exit the MCP view and get back to the chat prompt.</div>
-          <div class="small" style="color:var(--ink-mute); margin-top:.08in; max-width:4.4in;">If you don't see <span class="mono" style="font-size:.85em; background:var(--paper-deep); padding:1px 4px; border-radius:3px; border:1px solid var(--rule);">pocketcasts</span>, jump to "in case of emergency" on page 9.</div>
+          <div class="small" style="color:var(--ink-mute); margin-top:.08in; max-width:4.4in;">If you don't see <span class="mono" style="font-size:.85em; background:var(--paper-deep); padding:1px 4px; border-radius:3px; border:1px solid var(--rule);">pocketcasts</span>, jump to "in case of emergency" on page 10.</div>
         </div>
       </div>
-      ${footer(5, "CH.6 &nbsp;&middot;&nbsp; SETUP &nbsp;&rsaquo;&nbsp; LAUNCH + VERIFY", "/06#launch")}
+      ${footer(6, "CH.6 &nbsp;&middot;&nbsp; SETUP &nbsp;&rsaquo;&nbsp; LAUNCH + VERIFY", "/06#launch")}
     </section>
   `;
 }
@@ -267,9 +289,9 @@ function pageLaunchAndVerify() {
 function pageAskClaude() {
   return `
     <section class="page">
-      ${rail(5, '', 8)}
+      ${rail(6, '', 9)}
       <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
-        <div class="eyebrow" style="color:var(--ink-mute);">SETUP &nbsp;&middot;&nbsp; SECTION 5 OF 8</div>
+        <div class="eyebrow" style="color:var(--ink-mute);">SETUP &nbsp;&middot;&nbsp; SECTION 6 OF 9</div>
         <div style="display:flex; align-items:baseline; justify-content:space-between; gap:.18in; margin-top:.04in;">
           <div class="section-h">Ask Claude.</div>
           <div style="font-family:'Caveat'; color:var(--orange); font-size:20pt; line-height:.9; transform:rotate(-2deg); white-space:nowrap;">the actual moment</div>
@@ -301,7 +323,7 @@ function pageAskClaude() {
           </div>
         </div>
       </div>
-      ${footer(6, "CH.6 &nbsp;&middot;&nbsp; SETUP &nbsp;&rsaquo;&nbsp; ASK CLAUDE", "/06#ask")}
+      ${footer(7, "CH.6 &nbsp;&middot;&nbsp; SETUP &nbsp;&rsaquo;&nbsp; ASK CLAUDE", "/06#ask")}
     </section>
   `;
 }
@@ -309,10 +331,10 @@ function pageAskClaude() {
 function pageWhatJustHappened() {
   return `
     <section class="page">
-      ${rail(6, '', 8)}
+      ${rail(7, '', 9)}
       <div class="body-wrap">
         <div>
-          <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 6 OF 8</div>
+          <div class="eyebrow" style="color:var(--ink-mute);">CONCEPT &nbsp;&middot;&nbsp; SECTION 7 OF 9</div>
           <div class="section-h" style="margin:.06in 0 .04in;">What just <span class="stroke-under">happened</span>.</div>
           <div class="annot ink" style="margin:-.04in 0 .35in; font-size:13pt; transform:rotate(-1deg);">(two tools. one prompt.)</div>
 
@@ -346,7 +368,7 @@ function pageWhatJustHappened() {
           </div>
         </div>
       </div>
-      ${footer(7, "CH.6 &nbsp;&middot;&nbsp; WHAT JUST HAPPENED", "/06#recap")}
+      ${footer(8, "CH.6 &nbsp;&middot;&nbsp; WHAT JUST HAPPENED", "/06#recap")}
     </section>
   `;
 }
@@ -359,9 +381,9 @@ function pageFindMore() {
   ];
   return `
     <section class="page">
-      ${rail(7, '', 8)}
+      ${rail(8, '', 9)}
       <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
-        <div class="eyebrow" style="color:var(--ink-mute);">TANGENT &nbsp;&middot;&nbsp; SECTION 7 OF 8</div>
+        <div class="eyebrow" style="color:var(--ink-mute);">TANGENT &nbsp;&middot;&nbsp; SECTION 8 OF 9</div>
         <div style="display:flex; align-items:baseline; justify-content:space-between; gap:.18in; margin-top:.04in;">
           <div class="section-h">Where to find more MCPs.</div>
           <div style="font-family:'Caveat'; color:var(--orange); font-size:20pt; line-height:.9; transform:rotate(-2deg); white-space:nowrap;">the ecosystem</div>
@@ -382,7 +404,7 @@ function pageFindMore() {
           third-party MCPs<br/>aren't vetted by<br/>Anthropic. use judgment.
         </div>
       </div>
-      ${footer(8, "CH.6 &nbsp;&middot;&nbsp; WHERE TO FIND MORE", "/06#more")}
+      ${footer(9, "CH.6 &nbsp;&middot;&nbsp; WHERE TO FIND MORE", "/06#more")}
     </section>
   `;
 }
@@ -397,9 +419,9 @@ function pageRemoveAndEmergency() {
   ];
   return `
     <section class="page">
-      ${rail(8, '', 8)}
+      ${rail(9, '', 9)}
       <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
-        <div class="eyebrow" style="color:var(--ink-mute);">GROUND RULES &nbsp;&middot;&nbsp; SECTION 8 OF 8</div>
+        <div class="eyebrow" style="color:var(--ink-mute);">GROUND RULES &nbsp;&middot;&nbsp; SECTION 9 OF 9</div>
         <div style="display:flex; align-items:baseline; justify-content:space-between; gap:.18in; margin-top:.04in;">
           <div class="section-h">How to remove it.</div>
           <div style="font-family:'Caveat'; color:var(--orange); font-size:20pt; line-height:.9; transform:rotate(-2deg); white-space:nowrap;">and if it gets weird</div>
@@ -422,7 +444,7 @@ function pageRemoveAndEmergency() {
           </tbody>
         </table>
       </div>
-      ${footer(9, "CH.6 &nbsp;&middot;&nbsp; REMOVE + TROUBLESHOOTING", "/06#remove")}
+      ${footer(10, "CH.6 &nbsp;&middot;&nbsp; REMOVE + TROUBLESHOOTING", "/06#remove")}
     </section>
   `;
 }
@@ -437,9 +459,9 @@ function pageRecap() {
   ];
   return `
     <section class="page">
-      ${railDone(8)}
+      ${railDone(9)}
       <div style="position:absolute; left:.42in; right:.42in; top:1in; bottom:.7in; z-index:2;">
-        <div class="eyebrow" style="color:var(--ink-mute);">WHERE YOU ARE &nbsp;&middot;&nbsp; SECTION 8 OF 8</div>
+        <div class="eyebrow" style="color:var(--ink-mute);">WHERE YOU ARE &nbsp;&middot;&nbsp; SECTION 9 OF 9</div>
         <div style="display:flex; align-items:baseline; justify-content:space-between; margin-top:.04in;">
           <div class="section-h">Now you can.</div>
         </div>
@@ -454,7 +476,7 @@ function pageRecap() {
           <div style="font-family:'Caveat'; font-size:16pt; color:var(--ink-soft);">Six chapters down. One short closing chapter to go.</div>
         </div>
       </div>
-      ${footer(10, "CH.6 &nbsp;&middot;&nbsp; NOW YOU CAN", "/06#all")}
+      ${footer(11, "CH.6 &nbsp;&middot;&nbsp; NOW YOU CAN", "/06#all")}
     </section>
   `;
 }
@@ -530,7 +552,7 @@ function pageNext() {
         </div>
       </div>
 
-      ${footer(11, "UP NEXT &nbsp;&middot;&nbsp; YOU MADE IT. NOW WHAT.", "/07-you-made-it")}
+      ${footer(12, "UP NEXT &nbsp;&middot;&nbsp; YOU MADE IT. NOW WHAT.", "/07-you-made-it")}
     </section>
   `;
 }
@@ -538,6 +560,7 @@ function pageNext() {
 export function renderPages() {
   return [
     pageChapterOpener(),
+    pageIntro(),
     pageWhyBother(),
     pageWhatIsMCP(),
     pageRegisterMCP(),

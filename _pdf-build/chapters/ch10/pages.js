@@ -15,30 +15,34 @@ import { rail, railDone, footer } from '../../shared/components.js';
 
 export const chapterTitle = 'Honestly, Claude Code, ch.10 — Cheat Sheet';
 
-/** Two-column command reference table. heads = [col1 label, col2 label]. */
-function cmdTable(title, heads, rows, note) {
-  const rowHtml = rows.map(([col1, col2], i) => `
-    <tr>
-      <td>${col1}</td>
-      <td><span class="mono">${col2}</span></td>
-    </tr>`).join('');
-  const noteHtml = note
-    ? `<div class="small" style="color:var(--ink-soft); margin-top:.06in; font-style:italic;">${note}</div>`
-    : '';
-  return `
-    <div style="margin-top:.2in;">
-      <div class="eyebrow" style="color:var(--navy); margin-bottom:.04in; font-size:7pt;">${title}</div>
-      <table class="dtable">
-        <thead>
-          <tr>
-            <th style="width:52%;">${heads[0]}</th>
-            <th>${heads[1]}</th>
-          </tr>
-        </thead>
-        <tbody>${rowHtml}</tbody>
-      </table>
-      ${noteHtml}
-    </div>`;
+/** Dark card: label on top, orange mono command below, optional smaller subtext. */
+function cmdCard(label, command, sub = '') {
+  return `<div style="background:var(--ink); padding:.08in .1in; border-radius:8px;">
+    <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6pt; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.42); margin-bottom:.04in;">${label}</div>
+    <div style="font-family:'JetBrains Mono'; font-size:10.5pt; color:var(--orange); line-height:1.2;">${command}</div>
+    ${sub ? `<div style="font-family:'JetBrains Mono'; font-size:8pt; color:rgba(255,255,255,.3); margin-top:.03in;">${sub}</div>` : ''}
+  </div>`;
+}
+
+/** Horizontal rule with centered label — visually separates command groups. */
+function sectionRule(label) {
+  return `<div style="display:flex; align-items:center; gap:.1in; margin:.14in 0 .09in;">
+    <div style="flex:1; height:1px; background:var(--rule);"></div>
+    <div style="font-family:'Archivo',sans-serif; font-weight:800; font-size:6.5pt; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-mute); white-space:nowrap;">${label}</div>
+    <div style="flex:1; height:1px; background:var(--rule);"></div>
+  </div>`;
+}
+
+/** Symptom → fix row for the troubleshooting section. */
+function fixRow(symptom, fix, isMono = false) {
+  const symptomInner = isMono
+    ? `<span style="font-family:'JetBrains Mono'; font-size:8pt; line-height:1.3;">${symptom}</span>`
+    : `<span style="font-family:'Source Sans 3',sans-serif; font-size:9pt; line-height:1.3;">${symptom}</span>`;
+  return `<div style="display:grid; grid-template-columns:1fr .2in 1fr; align-items:center; gap:.05in;">
+    <div style="background:var(--paper-deep); padding:.06in .09in; border-radius:6px; border-left:2px solid var(--orange); color:var(--ink);">${symptomInner}</div>
+    <div style="color:var(--orange); font-size:13pt; text-align:center; line-height:1;">&rarr;</div>
+    <div style="background:var(--paper-deep); padding:.06in .09in; border-radius:6px; font-family:'Source Sans 3',sans-serif; font-size:9pt; color:var(--ink-soft); line-height:1.3;">${fix}</div>
+  </div>`;
 }
 
 function pageChapterOpener() {
@@ -102,29 +106,23 @@ function pageTerminalBasics() {
           <div style="font-family:'Caveat'; color:var(--orange); font-size:18pt; line-height:.9; transform:rotate(-2deg); white-space:nowrap;">type these outside Claude</div>
         </div>
 
-        ${cmdTable(
-          'OPEN AND CLOSE CLAUDE',
-          ['What you want', 'What you type'],
-          [
-            ['Start Claude in this folder', 'claude'],
-            ['Check it\'s installed', 'claude --version'],
-            ['Exit cleanly', '/exit'],
-            ['Force quit (last resort)', 'Ctrl+C twice'],
-          ]
-        )}
+        ${sectionRule('OPEN + CLOSE')}
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:.07in;">
+          ${cmdCard('START CLAUDE', 'claude')}
+          ${cmdCard('CHECK INSTALL', 'claude --version')}
+          ${cmdCard('EXIT CLEANLY', '/exit')}
+          ${cmdCard('FORCE QUIT', 'Ctrl+C &nbsp;&nbsp; twice')}
+        </div>
 
-        ${cmdTable(
-          'MOVE AROUND YOUR COMPUTER',
-          ['What you want', 'What you type'],
-          [
-            ['See where you are', 'pwd'],
-            ['List what\'s in this folder', 'ls'],
-            ['Step into a folder', 'cd folder-name'],
-            ['Go up one folder', 'cd ..'],
-            ['Go to your home folder', 'cd ~'],
-            ['Make a new folder', 'mkdir folder-name'],
-          ]
-        )}
+        ${sectionRule('NAVIGATE YOUR COMPUTER')}
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:.07in;">
+          ${cmdCard('WHERE AM I?', 'pwd')}
+          ${cmdCard("WHAT'S IN HERE?", 'ls')}
+          ${cmdCard('STEP INTO A FOLDER', 'cd folder-name')}
+          ${cmdCard('GO UP ONE LEVEL', 'cd ..')}
+          ${cmdCard('GO HOME', 'cd ~')}
+          ${cmdCard('MAKE A FOLDER', 'mkdir folder-name')}
+        </div>
       </div>
       ${footer(2, "CH.10 &nbsp;&middot;&nbsp; TERMINAL BASICS", "/10-reference#terminal")}
     </section>
@@ -142,30 +140,24 @@ function pageClaudeInterface() {
           <div style="font-family:'Caveat'; color:var(--orange); font-size:18pt; line-height:.9; transform:rotate(-2deg); white-space:nowrap;">type these at the prompt</div>
         </div>
 
-        ${cmdTable(
-          'SLASH COMMANDS',
-          ['What you want', 'What you type'],
-          [
-            ['See what\'s available', '/help'],
-            ['Change the theme', '/theme'],
-            ['See current permissions', '/permissions'],
-            ['See your connected apps', '/mcp'],
-            ['Reload plugins', '/reload-plugins'],
-            ['Exit', '/exit'],
-          ]
-        )}
+        ${sectionRule('SLASH COMMANDS')}
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:.07in;">
+          ${cmdCard("SEE WHAT'S AVAILABLE", '/help')}
+          ${cmdCard('CHANGE THE THEME', '/theme')}
+          ${cmdCard('SEE PERMISSIONS', '/permissions')}
+          ${cmdCard('SEE CONNECTED APPS', '/mcp')}
+          ${cmdCard('RELOAD PLUGINS', '/reload-plugins')}
+          ${cmdCard('EXIT', '/exit')}
+        </div>
 
-        ${cmdTable(
-          'PLUGINS — BUNDLES OF SKILLS',
-          ['What you want', 'What you type'],
-          [
-            ['Register a marketplace', '/plugin marketplace add &lt;owner/repo&gt;'],
-            ['Install a plugin', '/plugin install &lt;name&gt;@&lt;marketplace&gt;'],
-            ['Uninstall a plugin', '/plugin uninstall &lt;name&gt;@&lt;marketplace&gt;'],
-            ['Remove a marketplace', '/plugin marketplace remove &lt;name&gt;'],
-          ],
-          'Always run <span class="mono">/reload-plugins</span> after installing or removing.'
-        )}
+        ${sectionRule('PLUGINS — BUNDLES OF SKILLS')}
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:.07in;">
+          ${cmdCard('ADD A MARKETPLACE', '/plugin marketplace add', '&lt;owner/repo&gt;')}
+          ${cmdCard('INSTALL A PLUGIN', '/plugin install', '&lt;name&gt;@&lt;marketplace&gt;')}
+          ${cmdCard('UNINSTALL A PLUGIN', '/plugin uninstall', '&lt;name&gt;@&lt;marketplace&gt;')}
+          ${cmdCard('REMOVE A MARKETPLACE', '/plugin marketplace remove', '&lt;name&gt;')}
+        </div>
+        <div style="margin-top:.08in; font-family:'Source Sans 3',sans-serif; font-size:8.5pt; color:var(--ink-mute); font-style:italic;">Always run <span style="font-family:'JetBrains Mono'; font-size:.85em;">/reload-plugins</span> after installing or removing.</div>
       </div>
       ${footer(3, "CH.10 &nbsp;&middot;&nbsp; CLAUDE INTERFACE", "/10-reference#claude")}
     </section>
@@ -183,35 +175,22 @@ function pageConnectAndFix() {
           <div style="font-family:'Caveat'; color:var(--orange); font-size:18pt; line-height:.9; transform:rotate(-2deg); white-space:nowrap;">don't throw the laptop</div>
         </div>
 
-        ${cmdTable(
-          'MCPs — CONNECT CLAUDE TO OTHER APPS',
-          ['What you want', 'What you type'],
-          [
-            ['Add an HTTP MCP', 'claude mcp add --transport http &lt;name&gt; &lt;url&gt;'],
-            ['List your MCPs', 'claude mcp list'],
-            ['Remove an MCP', 'claude mcp remove &lt;name&gt;'],
-          ],
-          'Then run <span class="mono">/mcp</span> inside Claude to confirm it\'s connected.'
-        )}
+        ${sectionRule('MCPs — CONNECT CLAUDE TO OTHER APPS')}
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:.07in;">
+          ${cmdCard('ADD AN MCP', 'claude mcp add', '--transport http &lt;name&gt; &lt;url&gt;')}
+          ${cmdCard('LIST YOUR MCPs', 'claude mcp list')}
+          ${cmdCard('REMOVE AN MCP', 'claude mcp remove', '&lt;name&gt;')}
+        </div>
+        <div style="margin-top:.07in; font-family:'Source Sans 3',sans-serif; font-size:8.5pt; color:var(--ink-mute); font-style:italic;">Then run <span style="font-family:'JetBrains Mono'; font-size:.85em;">/mcp</span> inside Claude to confirm it's connected.</div>
 
-        <div style="margin-top:.2in;">
-          <div class="eyebrow" style="color:var(--navy); margin-bottom:.04in; font-size:7pt;">WHEN SOMETHING'S BROKEN</div>
-          <table class="dtable">
-            <thead>
-              <tr>
-                <th style="width:40%;">Symptom</th>
-                <th>First thing to try</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td><span class="mono">claude: command not found</span></td><td>Close and reopen your terminal</td></tr>
-              <tr><td>A slash command does nothing</td><td>Run <span class="mono">/reload-plugins</span></td></tr>
-              <tr><td>Permission error on install</td><td>Don't use <span class="mono">sudo</span>. See chapter 02.</td></tr>
-              <tr><td>Claude wrote in the wrong folder</td><td><span class="mono">/exit</span>, <span class="mono">cd</span> to the right folder, <span class="mono">claude</span> again</td></tr>
-              <tr><td>MCP shows "failed"</td><td>Remove it, add it again</td></tr>
-              <tr><td>Anything else</td><td>Copy the error, ask Claude what it means</td></tr>
-            </tbody>
-          </table>
+        ${sectionRule("WHEN SOMETHING'S BROKEN")}
+        <div style="display:flex; flex-direction:column; gap:.06in;">
+          ${fixRow('claude: command not found', 'Close and reopen your terminal', true)}
+          ${fixRow('A slash command does nothing', 'Run /reload-plugins', false)}
+          ${fixRow('Permission error on install', "Don't use sudo — see chapter 02", false)}
+          ${fixRow('Claude wrote in the wrong folder', '/exit, cd to the right folder, claude again', false)}
+          ${fixRow('MCP shows "failed"', 'Remove it, add it again', false)}
+          ${fixRow('Anything else', 'Copy the error. Ask Claude what it means.', false)}
         </div>
       </div>
       ${footer(4, "CH.10 &nbsp;&middot;&nbsp; CONNECT + FIX", "/10-reference#fix")}

@@ -145,7 +145,7 @@ export function footer(pageNum, crumb, slug, opts = {}) {
  * @param {string} opts.footerSlug   — URL slug for the footer.
  * @returns {string} HTML string.
  */
-export function fearPage({ pageNum, sectionIndex, eyebrow, question, body, tldr, xrefLabel, xrefTitle, stickyBody, footerCrumb, footerSlug, railTotal = SECTION_COUNT }) {
+export function fearPage({ pageNum, sectionIndex, eyebrow, question, body, tldr, xrefLabel, xrefTitle, stickyBody, footerCrumb, footerSlug, railTotal = SECTION_COUNT, compact = false }) {
   const stickyHtml = stickyBody
     ? `<div class="fear-sticky" style="top:.4in; right:.4in; transform:rotate(2.5deg);">
          ${stickyBody}
@@ -159,14 +159,14 @@ export function fearPage({ pageNum, sectionIndex, eyebrow, question, body, tldr,
         <div class="fear-eyebrow">${eyebrow}</div>
         <div class="fear-q">${question}</div>
         <div class="fear-body">${body}</div>
-        ${tldr ? `<div class="fear-tldr"><b>TL;DR</b>${tldr}</div>` : ''}
-        <div class="fear-xref">
+        ${tldr ? `<div class="fear-tldr" style="${compact ? 'margin-top:.1in; padding:.07in .16in;' : ''}"><b>TL;DR</b>${tldr}</div>` : ''}
+        ${xrefLabel ? `<div class="fear-xref">
           <div class="x-text">
             <div class="x-lbl">${xrefLabel}</div>
             <div class="x-title">${xrefTitle}</div>
           </div>
           <div class="x-arrow">&rarr;</div>
-        </div>
+        </div>` : ''}
       </div>
       ${footer(pageNum, footerCrumb, footerSlug)}
     </section>
