@@ -1,0 +1,57 @@
+HONESTLY, CLAUDE CODE — LinkedIn Carousel Alt Text
+====================================================
+
+
+CH 00 — Cover
+--------------
+Book cover for Honestly, Claude Code by Brandon R. Hecker. The Honestly Series. Subtitle: An honest guide for humans. Illustrated cover with hand-drawn figures. A non-engineer's guide to using Claude Code AI.
+
+
+CH 01 — So what the hell is Claude Code
+-----------------------------------------
+Chapter 01 title page from Honestly, Claude Code. Title: So what the hell is Claude Code. Orientation chapter. Illustrated with a hand-drawn character. Covers what Claude Code actually is, what it is not, and why anyone bothers. Claude Code beginner guide.
+
+
+CH 02 — Get the damn thing running
+------------------------------------
+Chapter 02 title page from Honestly, Claude Code. Title: Get the damn thing running. Setup chapter. Illustrated character. Covers installing Node.js and Claude Code and logging in to Anthropic. Claude Code install guide for Mac, Windows, and Linux.
+
+
+CH 03 — Make it do something.
+------------------------------
+Chapter 03 title page from Honestly, Claude Code. Title: Make it do something. First task chapter. Illustrated character. Covers launching Claude in a folder, giving it a real task, reading and approving the output. Claude Code first steps guide.
+
+
+CH 04 — Give it a brain.
+--------------------------
+Chapter 04 title page from Honestly, Claude Code. Title: Give it a brain. Memory chapter. Illustrated character holding a brain. Covers writing a CLAUDE.md file, giving Claude a project folder, watching Claude follow your rules. Claude Code context and memory guide.
+
+
+CH 05 — Bolt on a skill.
+--------------------------
+Chapter 05 title page from Honestly, Claude Code. Title: Bolt on a skill. Power-ups chapter. Illustrated character. Covers registering a plugin marketplace, installing the superpowers plugin, using a brainstorming skill on a real problem. Claude Code plugins guide.
+
+
+CH 06 — Plug it into your other apps.
+---------------------------------------
+Chapter 06 title page from Honestly, Claude Code. Title: Plug it into your other apps. Connections chapter. Illustrated character. Covers registering an MCP, verifying it works, asking Claude to find podcast recommendations. Claude Code MCP integrations guide.
+
+
+CH 07 — You made it. Now what.
+--------------------------------
+Chapter 07 title page from Honestly, Claude Code. Title: You made it. Now what. Closing chapter. Illustrated character. Covers where to take Claude Code from here, what to say when AI comes up at work, and the one thing the book cannot teach you.
+
+
+CH 08 — Pull the plug.
+------------------------
+Chapter 08 title page from Honestly, Claude Code. Title: Pull the plug. Clean exit chapter. Illustrated character. Covers uninstalling Claude Code, removing your project folder, and canceling your Anthropic subscription. Claude Code uninstall guide.
+
+
+CH 09 — The questions you came here with.
+-------------------------------------------
+Chapter 09 title page from Honestly, Claude Code. Title: The questions you came here with. Honest answers chapter. Illustrated character. Covers data safety, hallucinations, job replacement, AI dependency, and burning out in an automated world.
+
+
+CH 10 — The stuff you actually need.
+--------------------------------------
+Chapter 10 title page from Honestly, Claude Code. Title: The stuff you actually need. Reference and cheat sheet. Illustrated character. Covers Claude Code slash commands, navigation, plugins, MCPs, and what to do when Claude stops responding.
