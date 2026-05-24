@@ -18,6 +18,9 @@ CLAUDE.md
 # Build pipeline output (PDFs, page PNGs, contact sheets)
 _pdf-build/out/
 
+# Chapter snapshots (local reference only)
+_pdf-build/chapters/*/snapshots/
+
 # npm dependencies
 _pdf-build/node_modules/
 
