@@ -372,7 +372,7 @@ function pageInstallWindows() {
       { t: `Open <strong>Windows Terminal</strong>: press the <span class="mono">Windows</span> key, type <span class="mono">Terminal</span>, hit Enter. A dark window opens. Keep it open.` },
       {
         t: `Windows blocks scripts by default. Allow your own user to run them (one-time, standard dev setup). When it asks "Are you sure?", type <span class="mono">Y</span>.`,
-        cmds: [{ text: `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned`, ps: true }],
+        cmds: [{ text: `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser`, ps: true }],
       },
       {
         t: `Install Claude Code. The <span class="mono">-g</span> flag means "global", so it works from any folder.`,

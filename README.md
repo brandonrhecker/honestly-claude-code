@@ -50,11 +50,11 @@ Common questions, answered short. Long versions live in chapter 09.
 
 ## the actual book starts here
 
-Nine chapters, in order. By the end of chapter 07 you'll have Claude
+Ten chapters, in order. By the end of chapter 07 you'll have Claude
 installed, a project it knows about, a custom skill, a hook into
 another app, and a sense of where to go next. Chapter 08 covers
 uninstalling. Chapter 09 has the honest answers to the fears you
-walked in with. Split them however you want.
+walked in with. Chapter 10 is a cheat sheet — commands and fixes at a glance.
 
 | # | Chapter |
 |---|---|
@@ -67,14 +67,7 @@ walked in with. Split them however you want.
 | 07 | [You made it. Now what.](07-you-made-it/) |
 | 08 | [Pull the plug](08-pull-the-plug/) |
 | 09 | [The questions you came here with](09-questions-you-came-here-with/) |
-
----
-
-## quick reference
-
-| File | What's in it |
-|---|---|
-| [Cheat sheet](10-reference/cheat-sheet.md) | Commands at a glance |
+| 10 | [Reference cheat sheet](10-reference/) |
 
 ---
 
