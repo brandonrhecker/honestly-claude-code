@@ -123,6 +123,7 @@ function pageTerminalBasics() {
           ${cmdCard('GO HOME', 'cd ~')}
           ${cmdCard('MAKE A FOLDER', 'mkdir folder-name')}
         </div>
+        <div style="margin-top:.08in; font-family:'Source Sans 3',sans-serif; font-size:8.5pt; color:var(--ink-mute); font-style:italic;">Native on Mac, Linux, and WSL. PowerShell supports all of these as aliases — they work, output looks slightly different.</div>
       </div>
       ${footer(2, "CH.10 &nbsp;&middot;&nbsp; TERMINAL BASICS", "/10-reference#terminal")}
     </section>
