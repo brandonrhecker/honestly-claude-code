@@ -581,7 +581,7 @@ function pageRecap() {
             <div class="small" style="color:var(--ink-mute); margin-top:.06in;">The rest of the book is built on top of this.</div>
           </div>
           <div style="text-align:center;">
-            <div class="qr"><div class="br"></div></div>
+            <img src="../../../assets/qr/ch02.png" style="width:.9in; height:.9in; display:block;" alt="QR code" />
             <div class="small" style="color:var(--ink-mute); margin-top:.05in; font-family:'JetBrains Mono'; font-size:7pt;">scan: ch.02</div>
           </div>
         </div>
@@ -663,7 +663,7 @@ function pageNext() {
             <div class="small" style="color:var(--ink-mute); margin-top:.04in;">honestly, <b style="color:var(--ink);">brandon</b>. still not an algorithm</div>
           </div>
           <div style="text-align:center; flex:0 0 auto;">
-            <div class="qr"><div class="br"></div></div>
+            <img src="../../../assets/qr/ch03.png" style="width:.9in; height:.9in; display:block;" alt="QR code" />
             <div class="small" style="color:var(--ink-mute); margin-top:.04in; font-family:'JetBrains Mono'; font-size:7pt;">repo &middot; ch.03</div>
           </div>
         </div>

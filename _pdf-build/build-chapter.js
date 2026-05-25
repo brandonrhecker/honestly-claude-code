@@ -17,12 +17,18 @@ import { svgDefs } from './shared/components.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ch = process.argv[2] || 'ch01';
 const OUT_DIR = path.join(__dirname, 'out', 'chapters', ch);
+const offsetIdx = process.argv.indexOf('--offset');
+const PAGE_OFFSET = offsetIdx !== -1 ? parseInt(process.argv[offsetIdx + 1], 10) : 0;
 
 const { chapterTitle, renderPages } = await import(`./chapters/${ch}/pages.js`);
 
 async function buildHtml() {
   const css = await fs.readFile(path.join(__dirname, 'styles.css'), 'utf-8');
-  const pages = renderPages();
+  const rawPages = renderPages();
+  const pages = PAGE_OFFSET === 0 ? rawPages : rawPages.map(html =>
+    html.replace(/<div class="page-num"([^>]*)>(\d+)<\/div>/g,
+      (_, attrs, num) => `<div class="page-num"${attrs}>${parseInt(num, 10) + PAGE_OFFSET}</div>`)
+  );
 
   return `<!doctype html>
 <html lang="en">
